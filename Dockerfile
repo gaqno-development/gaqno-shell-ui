@@ -35,9 +35,12 @@ ENV NODE_ENV=production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy public folder (create directory first, copy only if it exists)
+# Copy public folder if it exists
 RUN mkdir -p ./public
-COPY --from=builder /app/public ./public 2>&1 || echo "Public directory not found, skipping..."
+RUN --mount=from=builder,source=/app,target=/src \
+    if [ -d /src/public ] && [ "$(ls -A /src/public 2>/dev/null)" ]; then \
+      cp -r /src/public/* ./public/; \
+    fi
 
 # Copy standalone build
 # Next.js standalone output structure:
