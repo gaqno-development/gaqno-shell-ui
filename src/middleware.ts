@@ -75,12 +75,12 @@ export async function middleware(request: NextRequest) {
       }
 
       if (request.nextUrl.pathname.startsWith("/admin")) {
-      if (!profile.is_root_admin) {
-        return NextResponse.redirect(new URL("/dashboard", request.url));
+        if (!profile.is_root_admin) {
+          return NextResponse.redirect(new URL("/dashboard", request.url));
+        }
       }
-    }
 
-    if (request.nextUrl.pathname.startsWith("/dashboard")) {
+      if (request.nextUrl.pathname.startsWith("/dashboard")) {
       if (!profile.tenant_id && !profile.is_root_admin) {
         return NextResponse.redirect(new URL("/unauthorized", request.url));
       }
