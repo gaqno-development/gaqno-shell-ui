@@ -2,12 +2,18 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { createClient } from '@gaqno-dev/core/utils/supabase/client'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-dev/ui/components/ui'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@gaqno-dev/ui/components/ui'
+import { Input } from '@gaqno-dev/ui/components/ui'
+import { Button } from '@gaqno-dev/ui/components/ui'
+import { useLogin } from './hooks/useLogin'
 
 export default function LoginPage() {
   const router = useRouter()
   const [mounted, setMounted] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const { form, onSubmit, isSubmitting, error } = useLogin()
 
   useEffect(() => {
     setMounted(true)
@@ -39,15 +45,81 @@ export default function LoginPage() {
   }
 
   return (
-    <iframe
-      src="/api/auth-proxy?path=login"
-      className="w-full h-screen border-0"
-      title="Login"
-      onLoad={() => setError(null)}
-      onError={() => {
-        setError('Erro ao carregar página de login')
-      }}
-    />
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl font-bold">Login</CardTitle>
+          <CardDescription>
+            Entre com suas credenciais para acessar o sistema
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={onSubmit} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>E-mail</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="email" 
+                        placeholder="seu@email.com" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Senha</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="password" 
+                        placeholder="••••••••" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {error && (
+                <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
+                  {error}
+                </div>
+              )}
+
+              <Button 
+                type="submit" 
+                className="w-full" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Entrando...' : 'Entrar'}
+              </Button>
+            </form>
+          </Form>
+        </CardContent>
+        <CardFooter className="flex justify-center">
+          <p className="text-sm text-muted-foreground">
+            Não tem uma conta?{' '}
+            <Link 
+              href="/register" 
+              className="font-medium text-primary hover:underline"
+            >
+              Registre-se
+            </Link>
+          </p>
+        </CardFooter>
+      </Card>
+    </div>
   )
 }
-
