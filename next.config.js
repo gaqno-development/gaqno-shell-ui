@@ -17,7 +17,15 @@ const nextConfig = {
 
     return [
       // Note: /login and /register are handled by pages in src/app/login and src/app/register
-      // They proxy to the auth service client-side to handle errors gracefully
+      // They use iframe to load from auth service
+      {
+        source: "/login/_next/:path*",
+        destination: `${AUTH_URL}/_next/:path*`,
+      },
+      {
+        source: "/register/_next/:path*",
+        destination: `${AUTH_URL}/_next/:path*`,
+      },
       // App Asset Rewrites
       {
         source: "/auth/_next/:path*",
