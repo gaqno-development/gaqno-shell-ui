@@ -66,13 +66,24 @@ export async function middleware(request: NextRequest) {
         setTimeout(() => reject(new Error("Profile fetch timeout")), 3000)
       );
       
-      const { data: profile, error } = await Promise.race([
-        profilePromise,
-        timeoutPromise
-      ]) as { data: any; error: any };
+      let profile: any = null;
+      let profileError: any = null;
 
-      if (error || !profile) {
-        console.error("Profile fetch error:", error);
+      try {
+        const result = await Promise.race([
+          profilePromise,
+          timeoutPromise
+        ]) as { data: any; error: any };
+        
+        profile = result.data;
+        profileError = result.error;
+      } catch (err) {
+        profileError = err;
+        console.error("Profile fetch error:", err);
+      }
+
+      if (profileError || !profile) {
+        console.error("Profile fetch error:", profileError);
         return NextResponse.redirect(new URL("/login", request.url));
       }
 

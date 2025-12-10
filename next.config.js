@@ -42,10 +42,6 @@ const nextConfig = {
         destination: `${FINANCE_URL}/_next/:path*`,
       },
       {
-        source: "/dashboard/_next/:path*",
-        destination: `${PLATFORM_URL}/_next/:path*`,
-      },
-      {
         source: "/pdv/_next/:path*",
         destination: `${PDV_URL}/_next/:path*`,
       },
@@ -81,15 +77,6 @@ const nextConfig = {
       {
         source: "/pdv/:path*",
         destination: `${PDV_URL}/pdv/:path*`,
-      },
-      // Platform (Fallback for dashboard)
-      {
-        source: "/dashboard",
-        destination: `${PLATFORM_URL}/dashboard`,
-      },
-      {
-        source: "/dashboard/:path*",
-        destination: `${PLATFORM_URL}/dashboard/:path*`,
       },
     ];
   },
