@@ -4,6 +4,26 @@ import { type NextRequest, NextResponse } from "next/server";
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+// Map of routes to service names for error messages
+const SERVICE_NAMES: Record<string, string> = {
+  '/dashboard/finance': 'Finance',
+  '/dashboard/crm': 'CRM',
+  '/dashboard/erp': 'ERP',
+  '/dashboard/books': 'AI/Books',
+  '/dashboard/admin': 'Admin',
+  '/admin': 'Admin',
+  '/pdv': 'PDV',
+};
+
+function getServiceName(pathname: string): string {
+  for (const [route, name] of Object.entries(SERVICE_NAMES)) {
+    if (pathname.startsWith(route)) {
+      return name;
+    }
+  }
+  return 'serviço';
+}
+
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request: {

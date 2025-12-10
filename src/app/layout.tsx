@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@gaqno-dev/ui/components/providers";
 import { QueryProvider } from "@gaqno-dev/ui/components/providers";
 import { AuthProvider } from "@gaqno-dev/ui/contexts";
+import { MicroFrontendErrorBoundary } from "@/components/microfrontend-error-boundary";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,9 @@ export default function RootLayout({
         >
           <QueryProvider>
             <AuthProvider>
-              {children}
+              <MicroFrontendErrorBoundary>
+                {children}
+              </MicroFrontendErrorBoundary>
             </AuthProvider>
           </QueryProvider>
         </ThemeProvider>
