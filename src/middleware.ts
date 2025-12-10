@@ -74,7 +74,7 @@ export async function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL("/login", request.url));
       }
 
-    if (request.nextUrl.pathname.startsWith("/admin")) {
+      if (request.nextUrl.pathname.startsWith("/admin")) {
       if (!profile.is_root_admin) {
         return NextResponse.redirect(new URL("/dashboard", request.url));
       }
