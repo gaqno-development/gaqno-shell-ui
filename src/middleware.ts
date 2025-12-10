@@ -81,31 +81,32 @@ export async function middleware(request: NextRequest) {
       }
 
       if (request.nextUrl.pathname.startsWith("/dashboard")) {
-      if (!profile.tenant_id && !profile.is_root_admin) {
-        return NextResponse.redirect(new URL("/unauthorized", request.url));
-      }
+        if (!profile.tenant_id && !profile.is_root_admin) {
+          return NextResponse.redirect(new URL("/unauthorized", request.url));
+        }
 
-      const featureRoutes: Record<string, string> = {
-        "/dashboard/finance": "FINANCE",
-        "/dashboard/crm": "CRM",
-        "/dashboard/erp": "ERP",
-        "/dashboard/pdv": "PDV",
-        "/dashboard/books": "BOOK_CREATOR",
-      };
+        const featureRoutes: Record<string, string> = {
+          "/dashboard/finance": "FINANCE",
+          "/dashboard/crm": "CRM",
+          "/dashboard/erp": "ERP",
+          "/dashboard/pdv": "PDV",
+          "/dashboard/books": "BOOK_CREATOR",
+        };
 
-      for (const [routePrefix, featureKey] of Object.entries(featureRoutes)) {
-        if (request.nextUrl.pathname.startsWith(routePrefix)) {
-          if (!profile.is_root_admin) {
-            const featurePerms = profile.feature_permissions as Record<string, any> || {};
-            const hasAccess = featurePerms[featureKey] &&
-              featurePerms[featureKey].roles &&
-              featurePerms[featureKey].roles.length > 0;
+        for (const [routePrefix, featureKey] of Object.entries(featureRoutes)) {
+          if (request.nextUrl.pathname.startsWith(routePrefix)) {
+            if (!profile.is_root_admin) {
+              const featurePerms = profile.feature_permissions as Record<string, any> || {};
+              const hasAccess = featurePerms[featureKey] &&
+                featurePerms[featureKey].roles &&
+                featurePerms[featureKey].roles.length > 0;
 
-            if (!hasAccess) {
-              return NextResponse.redirect(new URL("/dashboard", request.url));
+              if (!hasAccess) {
+                return NextResponse.redirect(new URL("/dashboard", request.url));
+              }
             }
+            break;
           }
-          break;
         }
       }
     } catch (error) {
