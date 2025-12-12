@@ -1,4 +1,3 @@
-const { SERVICE_URLS } = require('@gaqno-dev/frontcore/config/service-urls');
 const path = require('path');
 
 /** @type {import('next').NextConfig} */
@@ -19,13 +18,13 @@ const nextConfig = {
     return config;
   },
   async rewrites() {
-    const AUTH_URL = SERVICE_URLS.AUTH;
-    const ADMIN_URL = SERVICE_URLS.ADMIN;
-    const AI_URL = SERVICE_URLS.AI;
-    const CRM_URL = SERVICE_URLS.CRM;
-    const ERP_URL = SERVICE_URLS.ERP;
-    const FINANCE_URL = SERVICE_URLS.FINANCE;
-    const PDV_URL = SERVICE_URLS.PDV;
+    const AUTH_URL = process.env.AUTH_SERVICE_URL;
+    const ADMIN_URL = process.env.ADMIN_SERVICE_URL;
+    const AI_URL = process.env.AI_SERVICE_URL;
+    const CRM_URL = process.env.CRM_SERVICE_URL;
+    const ERP_URL = process.env.ERP_SERVICE_URL;
+    const FINANCE_URL = process.env.FINANCE_SERVICE_URL;
+    const PDV_URL = process.env.PDV_SERVICE_URL;
 
     return [
       // App Asset Rewrites

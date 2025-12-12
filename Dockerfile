@@ -7,8 +7,8 @@ WORKDIR /app
 WORKDIR /app/gaqno-shell
 COPY gaqno-shell/package.json ./
 COPY gaqno-shell/package-lock.json ./
-RUN npm config set fetch-timeout 600000 && \
-    npm config set fetch-retries 5 && \
+RUN npm config set fetch-timeout 1200000 && \
+    npm config set fetch-retries 10 && \
     npm install --legacy-peer-deps
 
 COPY gaqno-shell/ .
