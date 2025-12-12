@@ -1,17 +1,19 @@
 FROM node:20-alpine AS base
-RUN apk add --no-cache git
+RUN apk add --no-cache git libc6-compat
 
 FROM base AS builder
 WORKDIR /app
 
 WORKDIR /app/gaqno-shell
 COPY gaqno-shell/package.json ./
-COPY gaqno-shell/package-lock.json ./
+# COPY gaqno-shell/package-lock.json ./
 RUN npm config set fetch-timeout 1200000 && \
     npm config set fetch-retries 10 && \
     npm install --legacy-peer-deps
 
 COPY gaqno-shell/ .
+# PATCH: Fix unused @ts-expect-error in @gaqno-dev/frontcore
+RUN find node_modules -name useDialogForm.ts -exec sed -i '/@ts-expect-error/d' {} +
 RUN npm run build
 
 FROM base AS runner
