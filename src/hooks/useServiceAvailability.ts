@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { getServiceName, SERVICE_ROUTE_MAP } from '@gaqno-dev/frontcore/config/service-urls'
 
 interface ServiceAvailability {
   available: boolean
@@ -10,27 +11,8 @@ interface ServiceAvailability {
   error?: string
 }
 
-const SERVICE_NAMES: Record<string, string> = {
-  '/dashboard/finance': 'Finance',
-  '/dashboard/crm': 'CRM',
-  '/dashboard/erp': 'ERP',
-  '/dashboard/books': 'AI/Books',
-  '/dashboard/admin': 'Admin',
-  '/admin': 'Admin',
-  '/pdv': 'PDV',
-}
-
-function getServiceName(pathname: string): string {
-  for (const [route, name] of Object.entries(SERVICE_NAMES)) {
-    if (pathname.startsWith(route)) {
-      return name
-    }
-  }
-  return 'serviço'
-}
-
 function isMicroFrontendRoute(pathname: string): boolean {
-  return Object.keys(SERVICE_NAMES).some(route => pathname.startsWith(route))
+  return Object.keys(SERVICE_ROUTE_MAP).some(route => pathname.startsWith(route))
 }
 
 export function useServiceAvailability(): ServiceAvailability {

@@ -1,4 +1,4 @@
-import { useAuth } from '@gaqno-dev/core/hooks/useAuth'
+import { useAuth } from '@gaqno-dev/frontcore/hooks/useAuth'
 
 export const useSettings = () => {
   const { profile, loading } = useAuth()

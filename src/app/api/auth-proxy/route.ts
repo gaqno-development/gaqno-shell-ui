@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { SERVICE_URLS } from '@gaqno-dev/frontcore/config/service-urls'
 
-const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || 'http://localhost:3001'
+const AUTH_SERVICE_URL = SERVICE_URLS.AUTH
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)

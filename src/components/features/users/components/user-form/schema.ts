@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { UserRole } from '@gaqno-dev/core/types/user'
+import { UserRole } from '@gaqno-dev/frontcore/types/user'
 
 export const userFormSchema = z.object({
   name: z.string().min(3, 'Nome deve ter no mínimo 3 caracteres'),

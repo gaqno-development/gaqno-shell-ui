@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.env*.local
+.DS_Store
+test-results
+playwright-report
+playwright/.cache
+build-logs
+

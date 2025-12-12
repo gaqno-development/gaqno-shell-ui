@@ -1,57 +1,32 @@
 FROM node:20-alpine AS base
-
-# Install git for git dependencies
 RUN apk add --no-cache git
 
-# Install dependencies only when needed
-FROM base AS deps
-WORKDIR /app
-
-# Copy package files (standalone repository structure)
-COPY package.json ./
-
-# Install dependencies
-# Note: Using npm install instead of npm ci since package-lock.json may not exist
-# @repo packages are installed from git dependencies
-RUN npm install --legacy-peer-deps
-
-# Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
 
-# Copy all source files
-COPY . .
+WORKDIR /app/gaqno-shell
+COPY gaqno-shell/package.json ./
+COPY gaqno-shell/package-lock.json ./
+RUN npm config set fetch-timeout 600000 && \
+    npm config set fetch-retries 5 && \
+    npm install --legacy-peer-deps
 
-# Build the app
+COPY gaqno-shell/ .
 RUN npm run build
 
-# Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
-
 ENV NODE_ENV=production
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Create public directory (Next.js standalone doesn't require it, but some apps might)
-# The public folder is optional - static assets go to .next/static in standalone builds
+COPY --from=builder --chown=nextjs:nodejs /app/gaqno-shell/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/gaqno-shell/.next/static ./.next/static
 RUN mkdir -p ./public
 
-# Copy standalone build
-# Next.js standalone output structure:
-# - .next/standalone/ (app code and dependencies)
-# - .next/static/ (static assets)
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
 USER nextjs
-
 EXPOSE 3000
-
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
-
-# The standalone build creates server.js in the root of standalone directory
 CMD ["node", "server.js"]

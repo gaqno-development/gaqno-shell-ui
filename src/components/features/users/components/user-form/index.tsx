@@ -3,7 +3,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@gaqno-dev/ui/components/ui'
 import { Button } from '@gaqno-dev/ui/components/ui'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@gaqno-dev/ui/components/ui'
-import { UserRole } from '@gaqno-dev/core/types/user'
+import { UserRole } from '@gaqno-dev/frontcore/types/user'
 import { IUserFormProps } from './types'
 import { useUserForm } from './hooks/useUserForm'
 

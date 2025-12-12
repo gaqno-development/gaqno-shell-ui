@@ -1,18 +1,31 @@
+const { SERVICE_URLS } = require('@gaqno-dev/frontcore/config/service-urls');
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone', // Enable standalone output for Docker
-  transpilePackages: ["@gaqno-dev/ui", "@gaqno-dev/core"],
+  transpilePackages: ["@gaqno-dev/ui", "@gaqno-dev/frontcore"],
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-hook-form': path.resolve(__dirname, 'node_modules/react-hook-form'),
+      '@hookform/resolvers': path.resolve(__dirname, 'node_modules/@hookform/resolvers'),
+      '@tanstack/react-query': path.resolve(__dirname, 'node_modules/@tanstack/react-query'),
+      'zod': path.resolve(__dirname, 'node_modules/zod'),
+      '@supabase/ssr': path.resolve(__dirname, 'node_modules/@supabase/ssr'),
+      '@supabase/supabase-js': path.resolve(__dirname, 'node_modules/@supabase/supabase-js'),
+    };
+    return config;
+  },
   async rewrites() {
-    // Use environment variables for service URLs (Coolify internal network)
-    // Falls back to localhost for local development
-    const AUTH_URL = process.env.AUTH_SERVICE_URL || 'http://localhost:3001';
-    const ADMIN_URL = process.env.ADMIN_SERVICE_URL || 'http://localhost:3002';
-    const AI_URL = process.env.AI_SERVICE_URL || 'http://localhost:3003';
-    const CRM_URL = process.env.CRM_SERVICE_URL || 'http://localhost:3004';
-    const ERP_URL = process.env.ERP_SERVICE_URL || 'http://localhost:3005';
-    const FINANCE_URL = process.env.FINANCE_SERVICE_URL || 'http://localhost:3006';
-    const PDV_URL = process.env.PDV_SERVICE_URL || 'http://localhost:3008';
+    const AUTH_URL = SERVICE_URLS.AUTH;
+    const ADMIN_URL = SERVICE_URLS.ADMIN;
+    const AI_URL = SERVICE_URLS.AI;
+    const CRM_URL = SERVICE_URLS.CRM;
+    const ERP_URL = SERVICE_URLS.ERP;
+    const FINANCE_URL = SERVICE_URLS.FINANCE;
+    const PDV_URL = SERVICE_URLS.PDV;
 
     return [
       // App Asset Rewrites

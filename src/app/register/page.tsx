@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { createClient } from '@gaqno-dev/core/utils/supabase/client'
+import { createClient } from '@gaqno-dev/frontcore/utils/supabase/client'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-dev/ui/components/ui'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@gaqno-dev/ui/components/ui'
 import { Input } from '@gaqno-dev/ui/components/ui'

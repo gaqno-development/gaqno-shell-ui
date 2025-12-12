@@ -1,42 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-
-const SERVICE_URLS: Record<string, string> = {
-  '/dashboard/finance': process.env.FINANCE_SERVICE_URL || 'http://localhost:3006',
-  '/dashboard/crm': process.env.CRM_SERVICE_URL || 'http://localhost:3004',
-  '/dashboard/erp': process.env.ERP_SERVICE_URL || 'http://localhost:3005',
-  '/dashboard/books': process.env.AI_SERVICE_URL || 'http://localhost:3003',
-  '/dashboard/admin': process.env.ADMIN_SERVICE_URL || 'http://localhost:3002',
-  '/admin': process.env.ADMIN_SERVICE_URL || 'http://localhost:3002',
-  '/pdv': process.env.PDV_SERVICE_URL || 'http://localhost:3008',
-}
-
-const SERVICE_NAMES: Record<string, string> = {
-  '/dashboard/finance': 'Finance',
-  '/dashboard/crm': 'CRM',
-  '/dashboard/erp': 'ERP',
-  '/dashboard/books': 'AI/Books',
-  '/dashboard/admin': 'Admin',
-  '/admin': 'Admin',
-  '/pdv': 'PDV',
-}
-
-function getServiceUrl(pathname: string): string | null {
-  for (const [route, url] of Object.entries(SERVICE_URLS)) {
-    if (pathname.startsWith(route)) {
-      return url
-    }
-  }
-  return null
-}
-
-function getServiceName(pathname: string): string {
-  for (const [route, name] of Object.entries(SERVICE_NAMES)) {
-    if (pathname.startsWith(route)) {
-      return name
-    }
-  }
-  return 'serviço'
-}
+import { getServiceUrl, getServiceName } from '@gaqno-dev/frontcore/config/service-urls'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)

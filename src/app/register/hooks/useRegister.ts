@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { registerSchema, IRegisterFormValues } from '../schema'
-import { createClient } from '@gaqno-dev/core/utils/supabase/client'
-import { UserRole } from '@gaqno-dev/core/types/user'
+import { createClient } from '@gaqno-dev/frontcore/utils/supabase/client'
+import { UserRole } from '@gaqno-dev/frontcore/types/user'
 
 export const useRegister = () => {
   const router = useRouter()

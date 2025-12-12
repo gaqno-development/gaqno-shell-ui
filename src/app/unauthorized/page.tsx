@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-dev/ui/components/ui'
 import { Button } from '@gaqno-dev/ui/components/ui'
 import { AlertCircle } from 'lucide-react'
-import { ROUTES } from '@gaqno-dev/core/lib/constants'
+import { ROUTES } from '@gaqno-dev/frontcore/lib/constants'
 
 export default function UnauthorizedPage() {
   const router = useRouter()

@@ -1,6 +1,6 @@
 'use client'
 
-import { useAuth as useCoreAuth } from '@gaqno-dev/core/hooks/useAuth'
+import { useAuth as useCoreAuth } from '@gaqno-dev/frontcore/hooks/useAuth'
 import { authStorage } from '@/utils/auth-storage'
 
 /**
