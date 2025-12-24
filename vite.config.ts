@@ -26,7 +26,9 @@ export default defineConfig(async () => {
     },
     plugins: [
       react(),
-      tailwindcss(),
+      tailwindcss({
+        config: path.resolve(__dirname, './tailwind.config.ts'),
+      }),
       federation({
         name: 'shell',
         remotes: {

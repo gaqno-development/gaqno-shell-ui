@@ -246,3 +246,56 @@
 2025-12-23 23:10:41 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
 2025-12-23 23:25:06 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
 2025-12-23 23:26:05 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:38:47 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:39:17 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:40:40 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:40:54 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:41:58 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:42:03 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:42:24 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:42:44 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:44:43 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:44:46 -03:00: x Build failed in 2.23s
+2025-12-23 23:44:46 -03:00: error during build:
+2025-12-23 23:44:46 -03:00: [vite:esbuild] Transform failed with 1 error:
+2025-12-23 23:44:46 -03:00: /home/kursk/coding/gaqno_server/gaqno-shell/src/App.tsx:76:14: ERROR: Expected "]" but found ":"
+2025-12-23 23:44:46 -03:00: file: /home/kursk/coding/gaqno_server/gaqno-shell/src/App.tsx:76:14
+2025-12-23 23:44:46 -03:00: 
+2025-12-23 23:44:46 -03:00: Expected "]" but found ":"
+2025-12-23 23:44:46 -03:00: 74 |          ),
+2025-12-23 23:44:46 -03:00: 75 |        },
+2025-12-23 23:44:46 -03:00: 76 |        children: [
+2025-12-23 23:44:46 -03:00:    |                ^
+2025-12-23 23:44:46 -03:00: 77 |          {
+2025-12-23 23:44:46 -03:00: 78 |            path: 'books', Component: BooksPage },
+2025-12-23 23:44:46 -03:00: 
+2025-12-23 23:44:46 -03:00:     at failureErrorWithLog (/home/kursk/coding/gaqno_server/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+2025-12-23 23:44:46 -03:00:     at /home/kursk/coding/gaqno_server/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+2025-12-23 23:44:46 -03:00:     at responseCallbacks.<computed> (/home/kursk/coding/gaqno_server/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+2025-12-23 23:44:46 -03:00:     at handleIncomingPacket (/home/kursk/coding/gaqno_server/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+2025-12-23 23:44:46 -03:00:     at Socket.readFromStdout (/home/kursk/coding/gaqno_server/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+2025-12-23 23:44:46 -03:00:     at Socket.emit (node:events:508:28)
+2025-12-23 23:44:46 -03:00:     at addChunk (node:internal/streams/readable:559:12)
+2025-12-23 23:44:46 -03:00:     at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2025-12-23 23:44:46 -03:00:     at Readable.push (node:internal/streams/readable:390:5)
+2025-12-23 23:44:46 -03:00:     at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2025-12-23 23:44:59 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:45:11 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:45:16 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:45:22 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:45:39 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:46:56 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:46:57 -03:00: x Build failed in 986ms
+2025-12-23 23:46:57 -03:00: error during build:
+2025-12-23 23:46:57 -03:00: Could not resolve "./styles.css" from "src/main.tsx"
+2025-12-23 23:46:57 -03:00: file: /home/kursk/coding/gaqno_server/gaqno-shell/src/main.tsx
+2025-12-23 23:46:57 -03:00:     at getRollupError (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+2025-12-23 23:46:57 -03:00:     at error (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+2025-12-23 23:46:57 -03:00:     at ModuleLoader.handleInvalidResolvedId (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21661:24)
+2025-12-23 23:46:57 -03:00:     at file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21621:26
+2025-12-23 23:47:04 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:47:17 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:48:55 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-23 23:49:16 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-24 00:13:33 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2025-12-24 00:14:05 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
