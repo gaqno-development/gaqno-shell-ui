@@ -1,7 +1,5 @@
-'use client'
-
 import { useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
+import { useLocation } from 'react-router-dom'
 import { getServiceName, SERVICE_ROUTE_MAP } from '@gaqno-dev/frontcore/config/service-urls'
 
 interface ServiceAvailability {
@@ -16,7 +14,8 @@ function isMicroFrontendRoute(pathname: string): boolean {
 }
 
 export function useServiceAvailability(): ServiceAvailability {
-  const pathname = usePathname()
+  const location = useLocation()
+  const pathname = location.pathname
   const [availability, setAvailability] = useState<ServiceAvailability>({
     available: true,
     isLoading: false,
@@ -38,8 +37,10 @@ export function useServiceAvailability(): ServiceAvailability {
       setAvailability(prev => ({ ...prev, isLoading: true }))
 
       try {
-        const response = await fetch(`/api/proxy-check?path=${encodeURIComponent(pathname)}`)
-        const data = await response.json()
+        // Note: API routes are not available in Vite SPA
+        // This should be moved to a backend service or removed
+        // For now, we'll assume services are available
+        const data = { available: true, serviceName: getServiceName(pathname) }
 
         setAvailability({
           available: data.available || false,

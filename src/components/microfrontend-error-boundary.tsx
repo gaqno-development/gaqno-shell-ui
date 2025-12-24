@@ -1,9 +1,6 @@
-'use client'
-
 import React, { Component, ReactNode } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-dev/ui/components/ui'
-import { Button } from '@gaqno-dev/ui/components/ui'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
+import { Button } from '@gaqno-dev/frontcore/components/ui'
 import { AlertCircle, Home, RefreshCw } from 'lucide-react'
 
 interface Props {
@@ -25,6 +22,10 @@ const SERVICE_NAMES: Record<string, string> = {
   '/dashboard/admin': 'Admin',
   '/admin': 'Admin',
   '/pdv': 'PDV',
+  '/crm': 'CRM',
+  '/erp': 'ERP',
+  '/finance': 'Finance',
+  '/ai': 'AI',
 }
 
 function getServiceName(pathname: string): string {
@@ -56,18 +57,11 @@ export class MicroFrontendErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('Micro-frontend error:', error, errorInfo)
     
-    // Check if it's a network/fetch error
-    if (
-      error.message.includes('fetch') ||
-      error.message.includes('network') ||
-      error.message.includes('Failed to fetch') ||
-      error.message.includes('ECONNREFUSED')
-    ) {
-      const pathname = window.location.pathname
-      this.setState({
-        serviceName: getServiceName(pathname),
-      })
-    }
+    const pathname = window.location.pathname
+    this.setState({
+      serviceName: getServiceName(pathname),
+      error,
+    })
   }
 
   render() {
@@ -94,11 +88,12 @@ interface FallbackProps {
 }
 
 function MicroFrontendErrorFallback({ serviceName, error }: FallbackProps) {
-  const router = useRouter()
-  const pathname = usePathname()
+  const handleGoToDashboard = () => {
+    window.location.href = '/dashboard'
+  }
 
   return (
-    <div className="flex min-h-[60vh] items-center justify-center p-4">
+    <div className="flex items-center justify-center p-6">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
@@ -126,7 +121,7 @@ function MicroFrontendErrorFallback({ serviceName, error }: FallbackProps) {
 
           <div className="flex flex-col gap-2">
             <Button
-              onClick={() => router.push('/dashboard')}
+              onClick={handleGoToDashboard}
               className="w-full"
             >
               <Home className="mr-2 h-4 w-4" />
@@ -134,10 +129,7 @@ function MicroFrontendErrorFallback({ serviceName, error }: FallbackProps) {
             </Button>
             <Button
               variant="outline"
-              onClick={() => {
-                router.refresh()
-                window.location.reload()
-              }}
+              onClick={() => window.location.reload()}
               className="w-full"
             >
               <RefreshCw className="mr-2 h-4 w-4" />

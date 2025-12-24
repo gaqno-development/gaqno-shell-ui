@@ -1,0 +1,1170 @@
+2025-12-23 16:01:21 -03:00: 
+2025-12-23 16:01:21 -03:00: > shell@0.0.0 dev
+2025-12-23 16:01:21 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 16:01:21 -03:00: 
+2025-12-23 16:01:22 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 16:01:22 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 16:01:22 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 16:01:22 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 16:01:22 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 16:01:25 -03:00: vite v5.4.21 building for production...
+2025-12-23 16:01:26 -03:00: transforming...
+2025-12-23 16:03:58 -03:00: ✓ 4432 modules transformed.
+2025-12-23 16:03:59 -03:00: rendering chunks...
+2025-12-23 16:03:59 -03:00: computing gzip size...
+2025-12-23 16:03:59 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 16:03:59 -03:00: dist/assets/style.css                                                 35.87 kB │ gzip:   5.94 kB
+2025-12-23 16:03:59 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:03:59 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:03:59 -03:00: dist/assets/_virtual___federation_fn_import-CwlQTsfx.js               14.37 kB │ gzip:   3.16 kB
+2025-12-23 16:03:59 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 16:03:59 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 16:03:59 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CRI0PEbN.js    107.24 kB │ gzip:  22.04 kB
+2025-12-23 16:03:59 -03:00: dist/assets/__federation_shared_react-router-dom-3qRj-sEV.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 16:03:59 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 16:03:59 -03:00: dist/assets/index-0ovCy3y7.js                                      1,237.06 kB │ gzip: 232.22 kB
+2025-12-23 16:03:59 -03:00: ✓ built in 2m 33s
+2025-12-23 16:04:12 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 16:04:12 -03:00:   ➜  Network: use --host to expose
+2025-12-23 16:14:07 -03:00: 
+2025-12-23 16:14:07 -03:00: > shell@0.0.0 dev
+2025-12-23 16:14:07 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 16:14:07 -03:00: 
+2025-12-23 16:14:15 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 16:14:15 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 16:14:15 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 16:14:15 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 16:14:15 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 16:14:16 -03:00: vite v5.4.21 building for production...
+2025-12-23 16:14:16 -03:00: transforming...
+2025-12-23 16:14:46 -03:00: ✓ 4432 modules transformed.
+2025-12-23 16:14:47 -03:00: rendering chunks...
+2025-12-23 16:14:47 -03:00: computing gzip size...
+2025-12-23 16:14:47 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 16:14:47 -03:00: dist/assets/style.css                                                 35.87 kB │ gzip:   5.94 kB
+2025-12-23 16:14:47 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:14:47 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:14:47 -03:00: dist/assets/_virtual___federation_fn_import-CwlQTsfx.js               14.37 kB │ gzip:   3.16 kB
+2025-12-23 16:14:47 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 16:14:47 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 16:14:47 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CRI0PEbN.js    107.24 kB │ gzip:  22.04 kB
+2025-12-23 16:14:47 -03:00: dist/assets/__federation_shared_react-router-dom-3qRj-sEV.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 16:14:47 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 16:14:47 -03:00: dist/assets/index-0ovCy3y7.js                                      1,237.06 kB │ gzip: 232.22 kB
+2025-12-23 16:14:47 -03:00: ✓ built in 30.80s
+2025-12-23 16:14:54 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 16:14:54 -03:00:   ➜  Network: use --host to expose
+2025-12-23 16:25:30 -03:00: 
+2025-12-23 16:25:30 -03:00: > shell@0.0.0 dev
+2025-12-23 16:25:30 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 16:25:30 -03:00: 
+2025-12-23 16:25:30 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 16:25:30 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 16:25:30 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 16:25:30 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 16:25:30 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 16:25:31 -03:00: vite v5.4.21 building for production...
+2025-12-23 16:25:31 -03:00: transforming...
+2025-12-23 16:25:44 -03:00: ✓ 4432 modules transformed.
+2025-12-23 16:25:44 -03:00: rendering chunks...
+2025-12-23 16:25:44 -03:00: computing gzip size...
+2025-12-23 16:25:44 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 16:25:44 -03:00: dist/assets/style.css                                                 44.98 kB │ gzip:   7.17 kB
+2025-12-23 16:25:44 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:25:44 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:25:44 -03:00: dist/assets/_virtual___federation_fn_import-CwlQTsfx.js               14.37 kB │ gzip:   3.16 kB
+2025-12-23 16:25:44 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 16:25:44 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 16:25:44 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CRI0PEbN.js    107.24 kB │ gzip:  22.04 kB
+2025-12-23 16:25:44 -03:00: dist/assets/__federation_shared_react-router-dom-3qRj-sEV.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 16:25:44 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 16:25:44 -03:00: dist/assets/index-0ovCy3y7.js                                      1,237.06 kB │ gzip: 232.22 kB
+2025-12-23 16:25:44 -03:00: ✓ built in 13.25s
+2025-12-23 16:25:46 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 16:25:46 -03:00:   ➜  Network: use --host to expose
+2025-12-23 16:30:50 -03:00: 
+2025-12-23 16:30:50 -03:00: > shell@0.0.0 dev
+2025-12-23 16:30:50 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 16:30:50 -03:00: 
+2025-12-23 16:30:50 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 16:30:50 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 16:30:50 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 16:30:50 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 16:30:51 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 16:30:51 -03:00: vite v5.4.21 building for production...
+2025-12-23 16:30:52 -03:00: transforming...
+2025-12-23 16:30:53 -03:00: ✓ 78 modules transformed.
+2025-12-23 16:30:53 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 16:31:22 -03:00: 
+2025-12-23 16:31:22 -03:00: > shell@0.0.0 dev
+2025-12-23 16:31:22 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 16:31:22 -03:00: 
+2025-12-23 16:31:22 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 16:31:22 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 16:31:22 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 16:31:22 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 16:31:22 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 16:31:22 -03:00: vite v5.4.21 building for production...
+2025-12-23 16:31:22 -03:00: transforming...
+2025-12-23 16:31:24 -03:00: ✓ 92 modules transformed.
+2025-12-23 16:31:24 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 16:34:07 -03:00: 
+2025-12-23 16:34:07 -03:00: > shell@0.0.0 dev
+2025-12-23 16:34:07 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 16:34:07 -03:00: 
+2025-12-23 16:34:07 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 16:34:07 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 16:34:07 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 16:34:07 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 16:34:07 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 16:34:08 -03:00: vite v5.4.21 building for production...
+2025-12-23 16:34:08 -03:00: transforming...
+2025-12-23 16:34:20 -03:00: ✓ 4436 modules transformed.
+2025-12-23 16:34:20 -03:00: rendering chunks...
+2025-12-23 16:34:20 -03:00: computing gzip size...
+2025-12-23 16:34:21 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 16:34:21 -03:00: dist/assets/style.css                                                110.70 kB │ gzip:  16.72 kB
+2025-12-23 16:34:21 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:34:21 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 16:34:21 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 16:34:21 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 16:34:21 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 16:34:21 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 16:34:21 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 16:34:21 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 16:34:21 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 16:34:21 -03:00: dist/assets/index-CI0Vq4vr.js                                      1,237.34 kB │ gzip: 232.26 kB
+2025-12-23 16:34:21 -03:00: ✓ built in 12.74s
+2025-12-23 16:34:21 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 16:34:21 -03:00:   ➜  Network: use --host to expose
+2025-12-23 17:02:34 -03:00: 
+2025-12-23 17:02:34 -03:00: > shell@0.0.0 dev
+2025-12-23 17:02:34 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 17:02:34 -03:00: 
+2025-12-23 17:02:35 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 17:02:35 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 17:02:35 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 17:02:35 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 17:02:35 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 17:02:38 -03:00: vite v5.4.21 building for production...
+2025-12-23 17:02:38 -03:00: transforming...
+2025-12-23 17:03:07 -03:00: ✓ 4436 modules transformed.
+2025-12-23 17:03:08 -03:00: rendering chunks...
+2025-12-23 17:03:08 -03:00: computing gzip size...
+2025-12-23 17:03:08 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 17:03:08 -03:00: dist/assets/style.css                                                110.70 kB │ gzip:  16.72 kB
+2025-12-23 17:03:08 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:03:08 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:03:08 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 17:03:08 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 17:03:08 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 17:03:08 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 17:03:08 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 17:03:08 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 17:03:08 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 17:03:08 -03:00: dist/assets/index-crsnoo4V.js                                      1,237.67 kB │ gzip: 232.27 kB
+2025-12-23 17:03:08 -03:00: ✓ built in 30.10s
+2025-12-23 17:03:08 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 17:03:08 -03:00:   ➜  Network: use --host to expose
+2025-12-23 17:09:20 -03:00: 
+2025-12-23 17:09:20 -03:00: > shell@0.0.0 dev
+2025-12-23 17:09:20 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 17:09:20 -03:00: 
+2025-12-23 17:09:20 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 17:09:20 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 17:09:20 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 17:09:20 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 17:09:20 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 17:09:20 -03:00: vite v5.4.21 building for production...
+2025-12-23 17:09:21 -03:00: transforming...
+2025-12-23 17:09:56 -03:00: ✓ 4436 modules transformed.
+2025-12-23 17:09:56 -03:00: rendering chunks...
+2025-12-23 17:09:56 -03:00: computing gzip size...
+2025-12-23 17:09:57 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 17:09:57 -03:00: dist/assets/style.css                                                110.70 kB │ gzip:  16.72 kB
+2025-12-23 17:09:57 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:09:57 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:09:57 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 17:09:57 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 17:09:57 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 17:09:57 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 17:09:57 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 17:09:57 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 17:09:57 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 17:09:57 -03:00: dist/assets/index-tq5XJZhK.js                                      1,243.74 kB │ gzip: 232.78 kB
+2025-12-23 17:09:57 -03:00: ✓ built in 36.11s
+2025-12-23 17:09:58 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 17:09:58 -03:00:   ➜  Network: use --host to expose
+2025-12-23 17:17:41 -03:00: 
+2025-12-23 17:17:41 -03:00: > shell@0.0.0 dev
+2025-12-23 17:17:41 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 17:17:41 -03:00: 
+2025-12-23 17:17:42 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 17:17:42 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 17:17:42 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 17:17:42 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 17:17:42 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 17:17:42 -03:00: vite v5.4.21 building for production...
+2025-12-23 17:17:43 -03:00: transforming...
+2025-12-23 17:19:04 -03:00: ✓ 4437 modules transformed.
+2025-12-23 17:19:05 -03:00: rendering chunks...
+2025-12-23 17:19:05 -03:00: computing gzip size...
+2025-12-23 17:19:06 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 17:19:06 -03:00: dist/assets/style.css                                                110.92 kB │ gzip:  16.75 kB
+2025-12-23 17:19:06 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:19:06 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:19:06 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 17:19:06 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 17:19:06 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 17:19:06 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 17:19:06 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 17:19:06 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 17:19:06 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 17:19:06 -03:00: dist/assets/index-CzCgXqCx.js                                      1,245.59 kB │ gzip: 233.23 kB
+2025-12-23 17:19:06 -03:00: ✓ built in 1m 23s
+2025-12-23 17:19:23 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 17:19:23 -03:00:   ➜  Network: use --host to expose
+2025-12-23 17:27:51 -03:00: 
+2025-12-23 17:27:51 -03:00: > shell@0.0.0 dev
+2025-12-23 17:27:51 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 17:27:51 -03:00: 
+2025-12-23 17:27:51 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 17:27:51 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 17:27:51 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 17:27:51 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 17:27:51 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 17:27:51 -03:00: vite v5.4.21 building for production...
+2025-12-23 17:27:52 -03:00: transforming...
+2025-12-23 17:28:36 -03:00: ✓ 4436 modules transformed.
+2025-12-23 17:28:36 -03:00: rendering chunks...
+2025-12-23 17:28:36 -03:00: computing gzip size...
+2025-12-23 17:28:36 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 17:28:36 -03:00: dist/assets/style.css                                                110.92 kB │ gzip:  16.75 kB
+2025-12-23 17:28:36 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:28:36 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:28:36 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 17:28:36 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 17:28:36 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 17:28:36 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 17:28:36 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 17:28:36 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 17:28:36 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 17:28:36 -03:00: dist/assets/index-BMQ2PpWI.js                                      1,241.87 kB │ gzip: 231.87 kB
+2025-12-23 17:28:36 -03:00: ✓ built in 44.84s
+2025-12-23 17:28:39 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 17:28:39 -03:00:   ➜  Network: use --host to expose
+2025-12-23 17:34:55 -03:00: 
+2025-12-23 17:34:55 -03:00: > shell@0.0.0 dev
+2025-12-23 17:34:55 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 17:34:55 -03:00: 
+2025-12-23 17:34:55 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 17:34:55 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 17:34:55 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 17:34:55 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 17:34:55 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 17:34:56 -03:00: vite v5.4.21 building for production...
+2025-12-23 17:34:56 -03:00: transforming...
+2025-12-23 17:35:18 -03:00: ✓ 4438 modules transformed.
+2025-12-23 17:35:18 -03:00: rendering chunks...
+2025-12-23 17:35:18 -03:00: computing gzip size...
+2025-12-23 17:35:18 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 17:35:18 -03:00: dist/assets/style.css                                                111.13 kB │ gzip:  16.78 kB
+2025-12-23 17:35:18 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:35:18 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 17:35:18 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 17:35:18 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 17:35:18 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 17:35:18 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 17:35:18 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 17:35:18 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 17:35:18 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 17:35:18 -03:00: dist/assets/index-Kr-v7_Ib.js                                      1,243.25 kB │ gzip: 232.14 kB
+2025-12-23 17:35:18 -03:00: ✓ built in 22.36s
+2025-12-23 17:35:19 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 17:35:19 -03:00:   ➜  Network: use --host to expose
+2025-12-23 18:27:23 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:27:24 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:27:25 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:27:25 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:27:34 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:27:36 -03:00: transforming...
+2025-12-23 18:27:37 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:27:37 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:27:38 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:27:39 -03:00: transforming...
+2025-12-23 18:27:45 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:27:45 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:27:46 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:27:46 -03:00: transforming...
+2025-12-23 18:28:13 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:28:13 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:28:14 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:28:14 -03:00: transforming...
+2025-12-23 18:28:16 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:28:16 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:28:17 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:28:17 -03:00: transforming...
+2025-12-23 18:28:25 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:28:26 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:28:27 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:28:28 -03:00: transforming...
+2025-12-23 18:28:29 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:28:29 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:28:30 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:28:30 -03:00: transforming...
+2025-12-23 18:28:53 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:28:53 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:28:54 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:28:55 -03:00: transforming...
+2025-12-23 18:28:56 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:28:56 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:28:57 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:28:57 -03:00: transforming...
+2025-12-23 18:29:12 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:29:12 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:29:13 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:29:13 -03:00: transforming...
+2025-12-23 18:29:32 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:29:32 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:29:33 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:29:33 -03:00: transforming...
+2025-12-23 18:29:35 -03:00: ✓ 89 modules transformed.
+2025-12-23 18:29:35 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 18:32:14 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:32:16 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:32:16 -03:00: transforming...
+2025-12-23 18:32:19 -03:00: ✓ 96 modules transformed.
+2025-12-23 18:32:19 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 18:33:22 -03:00: 
+2025-12-23 18:33:22 -03:00: > shell@0.0.0 dev
+2025-12-23 18:33:22 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 18:33:22 -03:00: 
+2025-12-23 18:33:23 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 18:33:23 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 18:33:23 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 18:33:23 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 18:33:23 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:33:24 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:33:24 -03:00: transforming...
+2025-12-23 18:33:28 -03:00: ✓ 85 modules transformed.
+2025-12-23 18:33:28 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 18:33:47 -03:00: 
+2025-12-23 18:33:47 -03:00: > shell@0.0.0 dev
+2025-12-23 18:33:47 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 18:33:47 -03:00: 
+2025-12-23 18:33:47 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 18:33:47 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 18:33:47 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 18:33:47 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 18:33:47 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:33:49 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:33:49 -03:00: transforming...
+2025-12-23 18:33:53 -03:00: ✓ 96 modules transformed.
+2025-12-23 18:33:53 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 18:36:01 -03:00: 
+2025-12-23 18:36:01 -03:00: > shell@0.0.0 dev
+2025-12-23 18:36:01 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 18:36:01 -03:00: 
+2025-12-23 18:36:01 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 18:36:01 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 18:36:01 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 18:36:01 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 18:36:01 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:36:02 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:36:02 -03:00: transforming...
+2025-12-23 18:36:22 -03:00: ✓ 4454 modules transformed.
+2025-12-23 18:36:22 -03:00: rendering chunks...
+2025-12-23 18:36:23 -03:00: computing gzip size...
+2025-12-23 18:36:23 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 18:36:23 -03:00: dist/assets/style.css                                                111.19 kB │ gzip:  16.79 kB
+2025-12-23 18:36:23 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 18:36:23 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 18:36:23 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 18:36:23 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 18:36:23 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 18:36:23 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 18:36:23 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 18:36:23 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 18:36:23 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 18:36:23 -03:00: dist/assets/index-C26LCOx1.js                                      1,313.21 kB │ gzip: 238.81 kB
+2025-12-23 18:36:23 -03:00: ✓ built in 20.82s
+2025-12-23 18:36:24 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 18:36:24 -03:00:   ➜  Network: use --host to expose
+2025-12-23 18:59:12 -03:00: 
+2025-12-23 18:59:12 -03:00: > shell@0.0.0 dev
+2025-12-23 18:59:12 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 18:59:12 -03:00: 
+2025-12-23 18:59:13 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 18:59:13 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 18:59:13 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 18:59:13 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 18:59:13 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 18:59:15 -03:00: vite v5.4.21 building for production...
+2025-12-23 18:59:16 -03:00: transforming...
+2025-12-23 19:00:03 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:00:05 -03:00: rendering chunks...
+2025-12-23 19:00:05 -03:00: computing gzip size...
+2025-12-23 19:00:05 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:00:05 -03:00: dist/assets/style.css                                                112.99 kB │ gzip:  16.97 kB
+2025-12-23 19:00:05 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:00:05 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:00:05 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:00:05 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:00:05 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:00:05 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:00:05 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:00:05 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:00:05 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:00:05 -03:00: dist/assets/index-BoV0nMZV.js                                      1,312.82 kB │ gzip: 238.72 kB
+2025-12-23 19:00:05 -03:00: ✓ built in 49.84s
+2025-12-23 19:00:07 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:00:07 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:02:26 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:02:26 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:02:27 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:02:28 -03:00: transforming...
+2025-12-23 19:03:02 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:03:02 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:03:03 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:03:04 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:03:04 -03:00: transforming...
+2025-12-23 19:03:25 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:03:25 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:03:27 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:03:27 -03:00: transforming...
+2025-12-23 19:03:40 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:03:40 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:03:42 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:03:43 -03:00: transforming...
+2025-12-23 19:04:16 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:04:17 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:04:18 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:04:19 -03:00: transforming...
+2025-12-23 19:04:46 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:04:46 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:04:46 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:04:46 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:04:46 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:04:46 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:04:46 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:04:48 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:04:48 -03:00: transforming...
+2025-12-23 19:05:08 -03:00: [32m[nodemon] still waiting for 2 sub-process to finish...[39m
+2025-12-23 19:05:09 -03:00: 
+2025-12-23 19:05:09 -03:00: > shell@0.0.0 dev
+2025-12-23 19:05:09 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:05:09 -03:00: 
+2025-12-23 19:05:09 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:05:09 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:05:10 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:05:10 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:05:10 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:05:11 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:05:11 -03:00: transforming...
+2025-12-23 19:05:45 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:05:48 -03:00: rendering chunks...
+2025-12-23 19:05:48 -03:00: computing gzip size...
+2025-12-23 19:05:48 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:05:48 -03:00: dist/assets/style.css                                                112.99 kB │ gzip:  16.97 kB
+2025-12-23 19:05:48 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:05:48 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:05:48 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:05:48 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:05:48 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:05:48 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:05:48 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:05:48 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:05:48 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:05:48 -03:00: dist/assets/index-BoV0nMZV.js                                      1,312.82 kB │ gzip: 238.72 kB
+2025-12-23 19:05:48 -03:00: ✓ built in 37.23s
+2025-12-23 19:05:51 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:05:51 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:18:04 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:18:04 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 19:18:04 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:18:06 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:18:06 -03:00: transforming...
+2025-12-23 19:18:33 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:18:34 -03:00: rendering chunks...
+2025-12-23 19:18:34 -03:00: computing gzip size...
+2025-12-23 19:18:34 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:18:34 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 19:18:34 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:18:34 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:18:34 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:18:34 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:18:34 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:18:34 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:18:34 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:18:34 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:18:34 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:18:34 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:18:34 -03:00: ✓ built in 27.84s
+2025-12-23 19:18:36 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:18:36 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:26:30 -03:00: 
+2025-12-23 19:26:30 -03:00: > shell@0.0.0 dev
+2025-12-23 19:26:30 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:26:30 -03:00: 
+2025-12-23 19:26:32 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:26:32 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:26:32 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:26:32 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:26:32 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:26:35 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2025-12-23 19:31:13 -03:00: 
+2025-12-23 19:31:13 -03:00: > shell@0.0.0 dev
+2025-12-23 19:31:13 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:31:13 -03:00: 
+2025-12-23 19:31:14 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:31:14 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:31:14 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:31:14 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:31:14 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:31:20 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:31:22 -03:00: transforming...
+2025-12-23 19:32:08 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:32:08 -03:00: rendering chunks...
+2025-12-23 19:32:09 -03:00: computing gzip size...
+2025-12-23 19:32:09 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:32:09 -03:00: dist/assets/style.css                                                102.95 kB │ gzip:  16.11 kB
+2025-12-23 19:32:09 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:32:09 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:32:09 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:32:09 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:32:09 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:32:09 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:32:09 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:32:09 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:32:09 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:32:09 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:32:09 -03:00: ✓ built in 48.13s
+2025-12-23 19:32:10 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:32:10 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:38:27 -03:00: 
+2025-12-23 19:38:27 -03:00: > shell@0.0.0 dev
+2025-12-23 19:38:27 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:38:27 -03:00: 
+2025-12-23 19:38:27 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:38:27 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:38:27 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:38:27 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:38:27 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:38:28 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:38:28 -03:00: transforming...
+2025-12-23 19:38:50 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:38:51 -03:00: rendering chunks...
+2025-12-23 19:38:51 -03:00: computing gzip size...
+2025-12-23 19:38:51 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:38:51 -03:00: dist/assets/style.css                                                102.95 kB │ gzip:  16.11 kB
+2025-12-23 19:38:51 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:38:51 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:38:51 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:38:51 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:38:51 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:38:51 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:38:51 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:38:51 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:38:51 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:38:51 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:38:51 -03:00: ✓ built in 23.71s
+2025-12-23 19:38:53 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:38:53 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:39:43 -03:00: 
+2025-12-23 19:39:43 -03:00: > shell@0.0.0 dev
+2025-12-23 19:39:43 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:39:43 -03:00: 
+2025-12-23 19:39:43 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:39:43 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:39:43 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:39:43 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:39:43 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:39:44 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:39:44 -03:00: transforming...
+2025-12-23 19:40:04 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:40:04 -03:00: rendering chunks...
+2025-12-23 19:40:04 -03:00: computing gzip size...
+2025-12-23 19:40:04 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:40:04 -03:00: dist/assets/style.css                                                102.95 kB │ gzip:  16.11 kB
+2025-12-23 19:40:04 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:40:04 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:40:04 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:40:04 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:40:04 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:40:04 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:40:04 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:40:04 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:40:04 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:40:04 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:40:04 -03:00: ✓ built in 20.75s
+2025-12-23 19:40:06 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:40:06 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:40:55 -03:00: 
+2025-12-23 19:40:55 -03:00: > shell@0.0.0 dev
+2025-12-23 19:40:55 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:40:55 -03:00: 
+2025-12-23 19:40:55 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:40:55 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:40:55 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:40:55 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:40:55 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:40:56 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:40:56 -03:00: transforming...
+2025-12-23 19:41:06 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:41:07 -03:00: rendering chunks...
+2025-12-23 19:41:07 -03:00: computing gzip size...
+2025-12-23 19:41:07 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:41:07 -03:00: dist/assets/style.css                                                115.49 kB │ gzip:  17.88 kB
+2025-12-23 19:41:07 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:41:07 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:41:07 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:41:07 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:41:07 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:41:07 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:41:07 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:41:07 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:41:07 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:41:07 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:41:07 -03:00: ✓ built in 11.01s
+2025-12-23 19:41:08 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:41:08 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:41:57 -03:00: 
+2025-12-23 19:41:57 -03:00: > shell@0.0.0 dev
+2025-12-23 19:41:57 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:41:57 -03:00: 
+2025-12-23 19:41:58 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:41:58 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:41:58 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:41:58 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:41:58 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:41:58 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:41:58 -03:00: transforming...
+2025-12-23 19:42:14 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:42:15 -03:00: rendering chunks...
+2025-12-23 19:42:15 -03:00: computing gzip size...
+2025-12-23 19:42:15 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:42:15 -03:00: dist/assets/style.css                                                115.49 kB │ gzip:  17.88 kB
+2025-12-23 19:42:15 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:42:15 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:42:15 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:42:15 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:42:15 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:42:15 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:42:15 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:42:15 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:42:15 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:42:15 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:42:15 -03:00: ✓ built in 16.37s
+2025-12-23 19:42:15 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:42:15 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:42:53 -03:00: 
+2025-12-23 19:42:53 -03:00: > shell@0.0.0 dev
+2025-12-23 19:42:53 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:42:53 -03:00: 
+2025-12-23 19:42:53 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:42:53 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:42:53 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:42:53 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:42:53 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:42:54 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:42:54 -03:00: transforming...
+2025-12-23 19:43:09 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:43:10 -03:00: rendering chunks...
+2025-12-23 19:43:10 -03:00: computing gzip size...
+2025-12-23 19:43:10 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:43:10 -03:00: dist/assets/style.css                                                115.49 kB │ gzip:  17.88 kB
+2025-12-23 19:43:10 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:43:10 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:43:10 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:43:10 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:43:10 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:43:10 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:43:10 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:43:10 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:43:10 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:43:10 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:43:10 -03:00: ✓ built in 15.93s
+2025-12-23 19:43:12 -03:00: 
+2025-12-23 19:43:12 -03:00: > shell@0.0.0 dev
+2025-12-23 19:43:12 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:43:12 -03:00: 
+2025-12-23 19:43:12 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:43:12 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:43:12 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:43:12 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:43:12 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:43:13 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:43:13 -03:00: transforming...
+2025-12-23 19:43:28 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:43:29 -03:00: rendering chunks...
+2025-12-23 19:43:29 -03:00: computing gzip size...
+2025-12-23 19:43:29 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:43:29 -03:00: dist/assets/style.css                                                115.49 kB │ gzip:  17.88 kB
+2025-12-23 19:43:29 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:43:29 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:43:29 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:43:29 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:43:29 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:43:29 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:43:29 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:43:29 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:43:29 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:43:29 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:43:29 -03:00: ✓ built in 16.57s
+2025-12-23 19:43:30 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:43:30 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:46:17 -03:00: 
+2025-12-23 19:46:17 -03:00: > shell@0.0.0 dev
+2025-12-23 19:46:17 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:46:17 -03:00: 
+2025-12-23 19:46:17 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:46:17 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:46:17 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:46:17 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:46:17 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:46:18 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:46:18 -03:00: transforming...
+2025-12-23 19:46:33 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:46:34 -03:00: rendering chunks...
+2025-12-23 19:46:34 -03:00: computing gzip size...
+2025-12-23 19:46:34 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:46:34 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 19:46:34 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:46:34 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:46:34 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:46:34 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:46:34 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:46:34 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:46:34 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:46:34 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:46:34 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:46:34 -03:00: dist/assets/index-CJmTH4LY.js                                      1,313.36 kB │ gzip: 238.81 kB
+2025-12-23 19:46:34 -03:00: ✓ built in 15.96s
+2025-12-23 19:46:35 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:46:35 -03:00:   ➜  Network: use --host to expose
+2025-12-23 19:53:39 -03:00: 
+2025-12-23 19:53:39 -03:00: > shell@0.0.0 dev
+2025-12-23 19:53:39 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 19:53:39 -03:00: 
+2025-12-23 19:53:39 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 19:53:39 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 19:53:39 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 19:53:39 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 19:53:39 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 19:53:40 -03:00: vite v5.4.21 building for production...
+2025-12-23 19:53:40 -03:00: transforming...
+2025-12-23 19:54:17 -03:00: ✓ 4454 modules transformed.
+2025-12-23 19:54:17 -03:00: rendering chunks...
+2025-12-23 19:54:18 -03:00: computing gzip size...
+2025-12-23 19:54:18 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 19:54:18 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 19:54:18 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:54:18 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 19:54:18 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 19:54:18 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 19:54:18 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 19:54:18 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 19:54:18 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 19:54:18 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 19:54:18 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 19:54:18 -03:00: dist/assets/index-DznhRbvj.js                                      1,313.37 kB │ gzip: 238.82 kB
+2025-12-23 19:54:18 -03:00: ✓ built in 37.48s
+2025-12-23 19:54:19 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 19:54:19 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:03:49 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:03:49 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:03:49 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:03:50 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:03:51 -03:00: transforming...
+2025-12-23 20:04:25 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:04:25 -03:00: rendering chunks...
+2025-12-23 20:04:25 -03:00: computing gzip size...
+2025-12-23 20:04:25 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:04:25 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 20:04:25 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:04:25 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:04:25 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:04:25 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:04:25 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:04:25 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:04:25 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:04:25 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:04:25 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:04:25 -03:00: dist/assets/index-BiMSyYYa.js                                      1,313.36 kB │ gzip: 238.80 kB
+2025-12-23 20:04:25 -03:00: ✓ built in 34.78s
+2025-12-23 20:04:26 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:04:26 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:05:13 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:05:13 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:05:15 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:05:16 -03:00: transforming...
+2025-12-23 20:05:56 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:05:57 -03:00: rendering chunks...
+2025-12-23 20:05:57 -03:00: computing gzip size...
+2025-12-23 20:05:57 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:05:57 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 20:05:57 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:05:57 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:05:57 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:05:57 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:05:57 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:05:57 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:05:57 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:05:57 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:05:57 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:05:57 -03:00: dist/assets/index-DLYhjv1V.js                                      1,316.18 kB │ gzip: 238.84 kB
+2025-12-23 20:05:57 -03:00: ✓ built in 41.79s
+2025-12-23 20:05:58 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:05:58 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:06:00 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:06:00 -03:00: transforming...
+2025-12-23 20:06:24 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:06:25 -03:00: rendering chunks...
+2025-12-23 20:06:25 -03:00: computing gzip size...
+2025-12-23 20:06:26 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:06:26 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 20:06:26 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:06:26 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:06:26 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:06:26 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:06:26 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:06:26 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:06:26 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:06:26 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:06:26 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:06:26 -03:00: dist/assets/index-BVUxoyml.js                                      1,316.17 kB │ gzip: 238.84 kB
+2025-12-23 20:06:26 -03:00: ✓ built in 25.80s
+2025-12-23 20:06:27 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:06:27 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:06:30 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:06:30 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:06:30 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:06:30 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:06:31 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:06:31 -03:00: transforming...
+2025-12-23 20:06:50 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:06:51 -03:00: rendering chunks...
+2025-12-23 20:06:51 -03:00: computing gzip size...
+2025-12-23 20:06:52 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:06:52 -03:00: dist/assets/style.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 20:06:52 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:06:52 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:06:52 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:06:52 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:06:52 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:06:52 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:06:52 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:06:52 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:06:52 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:06:52 -03:00: dist/assets/index-BVUxoyml.js                                      1,316.17 kB │ gzip: 238.84 kB
+2025-12-23 20:06:52 -03:00: ✓ built in 20.77s
+2025-12-23 20:06:53 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:06:53 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:07:42 -03:00: 
+2025-12-23 20:07:42 -03:00: > shell@0.0.0 dev
+2025-12-23 20:07:42 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 20:07:42 -03:00: 
+2025-12-23 20:07:43 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 20:07:43 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 20:07:43 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 20:07:43 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 20:07:43 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:07:44 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:07:44 -03:00: transforming...
+2025-12-23 20:08:20 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:08:21 -03:00: rendering chunks...
+2025-12-23 20:08:21 -03:00: computing gzip size...
+2025-12-23 20:08:21 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:08:21 -03:00: dist/assets/index.css                                                111.24 kB │ gzip:  16.75 kB
+2025-12-23 20:08:21 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:08:21 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:08:21 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:08:21 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:08:21 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:08:21 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:08:21 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:08:21 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:08:21 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:08:21 -03:00: dist/assets/index-CIdvnwqF.js                                      1,316.17 kB │ gzip: 238.84 kB
+2025-12-23 20:08:21 -03:00: ✓ built in 37.02s
+2025-12-23 20:08:23 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:08:23 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:15:57 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:15:57 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:15:57 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:15:57 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:15:59 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:15:59 -03:00: transforming...
+2025-12-23 20:16:13 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:16:14 -03:00: rendering chunks...
+2025-12-23 20:16:14 -03:00: computing gzip size...
+2025-12-23 20:16:14 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:16:14 -03:00: dist/assets/style.css                                                111.53 kB │ gzip:  16.87 kB
+2025-12-23 20:16:14 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:16:14 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:16:14 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:16:14 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:16:14 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:16:14 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:16:14 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:16:14 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:16:14 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:16:14 -03:00: dist/assets/index-B3rtE0Va.js                                      1,316.68 kB │ gzip: 238.93 kB
+2025-12-23 20:16:14 -03:00: ✓ built in 15.70s
+2025-12-23 20:16:16 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:16:16 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:27:55 -03:00: 
+2025-12-23 20:27:55 -03:00: > shell@0.0.0 dev
+2025-12-23 20:27:55 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 20:27:55 -03:00: 
+2025-12-23 20:27:55 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 20:27:55 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 20:27:55 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 20:27:55 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 20:27:55 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:27:56 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:27:56 -03:00: transforming...
+2025-12-23 20:28:09 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:28:10 -03:00: rendering chunks...
+2025-12-23 20:28:10 -03:00: computing gzip size...
+2025-12-23 20:28:10 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:28:10 -03:00: dist/assets/style.css                                                110.92 kB │ gzip:  16.80 kB
+2025-12-23 20:28:10 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:28:10 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:28:10 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:28:10 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:28:10 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:28:10 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:28:10 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:28:10 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:28:10 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:28:10 -03:00: dist/assets/index-B3rtE0Va.js                                      1,316.68 kB │ gzip: 238.93 kB
+2025-12-23 20:28:10 -03:00: ✓ built in 14.36s
+2025-12-23 20:28:12 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:28:12 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:31:25 -03:00: 
+2025-12-23 20:31:25 -03:00: > shell@0.0.0 dev
+2025-12-23 20:31:25 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 20:31:25 -03:00: 
+2025-12-23 20:31:26 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 20:31:26 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 20:31:26 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 20:31:26 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 20:31:26 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:31:31 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:31:32 -03:00: transforming...
+2025-12-23 20:32:31 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:32:31 -03:00: rendering chunks...
+2025-12-23 20:32:32 -03:00: computing gzip size...
+2025-12-23 20:32:32 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:32:32 -03:00: dist/assets/style.css                                                110.92 kB │ gzip:  16.80 kB
+2025-12-23 20:32:32 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:32:32 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:32:32 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:32:32 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:32:32 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:32:32 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:32:32 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:32:32 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:32:32 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:32:32 -03:00: dist/assets/index-B3rtE0Va.js                                      1,316.68 kB │ gzip: 238.93 kB
+2025-12-23 20:32:32 -03:00: ✓ built in 1m
+2025-12-23 20:32:33 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:32:33 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:40:57 -03:00: 
+2025-12-23 20:40:57 -03:00: > shell@0.0.0 dev
+2025-12-23 20:40:57 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2025-12-23 20:40:57 -03:00: 
+2025-12-23 20:40:57 -03:00: [33m[nodemon] 3.1.11[39m
+2025-12-23 20:40:57 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2025-12-23 20:40:57 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2025-12-23 20:40:57 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2025-12-23 20:40:57 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:40:59 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:40:59 -03:00: transforming...
+2025-12-23 20:41:28 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:41:30 -03:00: rendering chunks...
+2025-12-23 20:41:30 -03:00: computing gzip size...
+2025-12-23 20:41:30 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:41:30 -03:00: dist/assets/style.css                                                110.92 kB │ gzip:  16.80 kB
+2025-12-23 20:41:30 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:41:30 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:41:30 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:41:30 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:41:30 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:41:30 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:41:30 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:41:30 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:41:30 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:41:30 -03:00: dist/assets/index-CQmcNQPG.js                                      1,316.92 kB │ gzip: 238.94 kB
+2025-12-23 20:41:30 -03:00: ✓ built in 30.71s
+2025-12-23 20:41:32 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:41:32 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:51:16 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:51:17 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:51:18 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:51:18 -03:00: transforming...
+2025-12-23 20:51:26 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:51:27 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:51:28 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:51:28 -03:00: transforming...
+2025-12-23 20:52:02 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:52:03 -03:00: rendering chunks...
+2025-12-23 20:52:03 -03:00: computing gzip size...
+2025-12-23 20:52:04 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:52:04 -03:00: dist/assets/style.css                                                110.92 kB │ gzip:  16.80 kB
+2025-12-23 20:52:04 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:52:04 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:52:04 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:52:04 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:52:04 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:52:04 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:52:04 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:52:04 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:52:04 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:52:04 -03:00: dist/assets/index-BEuJy2pB.js                                      1,316.55 kB │ gzip: 238.94 kB
+2025-12-23 20:52:04 -03:00: ✓ built in 35.59s
+2025-12-23 20:52:05 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:52:05 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:52:20 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:52:20 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:52:21 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:52:21 -03:00: transforming...
+2025-12-23 20:52:52 -03:00: ✓ 4454 modules transformed.
+2025-12-23 20:52:54 -03:00: rendering chunks...
+2025-12-23 20:52:54 -03:00: computing gzip size...
+2025-12-23 20:52:54 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:52:54 -03:00: dist/assets/style.css                                                112.23 kB │ gzip:  16.94 kB
+2025-12-23 20:52:54 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:52:54 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:52:54 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:52:54 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:52:54 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:52:54 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:52:54 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:52:54 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:52:54 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:52:54 -03:00: dist/assets/index-R_F_dqgL.js                                      1,316.55 kB │ gzip: 238.94 kB
+2025-12-23 20:52:54 -03:00: ✓ built in 33.19s
+2025-12-23 20:52:57 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:52:57 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:53:26 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:53:26 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:53:27 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:53:28 -03:00: transforming...
+2025-12-23 20:53:35 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:53:35 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:53:35 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:53:36 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:53:37 -03:00: transforming...
+2025-12-23 20:54:06 -03:00: ✓ 4455 modules transformed.
+2025-12-23 20:54:07 -03:00: rendering chunks...
+2025-12-23 20:54:07 -03:00: computing gzip size...
+2025-12-23 20:54:07 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:54:07 -03:00: dist/assets/style.css                                                112.23 kB │ gzip:  16.94 kB
+2025-12-23 20:54:07 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:54:07 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:54:07 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:54:07 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:54:07 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:54:07 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:54:07 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:54:07 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:54:07 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:54:07 -03:00: dist/assets/index-BjIaoNa7.js                                      1,318.42 kB │ gzip: 239.04 kB
+2025-12-23 20:54:07 -03:00: ✓ built in 30.73s
+2025-12-23 20:54:09 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:54:09 -03:00:   ➜  Network: use --host to expose
+2025-12-23 20:56:46 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:56:46 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:56:47 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:56:47 -03:00: transforming...
+2025-12-23 20:56:48 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:56:48 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:56:50 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:56:50 -03:00: transforming...
+2025-12-23 20:56:53 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:56:54 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:56:55 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:56:55 -03:00: transforming...
+2025-12-23 20:56:56 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:56:56 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:56:57 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:56:58 -03:00: transforming...
+2025-12-23 20:57:06 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:06 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:57:07 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:57:07 -03:00: transforming...
+2025-12-23 20:57:09 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:09 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:57:10 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:57:10 -03:00: transforming...
+2025-12-23 20:57:20 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:20 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:57:21 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:57:22 -03:00: transforming...
+2025-12-23 20:57:33 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:33 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:57:34 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:57:34 -03:00: transforming...
+2025-12-23 20:57:44 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:44 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:44 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:44 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 20:57:44 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 20:57:45 -03:00: vite v5.4.21 building for production...
+2025-12-23 20:57:45 -03:00: transforming...
+2025-12-23 20:58:02 -03:00: ✓ 4458 modules transformed.
+2025-12-23 20:58:02 -03:00: rendering chunks...
+2025-12-23 20:58:02 -03:00: computing gzip size...
+2025-12-23 20:58:02 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 20:58:02 -03:00: dist/assets/style.css                                                112.23 kB │ gzip:  16.94 kB
+2025-12-23 20:58:02 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:58:02 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 20:58:02 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 20:58:02 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 20:58:02 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 20:58:02 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 20:58:02 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 20:58:02 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 20:58:02 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 20:58:02 -03:00: dist/assets/index-DiZfQpzW.js                                      1,322.93 kB │ gzip: 239.22 kB
+2025-12-23 20:58:02 -03:00: ✓ built in 17.22s
+2025-12-23 20:58:03 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 20:58:03 -03:00:   ➜  Network: use --host to expose
+2025-12-23 21:00:13 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 21:00:13 -03:00: [32m[nodemon] restarting due to changes...[39m
+2025-12-23 21:00:13 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2025-12-23 21:00:14 -03:00: vite v5.4.21 building for production...
+2025-12-23 21:00:14 -03:00: transforming...
+2025-12-23 21:00:40 -03:00: ✓ 4458 modules transformed.
+2025-12-23 21:00:40 -03:00: rendering chunks...
+2025-12-23 21:00:41 -03:00: computing gzip size...
+2025-12-23 21:00:41 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2025-12-23 21:00:41 -03:00: dist/assets/style.css                                                112.23 kB │ gzip:  16.94 kB
+2025-12-23 21:00:41 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2025-12-23 21:00:41 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2025-12-23 21:00:41 -03:00: dist/assets/_virtual___federation_fn_import-DHV1XhJ7.js               14.64 kB │ gzip:   3.19 kB
+2025-12-23 21:00:41 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2025-12-23 21:00:41 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2025-12-23 21:00:41 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmXtza7B.js    107.24 kB │ gzip:  22.05 kB
+2025-12-23 21:00:41 -03:00: dist/assets/__federation_shared_react-router-dom-CjrlCwlf.js         257.57 kB │ gzip:  61.98 kB
+2025-12-23 21:00:41 -03:00: dist/assets/__federation_shared_tailwindcss-DUFRkgTj.js              265.40 kB │ gzip:  68.75 kB
+2025-12-23 21:00:41 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2025-12-23 21:00:41 -03:00: dist/assets/index-DiZfQpzW.js                                      1,322.93 kB │ gzip: 239.22 kB
+2025-12-23 21:00:41 -03:00: ✓ built in 26.61s
+2025-12-23 21:00:42 -03:00:   ➜  Local:   http://localhost:3000/
+2025-12-23 21:00:42 -03:00:   ➜  Network: use --host to expose

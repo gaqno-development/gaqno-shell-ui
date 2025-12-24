@@ -1,14 +1,15 @@
 import type { Config } from "tailwindcss";
-import sharedConfig from "@gaqno-dev/frontcore/config/tailwind";
 
+// Tailwind v4 configuration
+// With @tailwindcss/vite plugin, most config is in CSS via @theme
+// But we still need content paths for class detection
 const config: Config = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "../gaqno-ui/src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@gaqno-dev/ui/src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "../@gaqno-frontcore/src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@gaqno-dev/frontcore/src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  presets: [sharedConfig],
-  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar')],
 };
 
 export default config;

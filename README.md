@@ -51,8 +51,8 @@ build:
 ## Environment Variables
 
 ### Required
-- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous key
+- `VITE_PUBLIC_SUPABASE_URL` - Supabase project URL
+- `VITE_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous key
 
 ### Service URLs (for routing to other MFEs)
 - `AUTH_SERVICE_URL` - Default: `http://localhost:3001`
@@ -80,7 +80,7 @@ The Shell app routes requests based on path patterns:
 - `/dashboard/manager` → Shell app (native - manager dashboard)
 - `/dashboard/user` → Shell app (native - user dashboard)
 - `/dashboard/settings` → Shell app (native - settings)
-- `/dashboard/users` → Shell app (native - user management)
+- `/sso/users` → SSO app (user management)
 - `/admin/*` → Admin app
 - `/dashboard/admin/*` → Admin app
 - `/dashboard/finance/*` → Finance app

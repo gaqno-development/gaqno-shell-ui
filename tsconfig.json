@@ -1,11 +1,6 @@
 {
   "extends": "@gaqno-dev/frontcore/config/tsconfig.base.json",
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -13,12 +8,16 @@
       ]
     },
     "jsx": "preserve",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": [
+      "vite/client"
+    ],
+    "strictNullChecks": true
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/vite-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts"
   ],
   "exclude": [

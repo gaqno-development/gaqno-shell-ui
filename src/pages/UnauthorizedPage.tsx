@@ -1,0 +1,41 @@
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
+import { Button } from '@gaqno-dev/frontcore/components/ui'
+import { AlertCircle } from 'lucide-react'
+import { ROUTES } from '@gaqno-dev/frontcore/lib/constants'
+
+export default function UnauthorizedPage() {
+  const navigate = useNavigate()
+
+  const handleGoBack = () => {
+    navigate(ROUTES.DASHBOARD)
+  }
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-1 text-center">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
+            <AlertCircle className="h-6 w-6 text-destructive" />
+          </div>
+          <CardTitle className="text-2xl font-bold">Acesso Negado</CardTitle>
+          <CardDescription>
+            Você não tem permissão para acessar esta página
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-center text-sm text-muted-foreground">
+            Entre em contato com o administrador do sistema se você acredita que isto é um erro.
+          </p>
+        </CardContent>
+        <CardFooter className="flex justify-center">
+          <Button onClick={handleGoBack}>
+            Voltar ao Dashboard
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  )
+}
+

@@ -1,4 +1,4 @@
-'use client'
+
 
 const AUTH_STORAGE_KEY = 'gaqno_auth_state'
 
