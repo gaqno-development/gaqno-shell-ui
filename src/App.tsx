@@ -39,6 +39,7 @@ const CRMPage = lazy(async () => import("crm/App" as string));
 const ERPPage = lazy(async () => import("erp/App" as string));
 const FinancePage = lazy(async () => import("finance/App" as string));
 const PDVPage = lazy(async () => import("pdv/App" as string));
+const RPGPage = lazy(async () => import("rpg/App" as string));
 const SSOPage = lazy(async () => import("sso/App" as string));
 
 function LoadingFallback() {
@@ -210,6 +211,44 @@ const router = createBrowserRouter(
           ],
         },
         {
+          path: "/rpg",
+          errorElement: <RouteErrorElement />,
+          children: [
+            {
+              index: true,
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <RPGPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "sessions/:id",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <RPGPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "sessions/:id/master",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <RPGPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "*",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <RPGPage />
+                </Suspense>
+              ),
+            },
+          ],
+        },
+        {
           path: "/sso",
           errorElement: <RouteErrorElement />,
           children: [
@@ -244,6 +283,11 @@ const router = createBrowserRouter(
       ],
     },
   ],
+  {
+    future: {
+      v7_startTransition: true,
+    },
+  },
 );
 
 export default function App() {

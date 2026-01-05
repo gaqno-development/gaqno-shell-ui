@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { useNavigate } from 'react-router-dom'
 import { useSignIn } from '@gaqno-dev/frontcore/hooks/auth/useSsoAuth'
 import { authStorage } from '@/utils/auth-storage'
+import { ssoAxiosClient } from '@gaqno-dev/frontcore/utils/api/sso-client'
+import { getFirstAvailableRoute } from '@/utils/route-utils'
 
 const loginSchema = z.object({
   email: z.string().email('E-mail inválido'),
@@ -32,14 +34,35 @@ export const useLogin = () => {
           password: values.password,
         },
         {
-          onSuccess: (data) => {
+          onSuccess: async (data) => {
             if (data) {
               authStorage.set(data.user, {
                 access_token: data.tokens.accessToken,
                 expires_at: data.tokens.expiresAt,
               })
+
+              try {
+                const { data: permissionsData } = await ssoAxiosClient.get<{ permissions: string[] }>('/permissions/my-permissions')
+                const userPermissions = permissionsData.permissions || []
+                const hasDashboardAccess = userPermissions.includes('dashboard.access') || userPermissions.includes('platform.all')
+
+                if (hasDashboardAccess) {
+                  navigate('/dashboard')
+                } else {
+                  const firstRoute = getFirstAvailableRoute(userPermissions)
+                  if (firstRoute) {
+                    navigate(firstRoute)
+                  } else {
+                    navigate('/unauthorized')
+                  }
+                }
+              } catch (error) {
+                console.error('[LOGIN] Error fetching permissions:', error)
+                navigate('/dashboard')
+              }
+            } else {
+              navigate('/dashboard')
             }
-            navigate('/dashboard')
           },
           onError: (error: Error) => {
             const errorMessage = error.message || 'Erro ao fazer login'

@@ -11,6 +11,7 @@ export default defineConfig(async () => {
   const ERP_SERVICE_URL = process.env.ERP_SERVICE_URL || 'http://localhost:3004'
   const FINANCE_SERVICE_URL = process.env.FINANCE_SERVICE_URL || 'http://localhost:3005'
   const PDV_SERVICE_URL = process.env.PDV_SERVICE_URL || 'http://localhost:3006'
+  const RPG_SERVICE_URL = process.env.RPG_SERVICE_URL || 'http://localhost:3007'
   const SSO_SERVICE_URL = process.env.SSO_SERVICE_URL || 'http://localhost:3001'
 
   return {
@@ -37,6 +38,7 @@ export default defineConfig(async () => {
           erp: ERP_SERVICE_URL + '/assets/remoteEntry.js',
           finance: FINANCE_SERVICE_URL + '/assets/remoteEntry.js',
           pdv: PDV_SERVICE_URL + '/assets/remoteEntry.js',
+          rpg: RPG_SERVICE_URL + '/assets/remoteEntry.js',
           sso: SSO_SERVICE_URL + '/assets/remoteEntry.js',
         },
         shared: {

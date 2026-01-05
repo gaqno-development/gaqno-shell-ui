@@ -16,11 +16,12 @@ const AUTHENTICATED_ROUTES = [
   '/pdv',
   '/admin',
   '/sso',
+  '/rpg',
 ]
 
 const PUBLIC_ROUTES = ['/login', '/register', '/']
 
-const MICRO_FRONTEND_ROUTES = ['/ai', '/crm', '/erp', '/finance', '/pdv', '/admin', '/sso']
+const MICRO_FRONTEND_ROUTES = ['/ai', '/crm', '/erp', '/finance', '/pdv', '/rpg', '/admin', '/sso']
 
 function shouldShowDashboardLayout(pathname: string): boolean {
   if (PUBLIC_ROUTES.some((route) => pathname === route || pathname.startsWith(route + '/'))) {
@@ -43,8 +44,8 @@ export function ShellLayoutWrapper() {
   const menuItems = useFilteredMenu()
 
   useEffect(() => {
-    const showLayout = shouldShowDashboardLayout(pathname) && !loading && user
     const isMFE = isMicroFrontendRoute(pathname)
+    const showLayout = shouldShowDashboardLayout(pathname) && !loading && !!user
     setShouldShowLayout(showLayout)
     setIsMicroFrontend(isMFE)
   }, [pathname, loading, user])

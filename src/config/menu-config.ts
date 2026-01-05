@@ -5,7 +5,8 @@ import {
   DollarSign, 
   Settings, 
   BookOpen,
-  LayoutDashboard 
+  LayoutDashboard,
+  Dices
 } from 'lucide-react';
 
 export interface MenuItem {
@@ -23,7 +24,7 @@ export const MENU_ITEMS: MenuItem[] = [
     label: 'Dashboard',
     href: '/dashboard',
     icon: LayoutDashboard,
-    requiredPermissions: [],
+    requiredPermissions: ['dashboard.access'],
   },
   {
     id: 'pdv',
@@ -35,46 +36,59 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: 'crm',
     label: 'CRM',
-    href: '/dashboard/crm',
+    href: '/crm/dashboard',
     icon: Users,
     requiredPermissions: ['crm.access'],
   },
   {
     id: 'erp',
     label: 'ERP',
-    href: '/dashboard/erp',
+    href: '/erp/dashboard',
     icon: Package,
     requiredPermissions: ['erp.access'],
   },
   {
     id: 'finance',
     label: 'Financeiro',
-    href: '/dashboard/finance',
+    href: '/finance/dashboard',
     icon: DollarSign,
     requiredPermissions: ['finance.access'],
   },
   {
     id: 'ai',
     label: 'Inteligência Artificial',
-    href: '/dashboard/books',
+    href: '/ai/dashboard',
     icon: BookOpen,
     requiredPermissions: ['ai.access'],
   },
   {
+    id: 'rpg',
+    label: 'RPG',
+    href: '/rpg',
+    icon: Dices,
+    requiredPermissions: ['rpg.access'],
+  },
+  {
     id: 'admin',
     label: 'Administração',
-    href: '/dashboard/admin',
+    href: '/admin/dashboard',
     icon: Settings,
     requiredPermissions: ['admin.access'],
   },
 ];
 
 export const ROUTE_PERMISSIONS: Record<string, string[]> = {
+  '/dashboard': ['dashboard.access'],
   '/pdv': ['pdv.access'],
   '/pdv/sales': ['pdv.sales.read'],
   '/pdv/products': ['pdv.products.manage'],
   '/pdv/inventory': ['pdv.inventory.read'],
   '/pdv/settings': ['pdv.settings.write'],
+  '/crm/dashboard': ['crm.access'],
+  '/erp/dashboard': ['erp.access'],
+  '/finance/dashboard': ['finance.access'],
+  '/ai/dashboard': ['ai.access'],
+  '/admin/dashboard': ['admin.access'],
   '/crm': ['crm.access'],
   '/crm/contacts': ['crm.contacts.read'],
   '/crm/deals': ['crm.deals.read'],
@@ -95,6 +109,13 @@ export const ROUTE_PERMISSIONS: Record<string, string[]> = {
   '/ai/insights': ['ai.insights.view'],
   '/ai/avatar': ['ai.avatar.create'],
   '/ai/portrait': ['ai.portrait.create'],
+  '/rpg': ['rpg.access'],
+  '/rpg/sessions': ['rpg.access'],
+  '/rpg/sessions/:id': ['rpg.access'],
+  '/rpg/campaigns': ['rpg.access'],
+  '/rpg/campaigns/:id': ['rpg.access'],
+  '/rpg/campaigns/new': ['rpg.access'],
+  '/rpg/characters': ['rpg.access'],
   '/admin': ['admin.access'],
   '/admin/users': ['admin.users.manage'],
   '/admin/tenants': ['admin.tenants.manage'],
