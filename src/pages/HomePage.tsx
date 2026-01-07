@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { authStorage } from '@/utils/auth-storage'
-import { useUserPermissions } from '@gaqno-dev/frontcore/hooks/useUserPermissions'
+import { useUserPermissions } from '@gaqno-development/frontcore/hooks/useUserPermissions'
 import { getFirstAvailableRoute } from '@/utils/route-utils'
 
 export default function HomePage() {

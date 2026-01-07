@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
-import { Avatar, AvatarFallback, AvatarImage } from '@gaqno-dev/frontcore/components/ui'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-development/frontcore/components/ui'
+import { Avatar, AvatarFallback, AvatarImage } from '@gaqno-development/frontcore/components/ui'
 import { User, Settings as SettingsIcon, Shield } from 'lucide-react'
 import { useSettings } from '../hooks/useSettings'
 

@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useNavigate } from 'react-router-dom'
-import { useSignUp } from '@gaqno-dev/frontcore/hooks/auth/useSsoAuth'
+import { useSignUp } from '@gaqno-development/frontcore/hooks/auth/useSsoAuth'
 import { authStorage } from '@/utils/auth-storage'
 
 const passwordSchema = z

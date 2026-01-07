@@ -1,5 +1,5 @@
 import React from 'react'
-import { DomainsList } from '@gaqno-dev/frontcore/components/admin'
+import { DomainsList } from '@gaqno-development/frontcore/components/admin'
 
 export default function DomainsPage() {
   return (

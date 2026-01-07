@@ -5,9 +5,9 @@ import { getWidgetComponent } from '../config/widget-registry'
 import { WidgetConfig } from '../types/dashboard.types'
 import { DashboardGrid } from '../components/dashboard/DashboardGrid'
 import { WidgetConfigDialog } from '../components/dashboard/WidgetConfigDialog'
-import { Button, Alert, AlertDescription, AlertTitle } from '@gaqno-dev/frontcore/components/ui'
+import { Button, Alert, AlertDescription, AlertTitle } from '@gaqno-development/frontcore/components/ui'
 import { Settings, AlertCircle } from 'lucide-react'
-import { useUserPermissions } from '@gaqno-dev/frontcore/hooks/useUserPermissions'
+import { useUserPermissions } from '@gaqno-development/frontcore/hooks/useUserPermissions'
 import { getFirstAvailableRoute } from '@/utils/route-utils'
 
 export default function DashboardPage() {

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, Outlet } from 'react-router-dom'
-import { DashboardLayout } from '@gaqno-dev/frontcore/components'
-import { AppProvider } from '@gaqno-dev/frontcore/components/providers'
-import { WhiteLabelProvider } from '@gaqno-dev/frontcore/components/providers'
-import { TenantProvider } from '@gaqno-dev/frontcore/contexts'
-import { useFilteredMenu } from '@gaqno-dev/frontcore/hooks'
-import { useAuth } from '@gaqno-dev/frontcore/hooks'
+import { DashboardLayout } from '@gaqno-development/frontcore/components'
+import { AppProvider } from '@gaqno-development/frontcore/components/providers'
+import { WhiteLabelProvider } from '@gaqno-development/frontcore/components/providers'
+import { TenantProvider } from '@gaqno-development/frontcore/contexts'
+import { useFilteredMenu } from '@gaqno-development/frontcore/hooks'
+import { useAuth } from '@gaqno-development/frontcore/hooks'
 
 const AUTHENTICATED_ROUTES = [
   '/dashboard',

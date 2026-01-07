@@ -1438,6 +1438,10 @@
     border-color: var(--color-blue-500);
   }
 
+  .border-border {
+    border-color: var(--color-border);
+  }
+
   .border-border\/50 {
     border-color: color-mix(in srgb, hsl(var(--border)) 50%, transparent);
   }
@@ -2544,16 +2548,6 @@
       }
     }
 
-    .hover\:bg-destructive\/80:hover {
-      background-color: color-mix(in srgb, hsl(var(--destructive)) 80%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-destructive\/80:hover {
-        background-color: color-mix(in oklab, var(--color-destructive) 80%, transparent);
-      }
-    }
-
     .hover\:bg-destructive\/90:hover {
       background-color: color-mix(in srgb, hsl(var(--destructive)) 90%, transparent);
     }
@@ -2575,16 +2569,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:bg-muted\/50:hover {
         background-color: color-mix(in oklab, var(--color-muted) 50%, transparent);
-      }
-    }
-
-    .hover\:bg-primary\/80:hover {
-      background-color: color-mix(in srgb, hsl(var(--primary)) 80%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-primary\/80:hover {
-        background-color: color-mix(in oklab, var(--color-primary) 80%, transparent);
       }
     }
 
@@ -3031,16 +3015,36 @@
       border-color: var(--color-destructive);
     }
 
+    .dark\:border-muted-foreground {
+      border-color: var(--color-muted-foreground);
+    }
+
     .dark\:bg-blue-950 {
       background-color: var(--color-blue-950);
+    }
+
+    .dark\:bg-destructive {
+      background-color: var(--color-destructive);
     }
 
     .dark\:bg-green-950 {
       background-color: var(--color-green-950);
     }
 
+    .dark\:bg-muted {
+      background-color: var(--color-muted);
+    }
+
+    .dark\:bg-primary {
+      background-color: var(--color-primary);
+    }
+
     .dark\:bg-red-950 {
       background-color: var(--color-red-950);
+    }
+
+    .dark\:bg-transparent {
+      background-color: #0000;
     }
 
     .dark\:bg-yellow-950 {
@@ -3055,12 +3059,24 @@
       color: var(--color-blue-400);
     }
 
+    .dark\:text-destructive-foreground {
+      color: var(--color-destructive-foreground);
+    }
+
     .dark\:text-green-100 {
       color: var(--color-green-100);
     }
 
     .dark\:text-green-400 {
       color: var(--color-green-400);
+    }
+
+    .dark\:text-muted-foreground {
+      color: var(--color-muted-foreground);
+    }
+
+    .dark\:text-primary-foreground {
+      color: var(--color-primary-foreground);
     }
 
     .dark\:text-red-100 {
@@ -3080,6 +3096,40 @@
     }
 
     @media (hover: hover) {
+      .dark\:hover\:bg-destructive\/90:hover {
+        background-color: color-mix(in srgb, hsl(var(--destructive)) 90%, transparent);
+      }
+
+      @supports (color: color-mix(in lab, red, red)) {
+        .dark\:hover\:bg-destructive\/90:hover {
+          background-color: color-mix(in oklab, var(--color-destructive) 90%, transparent);
+        }
+      }
+
+      .dark\:hover\:bg-muted:hover {
+        background-color: var(--color-muted);
+      }
+
+      .dark\:hover\:bg-muted\/80:hover {
+        background-color: color-mix(in srgb, hsl(var(--muted)) 80%, transparent);
+      }
+
+      @supports (color: color-mix(in lab, red, red)) {
+        .dark\:hover\:bg-muted\/80:hover {
+          background-color: color-mix(in oklab, var(--color-muted) 80%, transparent);
+        }
+      }
+
+      .dark\:hover\:bg-primary\/90:hover {
+        background-color: color-mix(in srgb, hsl(var(--primary)) 90%, transparent);
+      }
+
+      @supports (color: color-mix(in lab, red, red)) {
+        .dark\:hover\:bg-primary\/90:hover {
+          background-color: color-mix(in oklab, var(--color-primary) 90%, transparent);
+        }
+      }
+
       .dark\:hover\:bg-white\/5:hover {
         background-color: #ffffff0d;
       }

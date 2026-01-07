@@ -394,3 +394,92 @@
 2026-01-05 13:29:27 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
 2026-01-05 13:31:09 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
 2026-01-05 13:31:52 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 10:13:02 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 10:13:04 -03:00: x Build failed in 1.74s
+2026-01-06 10:13:04 -03:00: error during build:
+2026-01-06 10:13:04 -03:00: [vite]: Rollup failed to resolve import "@gaqno-development/frontcore/styles" from "/home/kursk/coding/gaqno_server/gaqno-shell/src/main.tsx".
+2026-01-06 10:13:04 -03:00: This is most likely unintended because it can break your application at runtime.
+2026-01-06 10:13:04 -03:00: If you do want to externalize this module explicitly add it to
+2026-01-06 10:13:04 -03:00: `build.rollupOptions.external`
+2026-01-06 10:13:04 -03:00:     at viteWarn (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+2026-01-06 10:13:04 -03:00:     at onwarn (/home/kursk/coding/gaqno_server/node_modules/@vitejs/plugin-react/dist/index.cjs:112:7)
+2026-01-06 10:13:04 -03:00:     at onRollupWarning (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65885:5)
+2026-01-06 10:13:04 -03:00:     at onwarn (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+2026-01-06 10:13:04 -03:00:     at file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21046:13
+2026-01-06 10:13:04 -03:00:     at Object.logger [as onLog] (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:22919:9)
+2026-01-06 10:13:04 -03:00:     at ModuleLoader.handleInvalidResolvedId (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21663:26)
+2026-01-06 10:13:04 -03:00:     at file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21621:26
+2026-01-06 10:13:07 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 10:13:09 -03:00: x Build failed in 1.31s
+2026-01-06 10:13:09 -03:00: error during build:
+2026-01-06 10:13:09 -03:00: [vite]: Rollup failed to resolve import "@gaqno-development/frontcore/styles" from "/home/kursk/coding/gaqno_server/gaqno-shell/src/main.tsx".
+2026-01-06 10:13:09 -03:00: This is most likely unintended because it can break your application at runtime.
+2026-01-06 10:13:09 -03:00: If you do want to externalize this module explicitly add it to
+2026-01-06 10:13:09 -03:00: `build.rollupOptions.external`
+2026-01-06 10:13:09 -03:00:     at viteWarn (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+2026-01-06 10:13:09 -03:00:     at onwarn (/home/kursk/coding/gaqno_server/node_modules/@vitejs/plugin-react/dist/index.cjs:112:7)
+2026-01-06 10:13:09 -03:00:     at onRollupWarning (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65885:5)
+2026-01-06 10:13:09 -03:00:     at onwarn (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+2026-01-06 10:13:09 -03:00:     at file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21046:13
+2026-01-06 10:13:09 -03:00:     at Object.logger [as onLog] (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:22919:9)
+2026-01-06 10:13:09 -03:00:     at ModuleLoader.handleInvalidResolvedId (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21663:26)
+2026-01-06 10:13:09 -03:00:     at file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21621:26
+2026-01-06 10:33:00 -03:00: ▲ [WARNING] Cannot find base config file "@gaqno-development/frontcore/config/tsconfig.base.json" [tsconfig.json]
+2026-01-06 10:33:00 -03:00: 
+2026-01-06 10:33:00 -03:00:     tsconfig.json:2:13:
+2026-01-06 10:33:00 -03:00:       2 │   "extends": "@gaqno-development/frontcore/config/tsconfig.base.json",
+2026-01-06 10:33:00 -03:00:         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-01-06 10:33:00 -03:00: 
+2026-01-06 10:33:00 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 10:33:00 -03:00: x Build failed in 941ms
+2026-01-06 10:33:00 -03:00: error during build:
+2026-01-06 10:33:00 -03:00: [vite:esbuild] failed to resolve "extends":"@gaqno-development/frontcore/config/tsconfig.base.json" in /home/kursk/coding/gaqno_server/gaqno-shell/tsconfig.json
+2026-01-06 10:33:00 -03:00: file: /home/kursk/coding/gaqno_server/gaqno-shell/src/main.tsx
+2026-01-06 10:33:00 -03:00:     at resolveExtends (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18845:8)
+2026-01-06 10:33:00 -03:00:     at parseExtends (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18780:24)
+2026-01-06 10:33:00 -03:00:     at parse$e (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18638:23)
+2026-01-06 10:33:00 -03:00:     at async loadTsconfigJsonForFile (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19433:20)
+2026-01-06 10:33:00 -03:00:     at async transformWithEsbuild (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19194:30)
+2026-01-06 10:33:00 -03:00:     at async Object.transform (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19297:24)
+2026-01-06 10:33:00 -03:00:     at async transform (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21234:16)
+2026-01-06 10:33:00 -03:00:     at async ModuleLoader.addModuleSource (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21448:36)
+2026-01-06 11:39:37 -03:00: ▲ [WARNING] Cannot find base config file "@gaqno-development/frontcore/config/tsconfig.base.json" [tsconfig.json]
+2026-01-06 11:39:37 -03:00: 
+2026-01-06 11:39:37 -03:00:     tsconfig.json:2:13:
+2026-01-06 11:39:37 -03:00:       2 │   "extends": "@gaqno-development/frontcore/config/tsconfig.base.json",
+2026-01-06 11:39:37 -03:00:         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-01-06 11:39:37 -03:00: 
+2026-01-06 11:39:38 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 11:39:48 -03:00: x Build failed in 3.31s
+2026-01-06 11:39:48 -03:00: error during build:
+2026-01-06 11:39:48 -03:00: [vite:esbuild] failed to resolve "extends":"@gaqno-development/frontcore/config/tsconfig.base.json" in /home/kursk/coding/gaqno_server/gaqno-shell/tsconfig.json
+2026-01-06 11:39:48 -03:00: file: /home/kursk/coding/gaqno_server/gaqno-shell/src/main.tsx
+2026-01-06 11:39:48 -03:00:     at resolveExtends (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18845:8)
+2026-01-06 11:39:48 -03:00:     at parseExtends (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18780:24)
+2026-01-06 11:39:48 -03:00:     at parse$e (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18638:23)
+2026-01-06 11:39:48 -03:00:     at async loadTsconfigJsonForFile (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19433:20)
+2026-01-06 11:39:48 -03:00:     at async transformWithEsbuild (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19194:30)
+2026-01-06 11:39:48 -03:00:     at async Object.transform (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19297:24)
+2026-01-06 11:39:48 -03:00:     at async transform (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21234:16)
+2026-01-06 11:39:48 -03:00:     at async ModuleLoader.addModuleSource (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21448:36)
+2026-01-06 12:10:51 -03:00: ▲ [WARNING] Cannot find base config file "@gaqno-development/frontcore/config/tsconfig.base.json" [tsconfig.json]
+2026-01-06 12:10:51 -03:00: 
+2026-01-06 12:10:51 -03:00:     tsconfig.json:2:13:
+2026-01-06 12:10:51 -03:00:       2 │   "extends": "@gaqno-development/frontcore/config/tsconfig.base.json",
+2026-01-06 12:10:51 -03:00:         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-01-06 12:10:51 -03:00: 
+2026-01-06 12:10:51 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 12:10:56 -03:00: x Build failed in 1.76s
+2026-01-06 12:10:56 -03:00: error during build:
+2026-01-06 12:10:56 -03:00: [vite:esbuild] failed to resolve "extends":"@gaqno-development/frontcore/config/tsconfig.base.json" in /home/kursk/coding/gaqno_server/gaqno-shell/tsconfig.json
+2026-01-06 12:10:56 -03:00: file: /home/kursk/coding/gaqno_server/gaqno-shell/src/main.tsx
+2026-01-06 12:10:56 -03:00:     at resolveExtends (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18845:8)
+2026-01-06 12:10:56 -03:00:     at parseExtends (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18780:24)
+2026-01-06 12:10:56 -03:00:     at parse$e (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:18638:23)
+2026-01-06 12:10:56 -03:00:     at async loadTsconfigJsonForFile (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19433:20)
+2026-01-06 12:10:56 -03:00:     at async transformWithEsbuild (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19194:30)
+2026-01-06 12:10:56 -03:00:     at async Object.transform (file:///home/kursk/coding/gaqno_server/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:19297:24)
+2026-01-06 12:10:56 -03:00:     at async transform (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21234:16)
+2026-01-06 12:10:56 -03:00:     at async ModuleLoader.addModuleSource (file:///home/kursk/coding/gaqno_server/node_modules/rollup/dist/es/shared/node-entry.js:21448:36)
+2026-01-06 12:44:09 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+2026-01-06 12:45:41 -03:00: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@gaqno-dev/frontcore/components/ui'
-import { Input } from '@gaqno-dev/frontcore/components/ui'
-import { Button } from '@gaqno-dev/frontcore/components/ui'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-development/frontcore/components/ui'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@gaqno-development/frontcore/components/ui'
+import { Input } from '@gaqno-development/frontcore/components/ui'
+import { Button } from '@gaqno-development/frontcore/components/ui'
 import { useRegister } from '../hooks/useRegister'
 
 export default function RegisterPage() {

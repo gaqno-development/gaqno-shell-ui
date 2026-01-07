@@ -1,5 +1,5 @@
 import React from 'react'
-import { DomainForm } from '@gaqno-dev/frontcore/components/admin'
+import { DomainForm } from '@gaqno-development/frontcore/components/admin'
 
 export default function DomainFormPage() {
   return (

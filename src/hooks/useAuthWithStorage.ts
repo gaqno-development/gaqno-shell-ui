@@ -1,6 +1,6 @@
 
 
-import { useAuth as useCoreAuth } from '@gaqno-dev/frontcore/hooks/useAuth'
+import { useAuth as useCoreAuth } from '@gaqno-development/frontcore/hooks/useAuth'
 import { authStorage } from '@/utils/auth-storage'
 
 /**

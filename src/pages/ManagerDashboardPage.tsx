@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-development/frontcore/components/ui'
 import { FolderKanban, Users, CheckCircle, Clock } from 'lucide-react'
 import { useManagerDashboard } from '../hooks/useManagerDashboard'
 

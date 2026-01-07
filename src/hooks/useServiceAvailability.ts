@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { getServiceName, SERVICE_ROUTE_MAP } from '@gaqno-dev/frontcore/config/service-urls'
+import { getServiceName, SERVICE_ROUTE_MAP } from '@gaqno-development/frontcore/config/service-urls'
 
 interface ServiceAvailability {
   available: boolean

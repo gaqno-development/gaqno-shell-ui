@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouteError, useNavigate, useLocation } from 'react-router-dom'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
-import { Button } from '@gaqno-dev/frontcore/components/ui'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-development/frontcore/components/ui'
+import { Button } from '@gaqno-development/frontcore/components/ui'
 import { AlertCircle, Home, RefreshCw } from 'lucide-react'
 
 const SERVICE_NAMES: Record<string, string> = {

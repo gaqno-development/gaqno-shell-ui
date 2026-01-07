@@ -2833,3 +2833,124 @@
 2026-01-05 13:31:52 -03:00: ✓ built in 41.88s
 2026-01-05 13:31:53 -03:00:   ➜  Local:   http://localhost:3000/
 2026-01-05 13:31:53 -03:00:   ➜  Network: use --host to expose
+2026-01-06 10:12:56 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:12:59 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:00 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:01 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2026-01-06 10:13:02 -03:00: vite v5.4.21 building for production...
+2026-01-06 10:13:03 -03:00: transforming...
+2026-01-06 10:13:04 -03:00: ✓ 55 modules transformed.
+2026-01-06 10:13:06 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:06 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:06 -03:00: [32m[nodemon] restarting due to changes...[39m
+2026-01-06 10:13:07 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2026-01-06 10:13:08 -03:00: vite v5.4.21 building for production...
+2026-01-06 10:13:08 -03:00: transforming...
+2026-01-06 10:13:09 -03:00: ✓ 62 modules transformed.
+2026-01-06 10:13:10 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2026-01-06 10:32:30 -03:00: 
+2026-01-06 10:32:30 -03:00: > shell@0.0.0 dev
+2026-01-06 10:32:30 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2026-01-06 10:32:30 -03:00: 
+2026-01-06 10:32:51 -03:00: [33m[nodemon] 3.1.11[39m
+2026-01-06 10:32:51 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2026-01-06 10:32:51 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2026-01-06 10:32:51 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2026-01-06 10:32:51 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2026-01-06 10:33:00 -03:00: vite v5.4.21 building for production...
+2026-01-06 10:33:00 -03:00: transforming...
+2026-01-06 10:33:00 -03:00: ✓ 26 modules transformed.
+2026-01-06 10:33:00 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2026-01-06 11:39:30 -03:00: 
+2026-01-06 11:39:30 -03:00: > shell@0.0.0 dev
+2026-01-06 11:39:30 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2026-01-06 11:39:30 -03:00: 
+2026-01-06 11:39:33 -03:00: [33m[nodemon] 3.1.11[39m
+2026-01-06 11:39:33 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2026-01-06 11:39:33 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2026-01-06 11:39:33 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2026-01-06 11:39:33 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2026-01-06 11:39:44 -03:00: vite v5.4.21 building for production...
+2026-01-06 11:39:45 -03:00: transforming...
+2026-01-06 11:39:48 -03:00: ✓ 26 modules transformed.
+2026-01-06 11:39:48 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2026-01-06 12:10:48 -03:00: 
+2026-01-06 12:10:48 -03:00: > shell@0.0.0 dev
+2026-01-06 12:10:48 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2026-01-06 12:10:48 -03:00: 
+2026-01-06 12:10:49 -03:00: [33m[nodemon] 3.1.11[39m
+2026-01-06 12:10:49 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2026-01-06 12:10:49 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2026-01-06 12:10:49 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2026-01-06 12:10:49 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2026-01-06 12:10:54 -03:00: vite v5.4.21 building for production...
+2026-01-06 12:10:54 -03:00: transforming...
+2026-01-06 12:10:56 -03:00: ✓ 22 modules transformed.
+2026-01-06 12:10:56 -03:00: [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+2026-01-06 12:44:07 -03:00: 
+2026-01-06 12:44:07 -03:00: > shell@0.0.0 dev
+2026-01-06 12:44:07 -03:00: > nodemon --watch ./src --ext js,ts,jsx,tsx,json --exec "vite build && vite preview --port 3000 --strictPort"
+2026-01-06 12:44:07 -03:00: 
+2026-01-06 12:44:08 -03:00: [33m[nodemon] 3.1.11[39m
+2026-01-06 12:44:08 -03:00: [33m[nodemon] to restart at any time, enter `rs`[39m
+2026-01-06 12:44:08 -03:00: [33m[nodemon] watching path(s): src/**/*[39m
+2026-01-06 12:44:08 -03:00: [33m[nodemon] watching extensions: js,ts,jsx,tsx,json[39m
+2026-01-06 12:44:08 -03:00: [32m[nodemon] starting `vite build && vite preview --port 3000 --strictPort`[39m
+2026-01-06 12:44:10 -03:00: vite v5.4.21 building for production...
+2026-01-06 12:44:11 -03:00: transforming...
+2026-01-06 12:45:39 -03:00: ✓ 4460 modules transformed.
+2026-01-06 12:45:40 -03:00: rendering chunks...
+2026-01-06 12:45:40 -03:00: computing gzip size...
+2026-01-06 12:45:40 -03:00: dist/index.html                                                        0.80 kB │ gzip:   0.45 kB
+2026-01-06 12:45:40 -03:00: dist/assets/style.css                                                 82.59 kB │ gzip:  12.72 kB
+2026-01-06 12:45:40 -03:00: dist/assets/__federation_shared_react-z-BZoSEI.js                      0.05 kB │ gzip:   0.07 kB
+2026-01-06 12:45:40 -03:00: dist/assets/__federation_shared_react-dom-KmrQF9Fk.js                  0.05 kB │ gzip:   0.07 kB
+2026-01-06 12:45:40 -03:00: dist/assets/index-Bjo8FBYR.js                                          3.33 kB │ gzip:   1.14 kB
+2026-01-06 12:45:40 -03:00: dist/assets/__federation_shared_zustand-CwyouKAc.js                    6.94 kB │ gzip:   2.09 kB
+2026-01-06 12:45:40 -03:00: dist/assets/_virtual___federation_fn_import-BFWk3sLe.js               14.62 kB │ gzip:   3.21 kB
+2026-01-06 12:45:40 -03:00: dist/assets/jsx-runtime-CMWGVW1u.js                                   32.25 kB │ gzip:   7.41 kB
+2026-01-06 12:45:40 -03:00: dist/assets/index-CetfBc-a.js                                         72.42 kB │ gzip:  15.82 kB
+2026-01-06 12:45:40 -03:00: dist/assets/__federation_shared_@tanstack/react-query-CmbRR7by.js    107.24 kB │ gzip:  22.04 kB
+2026-01-06 12:45:40 -03:00: dist/assets/__federation_shared_react-router-dom-DeLLp4sn.js         257.57 kB │ gzip:  61.98 kB
+2026-01-06 12:45:40 -03:00: dist/assets/index-DeQGn_Du.js                                        839.79 kB │ gzip: 139.03 kB
+2026-01-06 12:45:40 -03:00: dist/assets/index-D_j0xEZI.js                                      1,342.04 kB │ gzip: 240.91 kB
+2026-01-06 12:45:40 -03:00: ✓ built in 1m 29s
+2026-01-06 12:45:42 -03:00:   ➜  Local:   http://localhost:3000/
+2026-01-06 12:45:42 -03:00:   ➜  Network: use --host to expose

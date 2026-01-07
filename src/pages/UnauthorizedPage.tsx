@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-dev/frontcore/components/ui'
-import { Button } from '@gaqno-dev/frontcore/components/ui'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@gaqno-development/frontcore/components/ui'
+import { Button } from '@gaqno-development/frontcore/components/ui'
 import { AlertCircle } from 'lucide-react'
-import { ROUTES } from '@gaqno-dev/frontcore/lib/constants'
+import { ROUTES } from '@gaqno-development/frontcore/lib/constants'
 
 export default function UnauthorizedPage() {
   const navigate = useNavigate()

@@ -2,9 +2,9 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useNavigate } from 'react-router-dom'
-import { useSignIn } from '@gaqno-dev/frontcore/hooks/auth/useSsoAuth'
+import { useSignIn } from '@gaqno-development/frontcore/hooks/auth/useSsoAuth'
 import { authStorage } from '@/utils/auth-storage'
-import { ssoAxiosClient } from '@gaqno-dev/frontcore/utils/api/sso-client'
+import { ssoAxiosClient } from '@gaqno-development/frontcore/utils/api/sso-client'
 import { getFirstAvailableRoute } from '@/utils/route-utils'
 
 const loginSchema = z.object({

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { TenantCostsSummary } from '@gaqno-dev/frontcore/components/admin'
+import { TenantCostsSummary } from '@gaqno-development/frontcore/components/admin'
 
 export default function TenantCostsPage() {
   const { tenantId } = useParams<{ tenantId?: string }>()

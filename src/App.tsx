@@ -1,9 +1,9 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ThemeProvider } from "@gaqno-dev/frontcore/components/providers";
-import { QueryProvider } from "@gaqno-dev/frontcore/components/providers";
-import { AuthProvider } from "@gaqno-dev/frontcore/contexts";
-import { ToastContainer } from "@gaqno-dev/frontcore/components/ui";
+import { ThemeProvider } from "@gaqno-development/frontcore/components/providers";
+import { QueryProvider } from "@gaqno-development/frontcore/components/providers";
+import { AuthProvider } from "@gaqno-development/frontcore/contexts";
+import { ToastContainer } from "@gaqno-development/frontcore/components/ui";
 import { ShellLayoutWrapper } from "@/components/shell-layout-wrapper";
 import { RouteErrorElement } from "@/components/route-error-element";
 import HomePage from "./pages/HomePage";

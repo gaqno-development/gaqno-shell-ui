@@ -1,5 +1,5 @@
 import React from 'react'
-import { SSLChecker } from '@gaqno-dev/frontcore/components/admin'
+import { SSLChecker } from '@gaqno-development/frontcore/components/admin'
 
 export default function SSLStatusPage() {
   return (

@@ -15,7 +15,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@gaqno-dev/frontcore/components/ui";
+} from "@gaqno-development/frontcore/components/ui";
 import { useLogin } from "../hooks/useLogin";
 
 export default function LoginPage() {

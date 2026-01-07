@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useAuth } from '@gaqno-dev/frontcore/hooks/useAuth'
+import { useAuth } from '@gaqno-development/frontcore/hooks/useAuth'
 
 interface UserProfile {
   name?: string

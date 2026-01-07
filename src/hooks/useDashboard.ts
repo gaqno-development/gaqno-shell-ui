@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { ssoClient } from '@gaqno-dev/frontcore/utils/api'
+import { ssoClient } from '@gaqno-development/frontcore/utils/api'
 import type {
   WidgetsData,
   DashboardSummary,
