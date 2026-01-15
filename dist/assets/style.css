@@ -1825,6 +1825,10 @@
     padding-right: calc(var(--spacing) * 2);
   }
 
+  .pr-28 {
+    padding-right: calc(var(--spacing) * 28);
+  }
+
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -2425,10 +2429,6 @@
     font-weight: var(--font-weight-medium);
   }
 
-  .file\:text-foreground::file-selector-button {
-    color: var(--color-foreground);
-  }
-
   .placeholder\:text-muted-foreground::placeholder {
     color: var(--color-muted-foreground);
   }
@@ -2877,6 +2877,10 @@
       display: flex;
     }
 
+    .sm\:inline {
+      display: inline;
+    }
+
     .sm\:max-w-sm {
       max-width: var(--container-sm);
     }
@@ -2931,11 +2935,6 @@
 
     .md\:p-6 {
       padding: calc(var(--spacing) * 6);
-    }
-
-    .md\:text-sm {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
     }
 
     .md\:opacity-0 {
