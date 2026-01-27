@@ -6,7 +6,10 @@ import {
   Settings, 
   BookOpen,
   LayoutDashboard,
-  Dices
+  Dices,
+  Video,
+  Image,
+  Volume2,
 } from 'lucide-react';
 
 export interface MenuItem {
@@ -57,9 +60,39 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: 'ai',
     label: 'Inteligência Artificial',
-    href: '/ai/dashboard',
+    href: '/ai',
     icon: BookOpen,
     requiredPermissions: ['ai.access'],
+    children: [
+      {
+        id: 'ai-video',
+        label: 'Vídeo',
+        href: '/ai/video',
+        icon: Video,
+        requiredPermissions: ['ai.access'],
+      },
+      {
+        id: 'ai-images',
+        label: 'Imagens',
+        href: '/ai/images',
+        icon: Image,
+        requiredPermissions: ['ai.access'],
+      },
+      {
+        id: 'ai-audio',
+        label: 'Áudio',
+        href: '/ai/audio',
+        icon: Volume2,
+        requiredPermissions: ['ai.access'],
+      },
+      {
+        id: 'ai-books',
+        label: 'Livros',
+        href: '/ai/books',
+        icon: BookOpen,
+        requiredPermissions: ['ai.books.read'],
+      },
+    ],
   },
   {
     id: 'rpg',
@@ -105,6 +138,9 @@ export const ROUTE_PERMISSIONS: Record<string, string[]> = {
   '/finance/investments': ['finance.investments.read'],
   '/finance/settings': ['finance.settings.write'],
   '/ai': ['ai.access'],
+  '/ai/video': ['ai.access'],
+  '/ai/images': ['ai.access'],
+  '/ai/audio': ['ai.access'],
   '/ai/books': ['ai.books.read'],
   '/ai/insights': ['ai.insights.view'],
   '/ai/avatar': ['ai.avatar.create'],

@@ -28,11 +28,11 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
       try {
         setError(null)
         setComponent(null)
-        
+
         // Dynamically import the remote module using Module Federation
         // Format: remoteName/./moduleName (exposes use './App' format)
         const importPath = `${remoteName}/./${moduleName}`
-        
+
         const logContext = {
           remoteName,
           moduleName,
@@ -41,21 +41,21 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
           userAgent: navigator.userAgent,
           location: window.location.href
         }
-        
+
         console.log(`[Module Federation] Attempting to load: ${importPath}`, logContext)
-        
+
         // Check if window.__FEDERATION__ exists (Module Federation runtime)
         if (typeof window !== 'undefined' && (window as any).__FEDERATION__) {
           const federation = (window as any).__FEDERATION__
-          const remoteDetails = federation?.[remoteName] 
+          const remoteDetails = federation?.[remoteName]
             ? {
-                exists: true,
-                name: federation[remoteName]?.name,
-                entry: federation[remoteName]?.entry,
-                exposes: federation[remoteName]?.exposes || 'not available'
-              }
+              exists: true,
+              name: federation[remoteName]?.name,
+              entry: federation[remoteName]?.entry,
+              exposes: federation[remoteName]?.exposes || 'not available'
+            }
             : 'not found'
-          
+
           const allRemotesInfo = federation ? Object.keys(federation).reduce((acc, key) => {
             acc[key] = {
               name: federation[key]?.name,
@@ -66,10 +66,10 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
             }
             return acc
           }, {} as Record<string, any>) : {}
-          
+
           const instance = (federation as any)?.__INSTANCES__?.[0]
           const instanceRemotes = instance?.options?.remotes || []
-          
+
           console.log(`[Module Federation] Runtime detected:`, {
             federationExists: !!federation,
             remotes: federation ? Object.keys(federation) : [],
@@ -96,16 +96,16 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
               } : 'no instance'
             }
           })
-          
+
           // Try to access loadRemote API if available
           if (federation && typeof (federation as any).loadRemote === 'function') {
             console.log(`[Module Federation] loadRemote API available`)
           } else {
-            console.warn(`[Module Federation] loadRemote API not found. Available methods:`, 
+            console.warn(`[Module Federation] loadRemote API not found. Available methods:`,
               federation ? Object.keys(federation).filter(k => typeof (federation as any)[k] === 'function') : []
             )
           }
-          
+
           // Log detailed instance information
           if (instance) {
             const fullOptionsStr = JSON.stringify(instance.options, null, 2)
@@ -135,7 +135,7 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
         } else {
           console.warn(`[Module Federation] Runtime not detected - Module Federation may not be initialized`)
         }
-        
+
         // Try to check remoteEntry accessibility (for debugging)
         const remotePorts: Record<string, number> = {
           ai: 3002,
@@ -143,18 +143,19 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
           erp: 3004,
           finance: 3005,
           pdv: 3006,
+          rpg: 3007,
           sso: 3001
         }
         const defaultPort = remotePorts[remoteName]
-        const remoteEntryUrl = defaultPort 
-          ? `http://localhost:${defaultPort}/remoteEntry.js`
+        const remoteEntryUrl = defaultPort
+          ? `http://localhost:${defaultPort}/assets/remoteEntry.js`
           : `unknown`
-        
+
         console.log(`[Module Federation] Remote entry URL: ${remoteEntryUrl}`)
-        
+
         // Try to fetch remoteEntry to verify accessibility and content
         try {
-          const response = await fetch(remoteEntryUrl, { 
+          const response = await fetch(remoteEntryUrl, {
             method: 'GET',
             headers: {
               'Cache-Control': 'no-cache'
@@ -162,13 +163,13 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
           })
           const contentLength = response.headers.get('content-length')
           const contentType = response.headers.get('content-type')
-          
+
           let contentPreview = ''
           if (response.ok) {
             const text = await response.text()
             contentPreview = text.substring(0, 200)
             const isEmpty = text.trim().length === 0
-            
+
             console.log(`[Module Federation] Remote entry accessibility check:`, {
               url: remoteEntryUrl,
               status: response.status,
@@ -180,7 +181,7 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
               preview: contentPreview,
               fullLength: text.length
             })
-            
+
             if (isEmpty) {
               console.error(`[Module Federation] WARNING: remoteEntry.js is EMPTY! This will cause module resolution to fail.`)
             }
@@ -201,15 +202,15 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
             } : fetchErr
           })
         }
-        
+
         // Try to use Module Federation loadRemote API if available
         let container: any = null
         let importError: Error | null = null
-        
+
         // Check if we can use loadRemote from the runtime
         const federation = typeof window !== 'undefined' ? (window as any).__FEDERATION__ : null
         const hostInstance = federation?.__INSTANCES__?.[0]
-        
+
         if (hostInstance && typeof hostInstance.loadRemote === 'function') {
           try {
             console.log(`[Module Federation] Using loadRemote API with path: ${importPath}`)
@@ -227,7 +228,7 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
             importError = loadRemoteErr instanceof Error ? loadRemoteErr : new Error(String(loadRemoteErr))
           }
         }
-        
+
         // Fallback to direct import if loadRemote is not available or failed
         if (!container) {
           // Try: remoteName/./App (with ./ - correct format for exposes: { './App': ... })
@@ -241,7 +242,7 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
               error: importError.message,
               name: importError.name
             })
-            
+
             // Fallback try: remoteName/App (without ./)
             const altImportPath = `${remoteName}/${moduleName}`
             try {
@@ -260,7 +261,7 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
             }
           }
         }
-        
+
         console.log(`[Module Federation] Import successful, container received:`, {
           importPath: logContext.importPath,
           containerKeys: Object.keys(container || {}),
@@ -268,7 +269,7 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
           containerType: typeof container,
           containerValue: container
         })
-        
+
         const RemoteComponent = container.default || container
 
         if (isMounted && RemoteComponent) {
@@ -309,18 +310,18 @@ export function MicroFrontendPage({ remoteName, moduleName }: MicroFrontendPageP
           timestamp: new Date().toISOString(),
           federationRuntime: typeof window !== 'undefined' ? {
             exists: !!(window as any).__FEDERATION__,
-            remotes: typeof window !== 'undefined' && (window as any).__FEDERATION__ 
-              ? Object.keys((window as any).__FEDERATION__) 
+            remotes: typeof window !== 'undefined' && (window as any).__FEDERATION__
+              ? Object.keys((window as any).__FEDERATION__)
               : []
           } : null
         }
-        
+
         console.error(`[Module Federation] Error loading micro-frontend ${remoteName}:`, errorDetails)
         console.error(`[Module Federation] Full error object:`, err)
-        
+
         if (isMounted) {
-          const errorMessage = err instanceof Error 
-            ? `Failed to load ${remoteName}: ${err.message}` 
+          const errorMessage = err instanceof Error
+            ? `Failed to load ${remoteName}: ${err.message}`
             : `Failed to load ${remoteName}. Please ensure the micro-frontend is running.`
           setError(errorMessage)
         }

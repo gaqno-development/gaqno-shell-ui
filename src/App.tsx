@@ -28,13 +28,6 @@ import { lazy, Suspense } from "react";
 
 // @ts-nocheck
 const AIPage = lazy(async () => import("ai/App" as string));
-const BooksPage = lazy(async () => import("ai/BooksPage" as string));
-const BookDetailPage = lazy(async () => import("ai/BookDetailPage" as string));
-const BookChaptersPage = lazy(
-  async () => import("ai/BookChaptersPage" as string)
-);
-const BookCoverPage = lazy(async () => import("ai/BookCoverPage" as string));
-const BookExportPage = lazy(async () => import("ai/BookExportPage" as string));
 const CRMPage = lazy(async () => import("crm/App" as string));
 const ERPPage = lazy(async () => import("erp/App" as string));
 const FinancePage = lazy(async () => import("finance/App" as string));
@@ -70,45 +63,12 @@ const router = createBrowserRouter(
         {
           path: "/ai",
           errorElement: <RouteErrorElement />,
-          element: (
-            <Suspense fallback={<LoadingFallback />}>
-              <AIPage />
-            </Suspense>
-          ),
           children: [
             {
-              path: "books",
-              Component: BooksPage,
-            },
-            {
-              path: "books/:id/chapters",
+              index: true,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <BookChaptersPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "books/:id/cover",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <BookCoverPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "books/:id/export",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <BookExportPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "books/:id",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <BookDetailPage />
+                  <AIPage />
                 </Suspense>
               ),
             },
@@ -216,54 +176,6 @@ const router = createBrowserRouter(
           children: [
             {
               index: true,
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <RPGPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "campaigns",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <RPGPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "wiki",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <RPGPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "rules",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <RPGPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "sessions",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <RPGPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "sessions/:id",
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <RPGPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "sessions/:id/master",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <RPGPage />

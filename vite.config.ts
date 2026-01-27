@@ -24,6 +24,7 @@ export default defineConfig(async () => {
       esbuildOptions: {
         target: 'esnext',
       },
+      exclude: ['jsonwebtoken'],
     },
     plugins: [
       react(),
@@ -81,10 +82,18 @@ export default defineConfig(async () => {
       minify: false,
       cssCodeSplit: false,
       rollupOptions: {
+        external: ['stream', 'events', 'crypto', 'util', 'buffer', 'process'],
         output: {
           assetFileNames: 'assets/[name].[ext]',
         },
       },
+      commonjsOptions: {
+        transformMixedEsModules: true,
+      },
+    },
+    define: {
+      'process.env': {},
+      global: 'globalThis',
     },
   }
 })
