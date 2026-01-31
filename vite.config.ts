@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import federation from '@originjs/vite-plugin-federation'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
 export default defineConfig(async () => {
@@ -33,6 +34,38 @@ export default defineConfig(async () => {
       react(),
       tailwindcss({
         config: path.resolve(__dirname, './tailwind.config.ts'),
+      }),
+      VitePWA({
+        registerType: 'autoUpdate',
+        manifest: {
+          name: 'White Label Admin',
+          short_name: 'Admin',
+          description: 'White Label Admin Dashboard',
+          theme_color: '#3b82f6',
+          background_color: '#ffffff',
+          display: 'standalone',
+          orientation: 'portrait',
+          icons: [
+            {
+              src: '/vite.svg',
+              sizes: '192x192',
+              type: 'image/svg+xml',
+              purpose: 'any',
+            },
+            {
+              src: '/vite.svg',
+              sizes: '512x512',
+              type: 'image/svg+xml',
+              purpose: 'any maskable',
+            },
+          ],
+        },
+        workbox: {
+          navigateFallback: '/index.html',
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+          maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        },
+        devOptions: { enabled: true },
       }),
       federation({
         name: 'shell',

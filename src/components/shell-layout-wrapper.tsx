@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, Outlet, useNavigate } from 'react-router-dom'
+import { AnimatePresence, motion } from 'motion/react'
 import { DashboardLayout } from '@gaqno-development/frontcore/components'
 import { AppProvider } from '@gaqno-development/frontcore/components/providers'
 import { WhiteLabelProvider } from '@gaqno-development/frontcore/components/providers'
@@ -61,8 +62,27 @@ export function ShellLayoutWrapper() {
     }
   }, [loading, user, pathname, navigate])
 
+  const pageTransition = {
+    initial: { opacity: 0, x: 8 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -8 },
+    transition: { duration: 0.2 },
+  }
+
   if (!shouldShowLayout) {
-    return <Outlet />
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.key}
+          initial={pageTransition.initial}
+          animate={pageTransition.animate}
+          exit={pageTransition.exit}
+          transition={pageTransition.transition}
+        >
+          <Outlet />
+        </motion.div>
+      </AnimatePresence>
+    )
   }
 
   return (
@@ -70,7 +90,18 @@ export function ShellLayoutWrapper() {
       <WhiteLabelProvider>
         <TenantProvider>
           <DashboardLayout menuItems={menuItems}>
-            <Outlet />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={location.key}
+                initial={pageTransition.initial}
+                animate={pageTransition.animate}
+                exit={pageTransition.exit}
+                transition={pageTransition.transition}
+                className="min-h-0 flex-1 flex flex-col"
+              >
+                <Outlet />
+              </motion.div>
+            </AnimatePresence>
           </DashboardLayout>
         </TenantProvider>
       </WhiteLabelProvider>

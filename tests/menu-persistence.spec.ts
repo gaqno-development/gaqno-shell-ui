@@ -304,7 +304,7 @@ test.describe('API Failure Handling', () => {
   })
 
   test('should display menu from cache when API returns 401', async ({ page }) => {
-    await page.route('**/v1/sso/menu', (route) => {
+    await page.route('**/v1/menu', (route) => {
       route.fulfill({
         status: 401,
         body: JSON.stringify({ error: 'Unauthorized' }),
@@ -322,7 +322,7 @@ test.describe('API Failure Handling', () => {
   })
 
   test('should display menu from cache when API returns 500', async ({ page }) => {
-    await page.route('**/v1/sso/menu', (route) => {
+    await page.route('**/v1/menu', (route) => {
       route.fulfill({
         status: 500,
         body: JSON.stringify({ error: 'Internal Server Error' }),
@@ -340,7 +340,7 @@ test.describe('API Failure Handling', () => {
   })
 
   test('should update menu when API recovers', async ({ page }) => {
-    await page.route('**/v1/sso/menu', (route) => {
+    await page.route('**/v1/menu', (route) => {
       route.fulfill({
         status: 500,
         body: JSON.stringify({ error: 'Internal Server Error' }),
@@ -353,7 +353,7 @@ test.describe('API Failure Handling', () => {
     const cachedMenu = await getMenuItems(page)
     expect(cachedMenu.length).toBeGreaterThan(0)
 
-    await page.unroute('**/v1/sso/menu')
+    await page.unroute('**/v1/menu')
     await page.waitForTimeout(3000)
 
     const recoveredMenu = await getMenuItems(page)
@@ -364,7 +364,7 @@ test.describe('API Failure Handling', () => {
     const beforeErrorStorage = await verifyMenuInLocalStorage(page)
     expect(beforeErrorStorage).toBe(true)
 
-    await page.route('**/v1/sso/menu', (route) => {
+    await page.route('**/v1/menu', (route) => {
       route.fulfill({
         status: 500,
         body: JSON.stringify({ error: 'Internal Server Error' }),
