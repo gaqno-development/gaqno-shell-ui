@@ -50,7 +50,7 @@ RUN if [ -n "$NPM_TOKEN" ]; then \
 RUN --mount=type=cache,target=/root/.npm \
     npm config set fetch-timeout 1200000 && \
     npm config set fetch-retries 10 && \
-    npm install --legacy-peer-deps
+    npm install --legacy-peer-deps --include=dev
 
 COPY . .
 RUN find node_modules -name useDialogForm.ts -exec sed -i '/@ts-expect-error/d' {} +
