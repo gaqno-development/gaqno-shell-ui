@@ -15,7 +15,7 @@ services:
         MFE_RPG_URL: ${MFE_RPG_URL:-http://localhost:3007}
         MFE_SSO_URL: ${MFE_SSO_URL:-http://localhost:3001}
         MFE_SAAS_URL: ${MFE_SAAS_URL:-http://localhost:3008}
-        MFE_OMNICHANNEL_URL: ${MFE_OMNICHANNEL_URL:-http://localhost:3010}
+        MFE_OMNICHANNEL_URL: ${MFE_OMNICHANNEL_URL:-http://localhost:3008}
     ports:
       - "3000:3000"
     environment:
@@ -24,12 +24,12 @@ services:
       # VITE_SERVICE_* = API base URLs (frontcore api-client / service-urls). Injected at build.
       - VITE_SERVICE_SSO_URL=${VITE_SERVICE_SSO_URL:-http://localhost:4001}
       - VITE_SERVICE_AI_URL=${VITE_SERVICE_AI_URL:-http://localhost:4002}
-      - VITE_SERVICE_CRM_URL=${VITE_SERVICE_CRM_URL:-http://localhost:3004}
-      - VITE_SERVICE_ERP_URL=${VITE_SERVICE_ERP_URL:-http://localhost:3005}
+      - VITE_SERVICE_CRM_URL=${VITE_SERVICE_CRM_URL:-http://localhost:4003}
+      - VITE_SERVICE_ERP_URL=${VITE_SERVICE_ERP_URL:-http://localhost:4004}
       - VITE_SERVICE_FINANCE_URL=${VITE_SERVICE_FINANCE_URL:-http://localhost:4005}
       - VITE_SERVICE_PDV_URL=${VITE_SERVICE_PDV_URL:-http://localhost:4006}
       - VITE_SERVICE_RPG_URL=${VITE_SERVICE_RPG_URL:-http://localhost:4007}
-      - VITE_SERVICE_OMNICHANNEL_URL=${VITE_SERVICE_OMNICHANNEL_URL:-http://localhost:4010}
+      - VITE_SERVICE_OMNICHANNEL_URL=${VITE_SERVICE_OMNICHANNEL_URL:-http://localhost:4008}
     env_file:
       - .env.local  # Local env file (or set in Coolify)
     restart: unless-stopped
