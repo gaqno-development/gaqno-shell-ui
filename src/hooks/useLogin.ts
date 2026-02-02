@@ -1,30 +1,30 @@
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { useNavigate } from 'react-router-dom'
-import { useSignIn } from '@gaqno-development/frontcore/hooks/auth/useSsoAuth'
-import { authStorage } from '@/utils/auth-storage'
-import { ssoAxiosClient } from '@gaqno-development/frontcore/utils/api/sso-client'
-import { getFirstAvailableRoute } from '@/utils/route-utils'
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useNavigate } from "react-router-dom";
+import { useSignIn } from "@gaqno-development/frontcore/hooks/auth/useSsoAuth";
+import { authStorage } from "@/utils/auth-storage";
+import { ssoAxiosClient } from "@gaqno-development/frontcore/utils/api/sso-client";
+import { getFirstAvailableRoute } from "@/utils/route-utils";
 
 const loginSchema = z.object({
-  email: z.string().email('E-mail inválido'),
-  password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres'),
-})
+  email: z.string().email("E-mail inválido"),
+  password: z.string().min(6, "A senha deve ter no mínimo 6 caracteres"),
+});
 
-type LoginFormValues = z.infer<typeof loginSchema>
+type LoginFormValues = z.infer<typeof loginSchema>;
 
 export const useLogin = () => {
-  const navigate = useNavigate()
-  const signIn = useSignIn()
+  const navigate = useNavigate();
+  const signIn = useSignIn();
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
-  })
+  });
 
   const onSubmit = form.handleSubmit(
     (values) => {
@@ -39,50 +39,46 @@ export const useLogin = () => {
               authStorage.set(data.user, {
                 access_token: data.tokens.accessToken,
                 expires_at: data.tokens.expiresAt,
-              })
+              });
 
               try {
-                const { data: permissionsData } = await ssoAxiosClient.get<{ permissions: string[] }>('/permissions/my-permissions')
-                const userPermissions = permissionsData.permissions || []
-                const hasDashboardAccess = userPermissions.includes('dashboard.access') || userPermissions.includes('platform.all')
-
-                if (hasDashboardAccess) {
-                  navigate('/dashboard')
+                const { data: permissionsData } = await ssoAxiosClient.get<{
+                  permissions: string[];
+                }>("/permissions/my-permissions");
+                const userPermissions = permissionsData.permissions || [];
+                const firstRoute = getFirstAvailableRoute(userPermissions);
+                if (firstRoute) {
+                  navigate(firstRoute);
                 } else {
-                  const firstRoute = getFirstAvailableRoute(userPermissions)
-                  if (firstRoute) {
-                    navigate(firstRoute)
-                  } else {
-                    navigate('/unauthorized')
-                  }
+                  navigate("/unauthorized");
                 }
               } catch (error) {
-                console.error('[LOGIN] Error fetching permissions:', error)
-                navigate('/dashboard')
+                console.error("[LOGIN] Error fetching permissions:", error);
+                const firstRoute = getFirstAvailableRoute([]);
+                navigate(firstRoute ?? "/unauthorized");
               }
             } else {
-              navigate('/dashboard')
+              navigate("/unauthorized");
             }
           },
           onError: (error: Error) => {
-            const errorMessage = error.message || 'Erro ao fazer login'
-            form.setError('root', {
+            const errorMessage = error.message || "Erro ao fazer login";
+            form.setError("root", {
               message: errorMessage,
-            })
+            });
           },
         }
-      )
+      );
     },
     (errors) => {
-      console.log('[LOGIN] Validation errors:', errors)
+      console.log("[LOGIN] Validation errors:", errors);
     }
-  )
+  );
 
   return {
     form,
     onSubmit,
     isSubmitting: signIn.isPending,
     error: form.formState.errors.root?.message,
-  }
-}
-
+  };
+};

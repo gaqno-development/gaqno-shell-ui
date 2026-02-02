@@ -32,15 +32,11 @@ export default function HomePage() {
 
         setIsRedirecting(true);
 
-        if (hasPermission("dashboard.access")) {
-          navigate("/dashboard");
+        const firstRoute = getFirstAvailableRoute(permissions);
+        if (firstRoute) {
+          navigate(firstRoute);
         } else {
-          const firstRoute = getFirstAvailableRoute(permissions);
-          if (firstRoute) {
-            navigate(firstRoute);
-          } else {
-            navigate("/unauthorized");
-          }
+          navigate("/unauthorized");
         }
       } catch {
         if (!isMounted) return;
