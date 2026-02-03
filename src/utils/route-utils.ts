@@ -18,7 +18,7 @@ export function getFirstAvailableRoute(permissions: string[]): string | null {
     const requiredPermissions = ROUTE_PERMISSIONS[route];
 
     if (!requiredPermissions || requiredPermissions.length === 0) {
-      continue;
+      return route;
     }
 
     if (hasPlatformAll) {

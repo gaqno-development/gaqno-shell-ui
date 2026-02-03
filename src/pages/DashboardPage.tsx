@@ -1,5 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useMemo } from "react";
 import {
   useDashboardWidgets,
   useDashboardData,
@@ -17,18 +16,9 @@ import {
   AlertTitle,
 } from "@gaqno-development/frontcore/components/ui";
 import { Settings, AlertCircle } from "lucide-react";
-import { useUserPermissions } from "@gaqno-development/frontcore/hooks/useUserPermissions";
-import { getFirstAvailableRoute } from "@/utils/route-utils";
-
 export default function DashboardPage() {
-  const navigate = useNavigate();
   const [configuringWidget, setConfiguringWidget] =
     useState<WidgetConfig | null>(null);
-  const {
-    permissions,
-    isLoading: permissionsLoading,
-    hasPermission,
-  } = useUserPermissions();
 
   const {
     data: widgetsData,
@@ -51,17 +41,6 @@ export default function DashboardPage() {
 
   const savePreferences = useSaveDashboardPreferences();
 
-  useEffect(() => {
-    if (!permissionsLoading && !hasPermission("dashboard.access")) {
-      const firstRoute = getFirstAvailableRoute(permissions);
-      if (firstRoute) {
-        navigate(firstRoute);
-      } else {
-        navigate("/unauthorized");
-      }
-    }
-  }, [permissions, permissionsLoading, hasPermission, navigate]);
-
   const visibleWidgets = useMemo(() => {
     if (!preferences) return [];
     return preferences.widgets
@@ -69,21 +48,8 @@ export default function DashboardPage() {
       .sort((a, b) => a.position - b.position);
   }, [preferences]);
 
-  const isLoading = permissionsLoading || widgetsLoading || preferencesLoading;
+  const isLoading = widgetsLoading || preferencesLoading;
   const hasError = widgetsError || summaryError || preferencesError;
-
-  if (permissionsLoading) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent" />
-        <p className="text-sm text-muted-foreground">Checking permissions...</p>
-      </div>
-    );
-  }
-
-  if (!hasPermission("dashboard.access")) {
-    return null;
-  }
 
   const handleToggleWidget = (widgetId: string) => {
     if (!preferences) return;
