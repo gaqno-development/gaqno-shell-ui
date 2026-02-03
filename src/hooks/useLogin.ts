@@ -4,8 +4,6 @@ import { z } from "zod";
 import { useNavigate } from "react-router-dom";
 import { useSignIn } from "@gaqno-development/frontcore/hooks/auth/useSsoAuth";
 import { authStorage } from "@/utils/auth-storage";
-import { ssoAxiosClient } from "@gaqno-development/frontcore/utils/api/sso-client";
-import { getFirstAvailableRoute } from "@/utils/route-utils";
 
 const loginSchema = z.object({
   email: z.string().email("E-mail inválido"),
@@ -34,31 +32,15 @@ export const useLogin = () => {
           password: values.password,
         },
         {
-          onSuccess: async (data) => {
+          onSuccess: (data) => {
             if (data) {
               authStorage.set(data.user, {
                 access_token: data.tokens.accessToken,
                 expires_at: data.tokens.expiresAt,
               });
-
-              try {
-                const { data: permissionsData } = await ssoAxiosClient.get<{
-                  permissions: string[];
-                }>("/permissions/my-permissions");
-                const userPermissions = permissionsData.permissions || [];
-                const firstRoute = getFirstAvailableRoute(userPermissions);
-                if (firstRoute) {
-                  navigate(firstRoute);
-                } else {
-                  navigate("/unauthorized");
-                }
-              } catch (error) {
-                console.error("[LOGIN] Error fetching permissions:", error);
-                const firstRoute = getFirstAvailableRoute([]);
-                navigate(firstRoute ?? "/unauthorized");
-              }
+              navigate("/dashboard");
             } else {
-              navigate("/unauthorized");
+              navigate("/dashboard");
             }
           },
           onError: (error: Error) => {
