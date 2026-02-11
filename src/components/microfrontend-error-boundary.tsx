@@ -1,96 +1,62 @@
-import React, { Component, ReactNode } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gaqno-development/frontcore/components/ui'
-import { Button } from '@gaqno-development/frontcore/components/ui'
-import { AlertCircle, Home, RefreshCw } from 'lucide-react'
+import type { ReactNode } from "react";
+import { ErrorBoundary as ReactErrorBoundary } from "react-error-boundary";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@gaqno-development/frontcore/components/ui";
+import { Button } from "@gaqno-development/frontcore/components/ui";
+import { AlertCircle, Home, RefreshCw } from "lucide-react";
 
 interface Props {
-  children: ReactNode
-  fallback?: ReactNode
-}
-
-interface State {
-  hasError: boolean
-  error: Error | null
-  serviceName: string
+  children: ReactNode;
+  fallback?: ReactNode;
 }
 
 const SERVICE_NAMES: Record<string, string> = {
-  '/dashboard/finance': 'Finance',
-  '/dashboard/crm': 'CRM',
-  '/dashboard/erp': 'ERP',
-  '/dashboard/books': 'AI/Books',
-  '/dashboard/admin': 'Admin',
-  '/admin': 'Admin',
-  '/pdv': 'PDV',
-  '/crm': 'CRM',
-  '/erp': 'ERP',
-  '/finance': 'Finance',
-  '/ai': 'AI',
-}
+  "/dashboard/finance": "Finance",
+  "/dashboard/crm": "CRM",
+  "/dashboard/erp": "ERP",
+  "/dashboard/books": "AI/Books",
+  "/dashboard/admin": "Admin",
+  "/admin": "Admin",
+  "/pdv": "PDV",
+  "/crm": "CRM",
+  "/erp": "ERP",
+  "/finance": "Finance",
+  "/ai": "AI",
+};
 
 function getServiceName(pathname: string): string {
   for (const [route, name] of Object.entries(SERVICE_NAMES)) {
     if (pathname.startsWith(route)) {
-      return name
+      return name;
     }
   }
-  return 'serviço'
-}
-
-export class MicroFrontendErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      hasError: false,
-      error: null,
-      serviceName: 'serviço',
-    }
-  }
-
-  static getDerivedStateFromError(error: Error): Partial<State> {
-    return {
-      hasError: true,
-      error,
-    }
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Micro-frontend error:', error, errorInfo)
-    
-    const pathname = window.location.pathname
-    this.setState({
-      serviceName: getServiceName(pathname),
-      error,
-    })
-  }
-
-  render() {
-    if (this.state.hasError) {
-      if (this.props.fallback) {
-        return this.props.fallback
-      }
-
-      return (
-        <MicroFrontendErrorFallback
-          serviceName={this.state.serviceName}
-          error={this.state.error}
-        />
-      )
-    }
-
-    return this.props.children
-  }
+  return "serviço";
 }
 
 interface FallbackProps {
-  serviceName: string
-  error: Error | null
+  serviceName: string;
+  error: unknown;
+  resetErrorBoundary: () => void;
 }
 
-function MicroFrontendErrorFallback({ serviceName, error }: FallbackProps) {
+function MicroFrontendErrorFallback({
+  serviceName,
+  error,
+  resetErrorBoundary,
+}: FallbackProps) {
   const handleGoToDashboard = () => {
-    window.location.href = '/dashboard'
-  }
+    window.location.href = "/dashboard";
+  };
+
+  const handleRetry = () => {
+    resetErrorBoundary();
+    window.location.reload();
+  };
 
   return (
     <div className="flex items-center justify-center p-6">
@@ -108,30 +74,23 @@ function MicroFrontendErrorFallback({ serviceName, error }: FallbackProps) {
           <div className="rounded-md bg-muted p-4 text-sm">
             <p className="font-medium mb-2">O que aconteceu?</p>
             <p className="text-muted-foreground">
-              O serviço que você está tentando acessar não está respondendo. 
-              Isso pode acontecer se o serviço não estiver em execução ou se houver 
-              um problema de conexão.
+              O serviço que você está tentando acessar não está respondendo.
+              Isso pode acontecer se o serviço não estiver em execução ou se
+              houver um problema de conexão.
             </p>
-            {error && (
+            {error != null && (
               <p className="mt-2 text-xs text-muted-foreground font-mono">
-                {error.message}
+                {error instanceof Error ? error.message : String(error)}
               </p>
             )}
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button
-              onClick={handleGoToDashboard}
-              className="w-full"
-            >
+            <Button onClick={handleGoToDashboard} className="w-full">
               <Home className="mr-2 h-4 w-4" />
               Voltar ao Dashboard
             </Button>
-            <Button
-              variant="outline"
-              onClick={() => window.location.reload()}
-              className="w-full"
-            >
+            <Button variant="outline" onClick={handleRetry} className="w-full">
               <RefreshCw className="mr-2 h-4 w-4" />
               Tentar Novamente
             </Button>
@@ -139,6 +98,29 @@ function MicroFrontendErrorFallback({ serviceName, error }: FallbackProps) {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
+export function MicroFrontendErrorBoundary({ children, fallback }: Props) {
+  if (fallback) {
+    return (
+      <ReactErrorBoundary fallback={fallback}>{children}</ReactErrorBoundary>
+    );
+  }
+  return (
+    <ReactErrorBoundary
+      onError={(error, info) => {
+        console.error("Micro-frontend error:", error, info);
+      }}
+      fallbackRender={({ error, resetErrorBoundary }) => (
+        <MicroFrontendErrorFallback
+          serviceName={getServiceName(window.location.pathname)}
+          error={error}
+          resetErrorBoundary={resetErrorBoundary}
+        />
+      )}
+    >
+      {children}
+    </ReactErrorBoundary>
+  );
+}
