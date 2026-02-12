@@ -51,6 +51,8 @@ const SaasPage = lazy(
 );
 // @ts-nocheck
 const OmnichannelPage = lazy(async () => import("omnichannel/App" as string));
+// @ts-nocheck
+const WellnessPage = lazy(async () => import("wellness/App" as string));
 
 function LoadingFallback() {
   return (
@@ -227,6 +229,28 @@ const router = createBrowserRouter(
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <OmnichannelPage />
+                </Suspense>
+              ),
+            },
+          ],
+        },
+        {
+          path: "/wellness",
+          errorElement: <RouteErrorElement />,
+          children: [
+            {
+              index: true,
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <WellnessPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "*",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <WellnessPage />
                 </Suspense>
               ),
             },
