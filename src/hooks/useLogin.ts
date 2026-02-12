@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useNavigate } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
 import { useSignIn } from "@gaqno-development/frontcore/hooks/auth/useSsoAuth";
 import { authStorage } from "@/utils/auth-storage";
 
@@ -13,7 +13,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export const useLogin = () => {
-  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const signIn = useSignIn();
 
   const form = useForm<LoginFormValues>({
@@ -33,14 +33,24 @@ export const useLogin = () => {
         },
         {
           onSuccess: (data) => {
-            if (data) {
-              authStorage.set(data.user, {
-                access_token: data.tokens.accessToken,
-                expires_at: data.tokens.expiresAt,
-              });
-              navigate("/dashboard");
-            } else {
-              navigate("/dashboard");
+            try {
+              if (data?.user && data?.tokens) {
+                const accessToken =
+                  data.tokens.accessToken ??
+                  (data.tokens as { access_token?: string }).access_token;
+                const expiresAt =
+                  data.tokens.expiresAt ??
+                  (data.tokens as { expires_at?: number }).expires_at;
+                if (accessToken != null) {
+                  authStorage.set(data.user, {
+                    access_token: accessToken,
+                    expires_at: expiresAt,
+                  });
+                  queryClient.setQueryData(["auth", "me"], data);
+                }
+              }
+            } finally {
+              window.location.href = "/dashboard";
             }
           },
           onError: (error: Error) => {
