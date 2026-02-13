@@ -121,7 +121,7 @@ export function ShellLayoutWrapper() {
                 animate={pageTransition.animate}
                 exit={pageTransition.exit}
                 transition={pageTransition.transition}
-                className="min-h-0 flex-1 flex flex-col"
+                className="min-h-0 flex-1 flex flex-col pt-[3.5em]"
               >
                 <Outlet />
               </motion.div>
