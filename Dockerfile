@@ -4,8 +4,9 @@ RUN apk add --no-cache git libc6-compat
 FROM base AS builder
 WORKDIR /app
 
-# Production: pass all MFE_* and VITE_SERVICE_* as build args (e.g. in Coolify).
-# Otherwise the shell loads remoteEntry.js from localhost and /admin, /sso, saas, etc. will not load.
+# Production: set VITE_APP_ORIGIN (e.g. https://portal.gaqno.com.br) so all MFE remotes
+# default to ${VITE_APP_ORIGIN}/{admin,sso,saas,...}. Or pass each MFE_*_URL explicitly.
+ARG VITE_APP_ORIGIN=
 ARG MFE_AI_URL=http://localhost:3002
 ARG MFE_CRM_URL=http://localhost:3003
 ARG MFE_ERP_URL=http://localhost:3004
@@ -26,6 +27,7 @@ ARG VITE_SERVICE_PDV_URL=http://localhost:4006
 ARG VITE_SERVICE_RPG_URL=http://localhost:4007
 ARG VITE_SERVICE_OMNICHANNEL_URL=http://localhost:4008
 
+ENV VITE_APP_ORIGIN=$VITE_APP_ORIGIN
 ENV MFE_AI_URL=$MFE_AI_URL
 ENV MFE_CRM_URL=$MFE_CRM_URL
 ENV MFE_ERP_URL=$MFE_ERP_URL

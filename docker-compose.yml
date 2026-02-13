@@ -6,7 +6,8 @@ services:
       context: .  # Repository root (standalone)
       dockerfile: Dockerfile
       args:
-        # MFE_* = Module Federation remotes (same pattern as AI / omnichannel). Production: set MFE_ADMIN_URL and MFE_SAAS_URL like MFE_AI_URL (e.g. MFE_ADMIN_URL=https://portal.gaqno.com.br/admin, MFE_SAAS_URL=https://portal.gaqno.com.br/saas).
+        # Production: set VITE_APP_ORIGIN=https://portal.gaqno.com.br so remotes default to that origin (e.g. /admin, /sso). Or set each MFE_*_URL.
+        VITE_APP_ORIGIN: ${VITE_APP_ORIGIN:-}
         MFE_AI_URL: ${MFE_AI_URL:-http://localhost:3002}
         MFE_CRM_URL: ${MFE_CRM_URL:-http://localhost:3003}
         MFE_ERP_URL: ${MFE_ERP_URL:-http://localhost:3004}
