@@ -919,6 +919,10 @@
     height: 1px;
   }
 
+  .h-\[120px\] {
+    height: 120px;
+  }
+
   .h-\[350px\] {
     height: 350px;
   }
@@ -1606,6 +1610,16 @@
     border-color: --color-border;
   }
 
+  .border-amber-500\/30 {
+    border-color: #f99c004d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-amber-500\/30 {
+      border-color: color-mix(in oklab, var(--color-amber-500) 30%, transparent);
+    }
+  }
+
   .border-blue-500 {
     border-color: var(--color-blue-500);
   }
@@ -1706,6 +1720,16 @@
 
   .bg-\[--color-bg\] {
     background-color: --color-bg;
+  }
+
+  .bg-amber-500\/5 {
+    background-color: #f99c000d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-amber-500\/5 {
+      background-color: color-mix(in oklab, var(--color-amber-500) 5%, transparent);
+    }
   }
 
   .bg-background {

@@ -10,7 +10,10 @@ import {
   ChartTooltipContent,
 } from "@gaqno-development/frontcore/components/ui";
 import type { ChartConfig } from "@gaqno-development/frontcore/components/ui";
-import { TIME_RANGES, type TimeRange } from "../../types/dashboard-overview.types";
+import {
+  TIME_RANGES,
+  type TimeRange,
+} from "../../types/dashboard-overview.types";
 import type { ChartDataPoint } from "../../types/dashboard-overview.types";
 
 interface ServiceUsageChartProps {
@@ -36,9 +39,7 @@ export function ServiceUsageChart({
       <CardHeader className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <CardTitle className="text-lg font-semibold">Service Usage</CardTitle>
-          <CardDescription>
-            Cloud service consumption over time
-          </CardDescription>
+          <CardDescription>Cloud service consumption over time</CardDescription>
         </div>
         <TimeRangeSelector
           value={timeRange}
@@ -84,9 +85,21 @@ export function ServiceUsageChart({
               }}
               content={<ChartTooltipContent indicator="dot" />}
             />
-            <StyledArea dataKey="apiCalls" color="hsl(217 91% 60%)" gradient="gradientApi" />
-            <StyledArea dataKey="storage" color="hsl(160 84% 39%)" gradient="gradientStorage" />
-            <StyledArea dataKey="bandwidth" color="hsl(280 68% 60%)" gradient="gradientBandwidth" />
+            <StyledArea
+              dataKey="apiCalls"
+              color="hsl(217 91% 60%)"
+              gradient="gradientApi"
+            />
+            <StyledArea
+              dataKey="storage"
+              color="hsl(160 84% 39%)"
+              gradient="gradientStorage"
+            />
+            <StyledArea
+              dataKey="bandwidth"
+              color="hsl(280 68% 60%)"
+              gradient="gradientBandwidth"
+            />
           </AreaChart>
         </ChartContainer>
       </CardContent>
@@ -122,7 +135,13 @@ function TimeRangeSelector({
   );
 }
 
-function AreaGradient({ id, color }: { readonly id: string; readonly color: string }) {
+function AreaGradient({
+  id,
+  color,
+}: {
+  readonly id: string;
+  readonly color: string;
+}) {
   return (
     <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stopColor={color} stopOpacity={0.3} />

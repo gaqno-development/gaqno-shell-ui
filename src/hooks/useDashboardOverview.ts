@@ -127,9 +127,7 @@ export const useDashboardOverview = (): DashboardOverviewState => {
     activityQuery.isLoading;
 
   const hasError =
-    !!overviewQuery.error ||
-    !!timeSeriesQuery.error ||
-    !!activityQuery.error;
+    !!overviewQuery.error || !!timeSeriesQuery.error || !!activityQuery.error;
 
   return {
     timeRange,
