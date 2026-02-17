@@ -15,7 +15,6 @@ const AUTHENTICATED_ROUTES = [
   "/erp",
   "/finance",
   "/pdv",
-  "/sass",
   "/admin",
   "/sso",
   "/rpg",

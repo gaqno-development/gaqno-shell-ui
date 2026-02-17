@@ -226,7 +226,7 @@ export default function ProfilePage() {
                 Tenants → Costs.
               </p>
               <Button variant="outline" size="sm" asChild>
-                <a href="/sass/tenants/costs">Ver custos</a>
+                <a href="/admin/costing">Ver custos</a>
               </Button>
             </CardContent>
           </Card>

@@ -11,7 +11,7 @@ export function getFirstAvailableRoute(permissions: string[]): string | null {
     "/erp/dashboard",
     "/finance/dashboard",
     "/ai/dashboard",
-    "/sass/costing",
+    "/admin/costing",
     "/admin/users",
   ];
 

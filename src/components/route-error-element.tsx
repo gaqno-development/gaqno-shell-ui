@@ -17,7 +17,6 @@ const SERVICE_NAMES: Record<string, string> = {
   "/dashboard/erp": "ERP",
   "/dashboard/books": "AI/Books",
   "/dashboard/admin": "Admin",
-  "/sass": "Plataforma",
   "/admin": "Admin",
   "/pdv": "PDV",
   "/crm": "CRM",

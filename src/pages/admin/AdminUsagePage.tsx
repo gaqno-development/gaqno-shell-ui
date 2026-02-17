@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useAuth } from "@gaqno-development/frontcore/hooks";
+import type { ColumnDef } from "@gaqno-development/frontcore/components/ui";
 import { useTenantUsage } from "@gaqno-development/frontcore/hooks/admin/useTenantUsage";
 import { useUsers } from "@gaqno-development/frontcore/hooks/admin/useUsers";
 import {
@@ -8,23 +9,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@gaqno-development/frontcore/components/ui";
-import {
+  DataTable,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Skeleton,
 } from "@gaqno-development/frontcore/components/ui";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@gaqno-development/frontcore/components/ui";
-import { Skeleton } from "@gaqno-development/frontcore/components/ui";
 import { PieChart } from "lucide-react";
 
 function getMonthOptions(): { value: string; label: string }[] {
@@ -79,17 +71,13 @@ export default function AdminUsagePage() {
     return map;
   }, [users]);
 
-  const { rows, metricColumns } = useMemo(() => {
+  const { rows, columns } = useMemo(() => {
     if (!usage?.metrics?.length)
       return {
-        rows: [],
-        metricColumns: [] as {
-          key: string;
-          serviceName: string;
-          unit: string;
-        }[],
+        rows: [] as Record<string, number | string>[],
+        columns: [] as ColumnDef<Record<string, number | string>, unknown>[],
       };
-    const columns = usage.metrics
+    const metricCols = usage.metrics
       .filter((m) => m.byUser != null)
       .map((m) => ({
         key: `${m.serviceName}-${m.metricKey}`,
@@ -103,7 +91,7 @@ export default function AdminUsagePage() {
       }
     }
     const userIds = Array.from(userIdSet).sort();
-    const rows = userIds.map((userId) => {
+    const dataRows = userIds.map((userId) => {
       const record: Record<string, number | string> = { userId };
       for (const m of usage.metrics) {
         if (m.byUser && m.byUser[userId] != null) {
@@ -112,8 +100,36 @@ export default function AdminUsagePage() {
       }
       return record;
     });
-    return { rows, metricColumns: columns };
-  }, [usage]);
+    const columnDefs: ColumnDef<Record<string, number | string>, unknown>[] = [
+      {
+        id: "userId",
+        header: "Usuário",
+        cell: ({ row }) => (
+          <span className="font-medium">
+            {row.original.userId === user?.id ? (
+              <span>Você ({user?.email ?? row.original.userId})</span>
+            ) : (
+              (userDisplayMap[row.original.userId as string] ??
+              String(row.original.userId))
+            )}
+          </span>
+        ),
+      },
+      ...metricCols.map((col) => ({
+        id: col.key,
+        header: `${col.serviceName === "ai" ? "IA (tokens)" : col.serviceName} (${col.unit})`,
+        cell: ({
+          row,
+        }: {
+          row: { original: Record<string, number | string> };
+        }) =>
+          typeof row.original[col.key] === "number"
+            ? Number(row.original[col.key]).toLocaleString("pt-BR")
+            : "—",
+      })),
+    ];
+    return { rows: dataRows, columns: columnDefs };
+  }, [usage, user?.id, user?.email, userDisplayMap]);
 
   if (!tenantId) {
     return (
@@ -178,48 +194,17 @@ export default function AdminUsagePage() {
         <CardContent>
           {isLoading ? (
             <Skeleton className="h-48 w-full" />
-          ) : rows.length === 0 ? (
-            <p className="text-muted-foreground text-sm py-4">
-              Nenhum uso registrado neste período. O consumo de IA (tokens) e
-              outras ações é atribuído ao usuário ao usar os apps.
-            </p>
           ) : (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Usuário</TableHead>
-                  {metricColumns.map((col) => (
-                    <TableHead key={col.key}>
-                      {col.serviceName === "ai"
-                        ? "IA (tokens)"
-                        : col.serviceName}{" "}
-                      ({col.unit})
-                    </TableHead>
-                  ))}
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {rows.map((row) => (
-                  <TableRow key={row.userId as string}>
-                    <TableCell className="font-medium">
-                      {row.userId === user?.id ? (
-                        <span>Você ({user?.email ?? row.userId})</span>
-                      ) : (
-                        (userDisplayMap[row.userId as string] ??
-                        String(row.userId))
-                      )}
-                    </TableCell>
-                    {metricColumns.map((col) => (
-                      <TableCell key={col.key}>
-                        {typeof row[col.key] === "number"
-                          ? Number(row[col.key]).toLocaleString("pt-BR")
-                          : "—"}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+            <DataTable<Record<string, number | string>, unknown>
+              columns={columns}
+              data={rows}
+              getRowId={(row) => String(row.userId)}
+              enableSorting={false}
+              enableFiltering={false}
+              enableVisibility={false}
+              showPagination={rows.length > 10}
+              emptyMessage="Nenhum uso registrado neste período. O consumo de IA (tokens) e outras ações é atribuído ao usuário ao usar os apps."
+            />
           )}
         </CardContent>
       </Card>

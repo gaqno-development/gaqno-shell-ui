@@ -36,6 +36,7 @@ import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
 import AdminUsagePage from "./pages/admin/AdminUsagePage";
 import CostingPage from "./pages/admin/CostingPage";
 import AIModelsPage from "./pages/admin/AIModelsPage";
+import NexAiRequestsPage from "./pages/admin/NexAiRequestsPage";
 import { lazy, Suspense } from "react";
 
 // @ts-nocheck
@@ -253,31 +254,32 @@ const router = createBrowserRouter(
             },
           ],
         },
-        { path: "/sass/domains", Component: DomainsPage },
-        { path: "/sass/domains/new", Component: DomainFormPage },
-        { path: "/sass/domains/:id/edit", Component: DomainEditPage },
-        { path: "/sass/domains/ssl", Component: SSLStatusPage },
-        { path: "/sass/tenants", Component: TenantsPage },
-        { path: "/sass/tenants/new", Component: TenantFormPage },
-        { path: "/sass/tenants/:id/edit", Component: TenantEditPage },
-        { path: "/sass/tenants/costs", Component: TenantCostsPage },
-        { path: "/sass/tenants/:tenantId/costs", Component: TenantCostsPage },
-        { path: "/sass/branches", Component: BranchesPage },
-        { path: "/sass/branches/new", Component: BranchFormPage },
-        { path: "/sass/branches/:id/edit", Component: BranchEditPage },
-        { path: "/sass/users", Component: UsersPage },
-        { path: "/sass/users/new", Component: UserFormPage },
-        { path: "/sass/users/:id/edit", Component: UserEditPage },
-        { path: "/sass/roles", Component: AdminRolesPage },
-        { path: "/sass/menu", Component: AdminMenuPage },
-        { path: "/sass/settings", Component: AdminSettingsPage },
-        { path: "/sass/usage", Component: AdminUsagePage },
-        { path: "/sass/costing", Component: CostingPage },
-        { path: "/sass/ai-models", Component: AIModelsPage },
         {
           path: "/admin",
           errorElement: <RouteErrorElement />,
           children: [
+            { path: "domains", Component: DomainsPage },
+            { path: "domains/new", Component: DomainFormPage },
+            { path: "domains/:id/edit", Component: DomainEditPage },
+            { path: "domains/ssl", Component: SSLStatusPage },
+            { path: "tenants", Component: TenantsPage },
+            { path: "tenants/new", Component: TenantFormPage },
+            { path: "tenants/:id/edit", Component: TenantEditPage },
+            { path: "tenants/costs", Component: TenantCostsPage },
+            { path: "tenants/:tenantId/costs", Component: TenantCostsPage },
+            { path: "branches", Component: BranchesPage },
+            { path: "branches/new", Component: BranchFormPage },
+            { path: "branches/:id/edit", Component: BranchEditPage },
+            { path: "users", Component: UsersPage },
+            { path: "users/new", Component: UserFormPage },
+            { path: "users/:id/edit", Component: UserEditPage },
+            { path: "roles", Component: AdminRolesPage },
+            { path: "menu", Component: AdminMenuPage },
+            { path: "settings", Component: AdminSettingsPage },
+            { path: "usage", Component: AdminUsagePage },
+            { path: "costing", Component: CostingPage },
+            { path: "ai-models", Component: AIModelsPage },
+            { path: "ai-requests", Component: NexAiRequestsPage },
             {
               index: true,
               element: (

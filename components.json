@@ -12,10 +12,12 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
-    "hooks": "@/hooks",
-    "lib": "@/lib",
     "utils": "@gaqno-development/frontcore/lib/utils",
-    "ui": "@gaqno-development/frontcore/components/ui"
+    "ui": "@gaqno-development/frontcore/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registries": {
+    "@lucide-animated": "https://lucide-animated.com/r/{name}.json"
   }
 }
-
