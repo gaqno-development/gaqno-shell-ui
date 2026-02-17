@@ -691,6 +691,10 @@
     }
   }
 
+  .m-5 {
+    margin: calc(var(--spacing) * 5);
+  }
+
   .-mx-1 {
     margin-inline: calc(var(--spacing) * -1);
   }
@@ -1119,12 +1123,20 @@
     width: 100px;
   }
 
+  .w-\[140px\] {
+    width: 140px;
+  }
+
   .w-\[150px\] {
     width: 150px;
   }
 
   .w-\[200px\] {
     width: 200px;
+  }
+
+  .w-\[220px\] {
+    width: 220px;
   }
 
   .w-\[280px\] {
@@ -1145,6 +1157,10 @@
 
   .max-w-\[--skeleton-width\] {
     max-width: --skeleton-width;
+  }
+
+  .max-w-\[140px\] {
+    max-width: 140px;
   }
 
   .max-w-\[200px\] {
