@@ -17,7 +17,7 @@ interface ServiceUsageChartProps {
   readonly data: readonly ChartDataPoint[];
   readonly config: ChartConfig;
   readonly timeRange: TimeRange;
-  readonly timeRangeLabels: Record<TimeRange, string>;
+  readonly timeRangeLabels: Record<string, string>;
   readonly onTimeRangeChange: (range: TimeRange) => void;
 }
 
@@ -63,7 +63,7 @@ export function ServiceUsageChart({
               className="stroke-border/30"
             />
             <XAxis
-              dataKey="month"
+              dataKey="date"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
@@ -100,7 +100,7 @@ function TimeRangeSelector({
   onChange,
 }: {
   readonly value: TimeRange;
-  readonly labels: Record<TimeRange, string>;
+  readonly labels: Record<string, string>;
   readonly onChange: (range: TimeRange) => void;
 }) {
   return (

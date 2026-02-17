@@ -1,29 +1,20 @@
 import { useState, useMemo } from "react";
-import { Zap, HardDrive, Wifi, Globe } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { ssoClient } from "@gaqno-development/frontcore/utils/api";
+import { Zap, DollarSign, Activity, Globe } from "lucide-react";
 import type { ChartConfig } from "@gaqno-development/frontcore/components/ui";
-import {
-  TIME_RANGES,
-  type TimeRange,
-  type ChartDataPoint,
-  type OverviewCardData,
-  type ActivityItemData,
-  type DashboardOverviewState,
+import type {
+  IDashboardOverviewResponse,
+  IDashboardTimeSeriesResponse,
+  IDashboardActivityResponse,
+} from "@gaqno-development/types";
+import type {
+  TimeRange,
+  OverviewCardData,
+  ActivityItemData,
+  ChartDataPoint,
+  DashboardOverviewState,
 } from "../types/dashboard-overview.types";
-
-const CHART_DATA: readonly ChartDataPoint[] = [
-  { month: "Jan", apiCalls: 4200, storage: 2400, bandwidth: 1800 },
-  { month: "Feb", apiCalls: 4800, storage: 2600, bandwidth: 2200 },
-  { month: "Mar", apiCalls: 5100, storage: 2900, bandwidth: 2600 },
-  { month: "Apr", apiCalls: 4600, storage: 3100, bandwidth: 2400 },
-  { month: "May", apiCalls: 5800, storage: 3400, bandwidth: 3100 },
-  { month: "Jun", apiCalls: 6200, storage: 3600, bandwidth: 3400 },
-  { month: "Jul", apiCalls: 7100, storage: 3800, bandwidth: 3800 },
-  { month: "Aug", apiCalls: 6800, storage: 4100, bandwidth: 4200 },
-  { month: "Sep", apiCalls: 7400, storage: 4300, bandwidth: 4600 },
-  { month: "Oct", apiCalls: 8200, storage: 4600, bandwidth: 5100 },
-  { month: "Nov", apiCalls: 8800, storage: 4900, bandwidth: 5400 },
-  { month: "Dec", apiCalls: 9400, storage: 5200, bandwidth: 5800 },
-];
 
 const CHART_CONFIG: ChartConfig = {
   apiCalls: { label: "API Calls", color: "hsl(217 91% 60%)" },
@@ -38,47 +29,117 @@ const TIME_RANGE_LABELS: Record<TimeRange, string> = {
   "12m": "12 months",
 };
 
-const OVERVIEW_CARDS: readonly OverviewCardData[] = [
-  { title: "API Calls", value: "9.4K", change: "+12.5%", trend: "up", icon: Zap, description: "This month" },
-  { title: "Storage Used", value: "5.2 TB", change: "+6.1%", trend: "up", icon: HardDrive, description: "Total consumed" },
-  { title: "Bandwidth", value: "5.8 TB", change: "+7.4%", trend: "up", icon: Wifi, description: "Data transferred" },
-  { title: "Active Services", value: "12", change: "-1", trend: "down", icon: Globe, description: "Running now" },
-];
+const CARD_ICON_MAP: Record<string, React.ElementType> = {
+  apiCalls: Zap,
+  revenue: DollarSign,
+  transactions: Activity,
+  activeServices: Globe,
+};
 
-const ACTIVITY_ITEMS: readonly ActivityItemData[] = [
-  { id: "1", type: "deploy", service: "API Gateway", message: "Deployment completed successfully", timestamp: "2 min ago", status: "success" },
-  { id: "2", type: "alert", service: "Auth Service", message: "High latency detected (p99 > 500ms)", timestamp: "15 min ago", status: "warning" },
-  { id: "3", type: "scale", service: "Worker Pool", message: "Auto-scaled from 3 to 5 instances", timestamp: "42 min ago", status: "info" },
-  { id: "4", type: "deploy", service: "CDN Edge", message: "Cache invalidation completed", timestamp: "1 hr ago", status: "success" },
-  { id: "5", type: "security", service: "Firewall", message: "Blocked 1,247 suspicious requests", timestamp: "2 hr ago", status: "info" },
-  { id: "6", type: "deploy", service: "Database Cluster", message: "Primary failover test passed", timestamp: "3 hr ago", status: "success" },
-];
+const useOverviewCards = () =>
+  useQuery<IDashboardOverviewResponse>({
+    queryKey: ["dashboard", "overview"],
+    queryFn: async () => {
+      const { data } = await ssoClient.get<IDashboardOverviewResponse>(
+        "/dashboard/overview"
+      );
+      return data;
+    },
+    staleTime: 2 * 60 * 1000,
+    refetchInterval: 5 * 60 * 1000,
+  });
 
-const buildChartDataByRange = (range: TimeRange): readonly ChartDataPoint[] => {
-  const sliceMap: Record<TimeRange, number> = {
-    "7d": 1,
-    "30d": 3,
-    "90d": 6,
-    "12m": 12,
-  };
-  return CHART_DATA.slice(-sliceMap[range]);
+const useUsageTimeSeries = (range: TimeRange) =>
+  useQuery<IDashboardTimeSeriesResponse>({
+    queryKey: ["dashboard", "usage-timeseries", range],
+    queryFn: async () => {
+      const { data } = await ssoClient.get<IDashboardTimeSeriesResponse>(
+        `/dashboard/usage-timeseries?range=${range}`
+      );
+      return data;
+    },
+    staleTime: 2 * 60 * 1000,
+  });
+
+const useActivityFeed = () =>
+  useQuery<IDashboardActivityResponse>({
+    queryKey: ["dashboard", "activity"],
+    queryFn: async () => {
+      const { data } = await ssoClient.get<IDashboardActivityResponse>(
+        "/dashboard/activity?limit=20"
+      );
+      return data;
+    },
+    staleTime: 1 * 60 * 1000,
+    refetchInterval: 3 * 60 * 1000,
+  });
+
+const formatTimestamp = (iso: string): string => {
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60_000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins} min ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs} hr ago`;
+  return `${Math.floor(hrs / 24)}d ago`;
 };
 
 export const useDashboardOverview = (): DashboardOverviewState => {
-  const [timeRange, setTimeRange] = useState<TimeRange>("12m");
+  const [timeRange, setTimeRange] = useState<TimeRange>("30d");
 
-  const chartData = useMemo(
-    () => buildChartDataByRange(timeRange),
-    [timeRange]
-  );
+  const overviewQuery = useOverviewCards();
+  const timeSeriesQuery = useUsageTimeSeries(timeRange);
+  const activityQuery = useActivityFeed();
+
+  const overviewCards: readonly OverviewCardData[] = useMemo(() => {
+    if (!overviewQuery.data?.cards) return [];
+    return overviewQuery.data.cards.map((card) => ({
+      key: card.key,
+      title: card.title,
+      value: card.value,
+      change: card.change,
+      trend: card.trend,
+      icon: CARD_ICON_MAP[card.key] ?? Activity,
+      description: card.description,
+    }));
+  }, [overviewQuery.data]);
+
+  const chartData: readonly ChartDataPoint[] = useMemo(() => {
+    if (!timeSeriesQuery.data?.points) return [];
+    return timeSeriesQuery.data.points;
+  }, [timeSeriesQuery.data]);
+
+  const activityItems: readonly ActivityItemData[] = useMemo(() => {
+    if (!activityQuery.data?.events) return [];
+    return activityQuery.data.events.map((evt) => ({
+      id: evt.id,
+      type: evt.type,
+      service: evt.service,
+      message: evt.message,
+      timestamp: formatTimestamp(evt.createdAt),
+      status: evt.status,
+    }));
+  }, [activityQuery.data]);
+
+  const isLoading =
+    overviewQuery.isLoading ||
+    timeSeriesQuery.isLoading ||
+    activityQuery.isLoading;
+
+  const hasError =
+    !!overviewQuery.error ||
+    !!timeSeriesQuery.error ||
+    !!activityQuery.error;
 
   return {
     timeRange,
     chartData,
     chartConfig: CHART_CONFIG,
-    overviewCards: OVERVIEW_CARDS,
-    activityItems: ACTIVITY_ITEMS,
+    overviewCards,
+    activityItems,
     timeRangeLabels: TIME_RANGE_LABELS,
+    isLoading,
+    hasError,
     handleTimeRangeChange: setTimeRange,
   };
 };

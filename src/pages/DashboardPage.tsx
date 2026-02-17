@@ -5,8 +5,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  LoaderPinwheelIcon,
+  Skeleton,
 } from "@gaqno-development/frontcore/components/ui";
-import { Plus, ArrowUpRight } from "lucide-react";
+import { Plus, ArrowUpRight, AlertCircle } from "lucide-react";
 import { useDashboardOverview } from "../hooks/useDashboardOverview";
 import { OverviewCard } from "../components/dashboard/OverviewCard";
 import { ActivityItem } from "../components/dashboard/ActivityItem";
@@ -20,8 +22,19 @@ export default function DashboardPage() {
     overviewCards,
     activityItems,
     timeRangeLabels,
+    isLoading,
+    hasError,
     handleTimeRangeChange,
   } = useDashboardOverview();
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
+        <LoaderPinwheelIcon size={32} />
+        <p className="text-sm text-muted-foreground">Loading dashboard...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8 p-6">
@@ -38,10 +51,21 @@ export default function DashboardPage() {
         </Button>
       </div>
 
+      {hasError && (
+        <div className="flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-sm text-amber-400">
+          <AlertCircle className="h-4 w-4 shrink-0" />
+          Some data may be unavailable. Showing what we could load.
+        </div>
+      )}
+
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-        {overviewCards.map((card) => (
-          <OverviewCard key={card.title} {...card} />
-        ))}
+        {overviewCards.length > 0
+          ? overviewCards.map((card) => (
+              <OverviewCard key={card.key} {...card} />
+            ))
+          : Array.from({ length: 4 }).map((_, i) => (
+              <Skeleton key={i} className="h-[120px] rounded-lg" />
+            ))}
       </div>
 
       <ServiceUsageChart
@@ -70,11 +94,17 @@ export default function DashboardPage() {
           </Button>
         </CardHeader>
         <CardContent className="px-2 pt-0">
-          <div className="divide-y divide-border/50">
-            {activityItems.map((item) => (
-              <ActivityItem key={item.id} {...item} />
-            ))}
-          </div>
+          {activityItems.length > 0 ? (
+            <div className="divide-y divide-border/50">
+              {activityItems.map((item) => (
+                <ActivityItem key={item.id} {...item} />
+              ))}
+            </div>
+          ) : (
+            <p className="py-8 text-center text-sm text-muted-foreground">
+              No recent activity
+            </p>
+          )}
         </CardContent>
       </Card>
     </div>

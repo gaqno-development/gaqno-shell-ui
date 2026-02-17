@@ -7,24 +7,25 @@ import {
   Shield,
   AlertTriangle,
   CheckCircle2,
+  Settings,
+  User,
 } from "lucide-react";
-import type {
-  ActivityItemData,
-  ActivityType,
-  ActivityStatus,
-} from "../../types/dashboard-overview.types";
+import type { ActivityItemData } from "../../types/dashboard-overview.types";
 
-const ICON_MAP: Record<ActivityType, React.ElementType> = {
+const ICON_MAP: Record<string, React.ElementType> = {
   deploy: CheckCircle2,
   alert: AlertTriangle,
   scale: Server,
   security: Shield,
+  config: Settings,
+  user: User,
 };
 
-const STATUS_COLORS: Record<ActivityStatus, string> = {
+const STATUS_COLORS: Record<string, string> = {
   success: "text-emerald-400",
   warning: "text-amber-400",
   info: "text-blue-400",
+  error: "text-rose-400",
 };
 
 export function ActivityItem({

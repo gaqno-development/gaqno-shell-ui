@@ -1,46 +1,52 @@
 import type React from "react";
 import type { ChartConfig } from "@gaqno-development/frontcore/components/ui";
 
+export type {
+  DashboardTimeRange as TimeRange,
+  IDashboardOverviewCard,
+  IDashboardOverviewResponse,
+  IDashboardTimeSeriesPoint,
+  IDashboardTimeSeriesResponse,
+  IDashboardActivityEvent,
+  IDashboardActivityResponse,
+} from "@gaqno-development/types";
+
 export const TIME_RANGES = ["7d", "30d", "90d", "12m"] as const;
-export type TimeRange = (typeof TIME_RANGES)[number];
-
-export type TrendDirection = "up" | "down";
-
-export type ActivityType = "deploy" | "alert" | "scale" | "security";
-
-export type ActivityStatus = "success" | "warning" | "info";
-
-export interface ChartDataPoint {
-  month: string;
-  apiCalls: number;
-  storage: number;
-  bandwidth: number;
-}
 
 export interface OverviewCardData {
+  key: string;
   title: string;
   value: string;
   change: string;
-  trend: TrendDirection;
+  trend: "up" | "down" | "neutral";
   icon: React.ElementType;
   description: string;
 }
 
 export interface ActivityItemData {
   id: string;
-  type: ActivityType;
+  type: string;
   service: string;
   message: string;
   timestamp: string;
-  status: ActivityStatus;
+  status: string;
+}
+
+export interface ChartDataPoint {
+  date: string;
+  apiCalls: number;
+  storage: number;
+  bandwidth: number;
 }
 
 export interface DashboardOverviewState {
-  timeRange: TimeRange;
+  timeRange: "7d" | "30d" | "90d" | "12m";
   chartData: readonly ChartDataPoint[];
   chartConfig: ChartConfig;
   overviewCards: readonly OverviewCardData[];
   activityItems: readonly ActivityItemData[];
-  timeRangeLabels: Record<TimeRange, string>;
-  handleTimeRangeChange: (range: TimeRange) => void;
+  timeRangeLabels: Record<string, string>;
+  isLoading: boolean;
+  hasError: boolean;
+  handleTimeRangeChange: (range: "7d" | "30d" | "90d" | "12m") => void;
 }
