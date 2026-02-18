@@ -93,7 +93,7 @@ export function ShellLayoutWrapper() {
 
   useEffect(() => {
     if (isMobile) {
-      setSidebarOpen(true);
+      setSidebarOpen(false);
     }
   }, [isMobile, setSidebarOpen]);
 

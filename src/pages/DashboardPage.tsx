@@ -37,11 +37,11 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="space-8 p-6">
+    <div className="space-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="space-y-1">
           <h1 className="text-3xl font-bold tracking-tight">Welcome back</h1>
-          <p className="text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             Your cloud services at a glance
           </p>
         </div>

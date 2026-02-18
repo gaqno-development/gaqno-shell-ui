@@ -27,7 +27,7 @@ export function OverviewCard({
           <Icon className="h-4 w-4 text-primary" />
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-2">
         <div className="flex items-baseline gap-2">
           <span className="text-2xl font-bold tracking-tight">{value}</span>
           <span
@@ -43,7 +43,11 @@ export function OverviewCard({
             {change}
           </span>
         </div>
-        <p className="mt-1 text-xs text-muted-foreground">{description}</p>
+        {description ? (
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {description}
+          </p>
+        ) : null}
       </CardContent>
     </Card>
   );
