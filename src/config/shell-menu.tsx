@@ -45,12 +45,27 @@ export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
   },
   {
     label: "ERP",
-    href: "/erp/catalog",
+    href: "/erp/dashboard",
     icon: BoxesIcon,
     children: [
       {
+        label: "Dashboard",
+        href: "/erp/dashboard",
+        icon: LayoutPanelTopIcon,
+      },
+      {
         label: "Catalog",
         href: "/erp/catalog",
+        icon: BoxesIcon,
+      },
+      {
+        label: "Orders",
+        href: "/erp/orders",
+        icon: ShoppingCartIcon,
+      },
+      {
+        label: "Inventory",
+        href: "/erp/inventory",
         icon: BoxesIcon,
       },
       {
