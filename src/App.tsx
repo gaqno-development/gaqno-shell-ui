@@ -37,22 +37,23 @@ import AdminUsagePage from "./pages/admin/AdminUsagePage";
 import CostingPage from "./pages/admin/CostingPage";
 import AIModelsPage from "./pages/admin/AIModelsPage";
 import NexAiRequestsPage from "./pages/admin/NexAiRequestsPage";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
+import { lazyWithCss } from "@/utils/lazy-with-css";
 
 // @ts-nocheck
-const AIPage = lazy(async () => import("ai/App" as string));
-const CRMPage = lazy(async () => import("crm/App" as string));
-const ERPPage = lazy(async () => import("erp/App" as string));
-const FinancePage = lazy(async () => import("finance/App" as string));
-const PDVPage = lazy(async () => import("pdv/App" as string));
-const RPGPage = lazy(async () => import("rpg/App" as string));
-const SSOPage = lazy(async () => import("sso/App" as string));
+const AIPage = lazyWithCss(async () => import("ai/App" as string));
+const CRMPage = lazyWithCss(async () => import("crm/App" as string));
+const ERPPage = lazyWithCss(async () => import("erp/App" as string));
+const FinancePage = lazyWithCss(async () => import("finance/App" as string));
+const PDVPage = lazyWithCss(async () => import("pdv/App" as string));
+const RPGPage = lazyWithCss(async () => import("rpg/App" as string));
+const SSOPage = lazyWithCss(async () => import("sso/App" as string));
 // @ts-nocheck
-const OmnichannelPage = lazy(async () => import("omnichannel/App" as string));
+const OmnichannelPage = lazyWithCss(async () => import("omnichannel/App" as string));
 // @ts-nocheck
-const AdminPage = lazy(async () => import("admin/App" as string));
+const AdminPage = lazyWithCss(async () => import("admin/App" as string));
 // @ts-nocheck
-const SaasPage = lazy(async () => import("saas/App" as string));
+const SaasPage = lazyWithCss(async () => import("saas/App" as string));
 
 function LoadingFallback() {
   return (
