@@ -191,7 +191,7 @@ export function ShellSidebar({ menuItems = [] }: ShellSidebarProps) {
   const { config: whiteLabel } = useWhiteLabel();
 
   return (
-    <Sidebar>
+    <Sidebar collapsible="offcanvas">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="flex min-h-12 items-center gap-2 p-4">
