@@ -67,12 +67,12 @@ function MenuItemContent({ item, pathname, depth }: MenuItemContentProps) {
           <CollapsibleTrigger asChild>
             <SidebarMenuButton isActive={active} className="group/collapsible flex w-full">
               <div
-                className="flex shrink-0 items-center justify-center rounded-md p-1.5"
+                className="flex shrink-0 items-center justify-center rounded-md p-1.5 text-sidebar-foreground"
                 style={{
                   backgroundColor: item.iconBackgroundColor ?? "transparent",
                 }}
               >
-                <Icon className="size-5" />
+                <Icon className="size-5 shrink-0" />
               </div>
               <span>{item.label}</span>
               {item.notificationCount != null && item.notificationCount > 0 && (
@@ -108,12 +108,12 @@ function MenuItemContent({ item, pathname, depth }: MenuItemContentProps) {
           className="flex items-center gap-2"
         >
           <div
-            className="flex shrink-0 items-center justify-center rounded-md p-1.5"
+            className="flex shrink-0 items-center justify-center rounded-md p-1.5 text-sidebar-foreground"
             style={{
               backgroundColor: item.iconBackgroundColor ?? "transparent",
             }}
           >
-            <Icon className="size-5" />
+            <Icon className="size-5 shrink-0" />
           </div>
           <span>{item.label}</span>
           {item.notificationCount != null && item.notificationCount > 0 && (
@@ -146,7 +146,7 @@ function ShellMenuSubItem({
               isActive={active}
               className="flex w-full group/collapsible"
             >
-              <Icon className="size-4" />
+              <Icon className="size-4 shrink-0 text-sidebar-foreground" />
               <span>{item.label}</span>
               <ChevronDownIcon className="ml-auto size-3 shrink-0 transition-transform group-data-[state=open]/collapsible:rotate-180" />
             </SidebarMenuSubButton>
@@ -172,7 +172,7 @@ function ShellMenuSubItem({
     <SidebarMenuSubItem>
       <SidebarMenuSubButton asChild isActive={active}>
         <Link to={item.href ?? "#"} className="flex items-center gap-2">
-          <Icon className="size-4" />
+          <Icon className="size-4 shrink-0 text-sidebar-foreground" />
           <span>{item.label}</span>
           {item.notificationCount != null && item.notificationCount > 0 && (
             <span className="ml-auto rounded-full bg-primary/10 px-1.5 py-0.5 text-xs">
