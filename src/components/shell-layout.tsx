@@ -75,8 +75,7 @@ export function ShellLayout({
   const location = useLocation();
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const displayName = profile?.name ?? user?.email ?? null;
-  const avatarFallback =
-    (displayName?.slice(0, 2).toUpperCase()) ?? "?";
+  const avatarFallback = displayName?.slice(0, 2).toUpperCase() ?? "?";
 
   return (
     <SidebarProvider
@@ -136,11 +135,7 @@ export function ShellLayout({
                   user={user}
                   onLogout={handleSignOut}
                   trigger={
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="size-9.5"
-                    >
+                    <Button variant="ghost" size="icon" className="size-9.5">
                       <Avatar className="size-9.5 rounded-md">
                         <AvatarImage
                           src={profile?.avatar_url}
@@ -155,7 +150,7 @@ export function ShellLayout({
             </div>
           </header>
           <main className="min-h-0 flex-1 overflow-auto bg-background">
-            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+            <div className="mx-auto max-w-7xl sm:px-6">
               <MicroFrontendErrorBoundary>
                 <AnimatePresence mode="wait">
                   <motion.div
