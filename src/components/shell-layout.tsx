@@ -145,7 +145,6 @@ export function ShellLayout({
                 }
               />
               <ProfileDropdown
-                menuItems={menuItems}
                 profile={profile}
                 user={user}
                 onLogout={handleSignOut}
