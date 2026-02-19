@@ -25,17 +25,39 @@ import {
   DropdownMenuTrigger
 } from '@gaqno-development/frontcore/components/ui'
 
+export type ProfileDropdownProfile = {
+  name?: string
+  avatar_url?: string
+  role?: string
+}
+
+export type ProfileDropdownUser = {
+  email?: string
+}
+
 type Props = {
   trigger: ReactNode
   defaultOpen?: boolean
   align?: 'start' | 'center' | 'end'
+  profile?: ProfileDropdownProfile | null
+  user?: ProfileDropdownUser | null
+  onLogout?: () => void | Promise<void>
 }
 
 const ProfileDropdown = ({
   trigger,
   defaultOpen,
-  align = 'end'
+  align = 'end',
+  profile,
+  user,
+  onLogout
 }: Props) => {
+  const displayName = profile?.name ?? user?.email ?? null
+  const displayEmail = user?.email ?? null
+  const avatarFallback = displayName
+    ? displayName.slice(0, 2).toUpperCase()
+    : '?'
+
   return (
     <DropdownMenu defaultOpen={defaultOpen}>
       <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
@@ -44,20 +66,22 @@ const ProfileDropdown = ({
           <div className='relative'>
             <Avatar className='size-10'>
               <AvatarImage
-                src='https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-1.png'
-                alt='John Doe'
+                src={profile?.avatar_url}
+                alt={displayName ?? undefined}
               />
-              <AvatarFallback>JD</AvatarFallback>
+              <AvatarFallback>{avatarFallback}</AvatarFallback>
             </Avatar>
             <span className='ring-card absolute right-0 bottom-0 block size-2 rounded-full bg-green-600 ring-2' />
           </div>
           <div className='flex flex-1 flex-col items-start'>
             <span className='text-foreground text-lg font-semibold'>
-              John Doe
+              {displayName ?? 'Account'}
             </span>
-            <span className='text-muted-foreground text-base'>
-              john.doe@example.com
-            </span>
+            {displayEmail && (
+              <span className='text-muted-foreground text-base'>
+                {displayEmail}
+              </span>
+            )}
           </div>
         </DropdownMenuLabel>
 
@@ -98,8 +122,8 @@ const ProfileDropdown = ({
         <DropdownMenuSeparator />
 
         <DropdownMenuItem
-          variant='destructive'
-          className='px-4 py-2.5 text-base'
+          className='px-4 py-2.5 text-base text-destructive focus:text-destructive'
+          onClick={onLogout}
         >
           <LogOutIcon className='size-5' />
           <span>Logout</span>

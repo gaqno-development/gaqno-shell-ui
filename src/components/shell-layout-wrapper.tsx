@@ -5,7 +5,7 @@ import { AppProvider } from "@gaqno-development/frontcore/components/providers";
 import { WhiteLabelProvider } from "@gaqno-development/frontcore/components/providers";
 import { TenantProvider } from "@gaqno-development/frontcore/contexts";
 import { MicroFrontendErrorBoundary } from "@/components/microfrontend-error-boundary";
-import { ApplicationShellLayout } from "@/components/application-shell-layout";
+import { ShellLayout } from "@/components/shell-layout";
 import { useShellLayout } from "@/hooks/useShellLayout";
 
 export function ShellLayoutWrapper() {
@@ -38,7 +38,7 @@ export function ShellLayoutWrapper() {
     <AppProvider>
       <WhiteLabelProvider>
         <TenantProvider>
-          <ApplicationShellLayout
+          <ShellLayout
             menuItems={menuItems}
             transitionKey={transitionKey}
             pageTransition={pageTransition}

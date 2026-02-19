@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "vite build",
+    "build:docker": "docker build -t gaqno-shell-ui:local --build-arg NPM_TOKEN=$NPM_TOKEN .",
     "prebuild": "test -f ../package.json && npm run build:types --prefix .. || true",
     "preview": "vite preview --port 3000 --host 0.0.0.0",
     "start": "vite preview --port 3000 --host 0.0.0.0",

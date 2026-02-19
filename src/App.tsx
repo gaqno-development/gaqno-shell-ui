@@ -51,7 +51,9 @@ const PDVPage = lazyWithCss(async () => import("pdv/App" as string));
 const RPGPage = lazyWithCss(async () => import("rpg/App" as string));
 const SSOPage = lazyWithCss(async () => import("sso/App" as string));
 // @ts-nocheck
-const OmnichannelPage = lazyWithCss(async () => import("omnichannel/App" as string));
+const OmnichannelPage = lazyWithCss(
+  async () => import("omnichannel/App" as string),
+);
 // @ts-nocheck
 const AdminPage = lazyWithCss(async () => import("admin/App" as string));
 // @ts-nocheck
@@ -332,9 +334,10 @@ const router = createBrowserRouter(
   ],
   {
     future: {
+      // @ts-ignore
       v7_startTransition: true,
     },
-  }
+  },
 );
 
 export default function App() {

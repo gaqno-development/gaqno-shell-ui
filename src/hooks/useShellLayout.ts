@@ -1,69 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@gaqno-development/frontcore/hooks";
 import { useFilteredMenu } from "@gaqno-development/frontcore/hooks";
 import { useIsMobile } from "@gaqno-development/frontcore/hooks";
 import { useUIStore } from "@gaqno-development/frontcore/store/uiStore";
+import { SHELL_MENU_ITEMS } from "@/config/shell-menu";
 
-const AUTHENTICATED_ROUTES = [
-  "/dashboard",
+const MFE_ROUTES = [
   "/ai",
   "/crm",
   "/erp",
   "/finance",
   "/pdv",
+  "/rpg",
   "/admin",
   "/sso",
-  "/rpg",
   "/omnichannel",
 ];
-
+const LAYOUT_ROUTES = ["/dashboard", ...MFE_ROUTES];
 const PUBLIC_ROUTES = ["/login", "/register", "/"];
-
-const STANDALONE_DEMO_ROUTES = ["/application-shell-01", "/dashboard-shell-01"];
-
-const MICRO_FRONTEND_ROUTES = [
-  "/ai",
-  "/crm",
-  "/erp",
-  "/finance",
-  "/pdv",
-  "/rpg",
-  "/admin",
-  "/sso",
-  "/omnichannel",
+const STANDALONE_DEMO_ROUTES = [
+  "/application-shell-01",
+  "/dashboard-shell-01",
 ];
 
-function shouldShowDashboardLayout(pathname: string): boolean {
-  if (
-    PUBLIC_ROUTES.some(
-      (route) => pathname === route || pathname.startsWith(route + "/")
-    )
-  ) {
+function pathUnderRoute(pathname: string, route: string): boolean {
+  return pathname === route || pathname.startsWith(route + "/");
+}
+
+function shouldShowShellLayout(pathname: string): boolean {
+  if (PUBLIC_ROUTES.some((r) => pathUnderRoute(pathname, r))) return false;
+  if (STANDALONE_DEMO_ROUTES.some((r) => pathUnderRoute(pathname, r)))
     return false;
-  }
-  if (
-    STANDALONE_DEMO_ROUTES.some(
-      (route) => pathname === route || pathname.startsWith(route + "/")
-    )
-  ) {
-    return false;
-  }
-  return AUTHENTICATED_ROUTES.some((route) => pathname.startsWith(route));
+  return LAYOUT_ROUTES.some((r) => pathname.startsWith(r));
 }
 
 function isMicroFrontendRoute(pathname: string): boolean {
-  return MICRO_FRONTEND_ROUTES.some((route) => pathname.startsWith(route));
+  return MFE_ROUTES.some((r) => pathname.startsWith(r));
 }
 
 function isAuthenticatedRoute(pathname: string): boolean {
-  return AUTHENTICATED_ROUTES.some((route) => pathname.startsWith(route));
+  return LAYOUT_ROUTES.some((r) => pathname.startsWith(r));
 }
 
 function getTransitionKey(pathname: string, locationKey: string): string {
   if (isMicroFrontendRoute(pathname)) {
-    const firstSegment = pathname.split("/").filter(Boolean)[0];
-    return (firstSegment ?? pathname) || locationKey;
+    const segment = pathname.split("/").filter(Boolean)[0];
+    return segment ?? locationKey;
   }
   return locationKey;
 }
@@ -77,13 +60,17 @@ export function useShellLayout() {
   const setSidebarOpen = useUIStore((state) => state.setSidebarOpen);
   const [shouldShowLayout, setShouldShowLayout] = useState(false);
   const [isMicroFrontend, setIsMicroFrontend] = useState(false);
-  const menuItems = useFilteredMenu();
+  const backendMenu = useFilteredMenu();
+  const menuItems = useMemo(
+    () => (backendMenu.length > 0 ? backendMenu : SHELL_MENU_ITEMS),
+    [backendMenu]
+  );
   const transitionKey = getTransitionKey(pathname, location.key);
 
   useEffect(() => {
     const isMFE = isMicroFrontendRoute(pathname);
     const showLayout =
-      shouldShowDashboardLayout(pathname) && !loading && !!user;
+      shouldShowShellLayout(pathname) && !loading && !!user;
     setShouldShowLayout(showLayout);
     setIsMicroFrontend(isMFE);
   }, [pathname, loading, user]);
