@@ -45,7 +45,7 @@ export default function DashboardPage() {
             Your cloud services at a glance
           </p>
         </div>
-        <Button className="gap-2 self-start">
+        <Button variant="default" className="gap-2 self-start">
           <Plus className="h-4 w-4" />
           Create New
         </Button>

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import {
   UserIcon,
   SettingsIcon,
@@ -86,34 +87,46 @@ const ProfileDropdown = ({
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>
-          <DropdownMenuItem className='px-4 py-2.5 text-base'>
-            <UserIcon className='text-foreground size-5' />
-            <span>My account</span>
+          <DropdownMenuItem className='px-4 py-2.5 text-base' asChild>
+            <Link to='/dashboard/profile'>
+              <UserIcon className='text-foreground size-5' />
+              <span>My account</span>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className='px-4 py-2.5 text-base'>
-            <SettingsIcon className='text-foreground size-5' />
-            <span>Settings</span>
+          <DropdownMenuItem className='px-4 py-2.5 text-base' asChild>
+            <Link to='/dashboard/settings'>
+              <SettingsIcon className='text-foreground size-5' />
+              <span>Settings</span>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className='px-4 py-2.5 text-base'>
-            <CreditCardIcon className='text-foreground size-5' />
-            <span>Billing</span>
+          <DropdownMenuItem className='px-4 py-2.5 text-base' asChild>
+            <Link to='/dashboard'>
+              <CreditCardIcon className='text-foreground size-5' />
+              <span>Billing</span>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>
-          <DropdownMenuItem className='px-4 py-2.5 text-base'>
-            <UsersIcon className='text-foreground size-5' />
-            <span>Manage team</span>
+          <DropdownMenuItem className='px-4 py-2.5 text-base' asChild>
+            <Link to='/admin/users'>
+              <UsersIcon className='text-foreground size-5' />
+              <span>Manage team</span>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className='px-4 py-2.5 text-base'>
-            <SquarePenIcon className='text-foreground size-5' />
-            <span>Customization</span>
+          <DropdownMenuItem className='px-4 py-2.5 text-base' asChild>
+            <Link to='/admin/settings'>
+              <SquarePenIcon className='text-foreground size-5' />
+              <span>Customization</span>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className='px-4 py-2.5 text-base'>
-            <CirclePlusIcon className='text-foreground size-5' />
-            <span>Add team account</span>
+          <DropdownMenuItem className='px-4 py-2.5 text-base' asChild>
+            <Link to='/admin/tenants/new'>
+              <CirclePlusIcon className='text-foreground size-5' />
+              <span>Add team account</span>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 
@@ -121,7 +134,10 @@ const ProfileDropdown = ({
 
         <DropdownMenuItem
           className='px-4 py-2.5 text-base text-destructive focus:text-destructive'
-          onClick={onLogout}
+          onSelect={(e) => {
+            e.preventDefault()
+            onLogout?.()
+          }}
         >
           <LogOutIcon className='size-5' />
           <span>Logout</span>

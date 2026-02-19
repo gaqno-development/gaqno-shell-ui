@@ -60,8 +60,11 @@ function useShellHeader() {
   const { profile, user, signOut } = useAuth();
 
   const handleSignOut = async () => {
-    await signOut();
-    navigate("/login");
+    try {
+      await signOut();
+    } finally {
+      navigate("/login", { replace: true });
+    }
   };
 
   return { profile, user, handleSignOut };
@@ -164,7 +167,7 @@ export function ShellLayout({
           </div>
         </header>
         <main className="min-h-0 flex-1 overflow-auto bg-background">
-          <div className="mx-auto max-w-7xl md:mx-0">
+          <div className="w-full min-w-0">
             <MicroFrontendErrorBoundary>
               <AnimatePresence mode="wait">
                 <motion.div

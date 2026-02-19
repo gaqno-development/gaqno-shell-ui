@@ -84,7 +84,7 @@ export function RouteErrorElement() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button onClick={() => navigate("/dashboard")} className="w-full">
+            <Button variant="default" onClick={() => navigate("/dashboard")} className="w-full">
               <Home className="mr-2 h-4 w-4" />
               Voltar ao Dashboard
             </Button>

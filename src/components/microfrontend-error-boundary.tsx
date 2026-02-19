@@ -90,7 +90,7 @@ function MicroFrontendErrorFallback({
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button onClick={handleGoToDashboard} className="w-full">
+            <Button variant="default" onClick={handleGoToDashboard} className="w-full">
               <Home className="mr-2 h-4 w-4" />
               Voltar ao Dashboard
             </Button>
