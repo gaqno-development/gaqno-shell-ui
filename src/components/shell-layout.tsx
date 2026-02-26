@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { ShellSidebar } from "@/components/shell-sidebar";
+import { GlobalOmnichannelSheet } from "@/components/global-omnichannel-sheet";
 import { useAuth } from "@gaqno-development/frontcore/hooks";
 import { useUIStore } from "@gaqno-development/frontcore/store/uiStore";
 import {
@@ -206,6 +207,7 @@ export function ShellLayout({
           </div>
         </footer>
       </SidebarInset>
+      <GlobalOmnichannelSheet />
     </SidebarProvider>
   );
 }
