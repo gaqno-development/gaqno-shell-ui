@@ -61,7 +61,10 @@ function getShellMobileNavItems(menuItems: ShellMenuItem[] | undefined) {
   });
 }
 
-function getShellActiveTab(pathname: string, items: { id: string; href?: string }[]): string {
+function getShellActiveTab(
+  pathname: string,
+  items: { id: string; href?: string }[],
+): string {
   const first = pathname.split("/").filter(Boolean)[0];
   if (first && items.some((i) => i.id === first)) return first;
   return items[0]?.id ?? "dashboard";
@@ -111,17 +114,22 @@ export function ShellLayout({
 
   const shellNavItems = React.useMemo(
     () => getShellMobileNavItems(menuItems),
-    [menuItems]
+    [menuItems],
   );
   const shellNavItemsWithHref = React.useMemo(
     () =>
       menuItems?.slice(0, SHELL_MOBILE_NAV_MAX).map((item) => ({
-        id: item.href?.split("/").filter(Boolean)[0] ?? item.label.toLowerCase().replace(/\s+/g, "-"),
+        id:
+          item.href?.split("/").filter(Boolean)[0] ??
+          item.label.toLowerCase().replace(/\s+/g, "-"),
         href: item.href,
       })) ?? [],
-    [menuItems]
+    [menuItems],
   );
-  const shellActiveTab = getShellActiveTab(location.pathname, shellNavItemsWithHref);
+  const shellActiveTab = getShellActiveTab(
+    location.pathname,
+    shellNavItemsWithHref,
+  );
   const handleShellNavChange = (tabId: string) => {
     const item = shellNavItemsWithHref.find((i) => i.id === tabId);
     if (item?.href) navigate(item.href);
@@ -212,7 +220,7 @@ export function ShellLayout({
           </div>
         </header>
         <main className="min-h-0 flex-1 flex flex-col overflow-auto bg-background">
-          <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col p-4 pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-4">
+          <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-4">
             <MicroFrontendErrorBoundary>
               <AnimatePresence mode="wait">
                 <motion.div

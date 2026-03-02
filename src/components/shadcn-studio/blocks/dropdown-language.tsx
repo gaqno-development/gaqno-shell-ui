@@ -10,7 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger
 } from '@gaqno-development/frontcore/components/ui'
-import { i18n } from '@gaqno-development/frontcore/i18n'
+import { i18n, broadcastLanguageChange } from '@gaqno-development/frontcore/i18n'
 
 const LANG_STORAGE_KEY = 'gaqno-lng'
 
@@ -53,6 +53,7 @@ const LanguageDropdown = ({ defaultOpen, align, trigger }: Props) => {
     const lng = VALUE_TO_LNG[value]
     if (lng) {
       i18n.changeLanguage(lng)
+      broadcastLanguageChange(lng)
       localStorage.setItem(LANG_STORAGE_KEY, lng)
     }
     setLanguage(value)
