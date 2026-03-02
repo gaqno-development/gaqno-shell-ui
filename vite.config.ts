@@ -11,7 +11,7 @@ export default defineConfig(async () => {
     typeof u === "string" && u.length > 0 ? u : fallback;
   const MFE_AI_URL = ensureUrl(process.env.MFE_AI_URL, "http://localhost:3002");
   const MFE_CRM_URL = ensureUrl(process.env.MFE_CRM_URL, "http://localhost:3003");
-  const MFE_ERP_URL = ensureUrl(process.env.MFE_ERP_URL, "http://localhost:3004");
+  const MFE_ERP_URL = ensureUrl(process.env.MFE_ERP_URL, "http://localhost:3004/erp");
   const MFE_FINANCE_URL = ensureUrl(
     process.env.MFE_FINANCE_URL,
     "http://localhost:3005"
@@ -19,14 +19,14 @@ export default defineConfig(async () => {
   const MFE_PDV_URL = ensureUrl(process.env.MFE_PDV_URL, "http://localhost:3006");
   const MFE_RPG_URL = ensureUrl(process.env.MFE_RPG_URL, "http://localhost:3007");
   const MFE_SSO_URL = ensureUrl(process.env.MFE_SSO_URL, "http://localhost:3001");
-  const MFE_SAAS_URL = ensureUrl(process.env.MFE_SAAS_URL, "http://localhost:3008");
+  const MFE_SAAS_URL = ensureUrl(process.env.MFE_SAAS_URL, "http://localhost:3008/saas");
   const MFE_OMNICHANNEL_URL = ensureUrl(
     process.env.MFE_OMNICHANNEL_URL,
-    "http://localhost:3011"
+    "http://localhost:3011/omnichannel"
   );
   const MFE_WELLNESS_URL = ensureUrl(
     process.env.MFE_WELLNESS_URL,
-    "http://localhost:3012"
+    "http://localhost:3012/wellness"
   );
   const MFE_ADMIN_URL = ensureUrl(process.env.MFE_ADMIN_URL, "http://localhost:3010");
 

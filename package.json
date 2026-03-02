@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "nodemon",
+    "dev:vite": "vite --port 3000 --strictPort --host 0.0.0.0",
     "build": "vite build",
     "build:docker": "docker build -t gaqno-shell-ui:local --build-arg NPM_TOKEN=$NPM_TOKEN .",
     "prebuild": "test -f ../package.json && npm run build:types --prefix .. || true",
