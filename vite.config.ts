@@ -3,6 +3,7 @@ import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
+import { FEDERATION_SHARED_HOST } from "@gaqno-development/frontcore/config/federation-shared";
 
 export default defineConfig(async () => {
   const tailwindcss = (await import("@tailwindcss/vite")).default;
@@ -93,48 +94,7 @@ export default defineConfig(async () => {
           wellness: MFE_WELLNESS_URL + "/assets/remoteEntry.js",
           admin: MFE_ADMIN_URL + "/assets/remoteEntry.js",
         },
-        shared: {
-          react: {
-            singleton: true,
-            requiredVersion: "^18.0.0",
-            eager: true,
-          },
-          "react-dom": {
-            singleton: true,
-            requiredVersion: "^18.0.0",
-            eager: true,
-          },
-          "react-router-dom": {
-            singleton: true,
-            requiredVersion: "^6.0.0",
-          },
-          "@tanstack/react-query": {
-            singleton: true,
-            requiredVersion: "^5.0.0",
-          },
-          zustand: {
-            singleton: true,
-            requiredVersion: "^4.0.0",
-          },
-          "use-sync-external-store": {
-            singleton: true,
-            requiredVersion: "*",
-          },
-          "socket.io-client": {
-            singleton: true,
-            requiredVersion: "^4.0.0",
-          },
-          i18next: {
-            singleton: true,
-            requiredVersion: "^24.0.0",
-            eager: true,
-          },
-          "react-i18next": {
-            singleton: true,
-            requiredVersion: "^15.0.0",
-            eager: true,
-          },
-        },
+        shared: FEDERATION_SHARED_HOST,
       }),
     ],
     css: {
