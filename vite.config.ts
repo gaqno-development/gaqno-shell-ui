@@ -124,6 +124,10 @@ export default defineConfig(async () => {
             singleton: true,
             requiredVersion: "^4.0.0",
           },
+          "@gaqno-development/frontcore": {
+            singleton: true,
+            requiredVersion: "^1.5.0",
+          },
         },
       }),
     ],
