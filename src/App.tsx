@@ -43,6 +43,9 @@ const RPGPage = lazy(() => import("rpg/App" as string));
 const SSOPage = lazy(() => import("sso/App" as string));
 // @ts-nocheck
 const OmnichannelPage = lazy(() => import("omnichannel/App" as string));
+const OmnichannelRouteLayout = lazy(
+  () => import("omnichannel/OmnichannelRouteLayout" as string),
+);
 const OmnichannelInboxPage = lazy(
   () => import("omnichannel/InboxView" as string),
 );
@@ -336,6 +339,11 @@ const router = createBrowserRouter(
         {
           path: "/omnichannel",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<LoadingFallback />}>
+              <OmnichannelRouteLayout />
+            </Suspense>
+          ),
           children: [
             {
               index: true,

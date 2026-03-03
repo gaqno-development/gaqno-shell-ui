@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { REMOTE_PATHS, ensureFederationRemotesPatched } from "@/lib/patchFederationRemotes";
 
 const LOAD_TIMEOUT_MS = 18000;
 const RETRY_DELAY_MS = 2500;
@@ -69,10 +70,23 @@ export function useMicroFrontendLoader({
 
     const runPreflightIfPossible = async (): Promise<boolean> => {
       if (typeof window === "undefined") return true;
+      ensureFederationRemotesPatched();
       const federation = (window as unknown as { __FEDERATION__?: Record<string, unknown> })
         .__FEDERATION__;
       const entry = federation?.[remoteName] as Record<string, unknown> | undefined;
-      const entryUrl = typeof entry?.entry === "string" ? entry.entry : null;
+      let entryUrl = typeof entry?.entry === "string" ? entry.entry : null;
+      const origin = window.location.origin;
+      const isProduction = !origin.startsWith("http://localhost") && !origin.startsWith("http://127.0.0.1");
+      if (entryUrl && isProduction && entryUrl.includes("localhost")) {
+        const path = REMOTE_PATHS[remoteName];
+        const fallback = path ? `${origin}${path}/assets/remoteEntry.js` : null;
+        if (fallback) {
+          entryUrl = fallback;
+          if (entry && federation) {
+            (federation[remoteName] as { entry: string }).entry = fallback;
+          }
+        }
+      }
       if (!entryUrl || !entryUrl.startsWith("http")) return true;
       try {
         await fetch(entryUrl, {
