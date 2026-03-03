@@ -29,6 +29,14 @@ const SERVICE_NAMES: Record<string, string> = {
   "/saas": "SAAS",
 };
 
+const PUBLIC_PATHS = ["/", "/login", "/register", "/recovery-pass"];
+
+function isPublicRoute(pathname: string): boolean {
+  return PUBLIC_PATHS.some(
+    (p) => pathname === p || pathname.startsWith(p + "/")
+  );
+}
+
 function getServiceName(pathname: string): string {
   for (const [route, name] of Object.entries(SERVICE_NAMES)) {
     if (pathname.startsWith(route)) {
@@ -43,6 +51,7 @@ export function RouteErrorElement() {
   const navigate = useNavigate();
   const location = useLocation();
   const serviceName = getServiceName(location.pathname);
+  const inline = !isPublicRoute(location.pathname);
 
   const errorMessage =
     error instanceof Error
@@ -69,7 +78,13 @@ export function RouteErrorElement() {
         : String(error);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6">
+    <div
+      className={
+        inline
+          ? "flex min-h-0 flex-1 flex-col items-center justify-center p-6"
+          : "flex min-h-screen items-center justify-center p-6"
+      }
+    >
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">

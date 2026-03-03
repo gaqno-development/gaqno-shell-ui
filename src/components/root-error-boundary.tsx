@@ -12,6 +12,7 @@ import { AlertCircle, Home, RefreshCw } from "lucide-react";
 
 interface RootErrorBoundaryProps {
   children: React.ReactNode;
+  inline?: boolean;
 }
 
 interface RootErrorBoundaryState {
@@ -42,6 +43,7 @@ export class RootErrorBoundary extends React.Component<
         <RootErrorFallback
           error={this.state.error}
           onRetry={() => this.setState({ hasError: false, error: null })}
+          inline={this.props.inline}
         />
       );
     }
@@ -52,16 +54,24 @@ export class RootErrorBoundary extends React.Component<
 function RootErrorFallback({
   error,
   onRetry,
+  inline = false,
 }: {
   error: Error;
   onRetry: () => void;
+  inline?: boolean;
 }) {
   const navigate = useNavigate();
   const message = error?.message ?? "Erro inesperado";
   const stack = error?.stack ?? "";
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-background">
+    <div
+      className={
+        inline
+          ? "flex min-h-0 flex-1 flex-col items-center justify-center p-6 bg-background"
+          : "flex min-h-screen items-center justify-center p-6 bg-background"
+      }
+    >
       <Card className="w-full max-w-lg">
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">

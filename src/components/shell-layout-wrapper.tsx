@@ -12,7 +12,7 @@ import { useShellLayout } from "@/hooks/useShellLayout";
 
 function ShellLayoutLoading() {
   return (
-    <RootErrorBoundary>
+    <RootErrorBoundary inline>
       <AppProvider>
         <WhiteLabelProvider>
           <TenantProvider>
@@ -38,7 +38,7 @@ function AuthenticatedShellLayout() {
 
   if (!shouldShowLayout) {
     return (
-      <RootErrorBoundary>
+      <RootErrorBoundary inline>
         <AppProvider>
           <WhiteLabelProvider>
             <TenantProvider>
@@ -63,7 +63,7 @@ function AuthenticatedShellLayout() {
   }
 
   return (
-    <RootErrorBoundary>
+    <RootErrorBoundary inline>
       <AppProvider>
         <WhiteLabelProvider>
           <TenantProvider>

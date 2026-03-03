@@ -367,6 +367,10 @@ const router = createBrowserRouter(
                 </Suspense>
               ),
             },
+            {
+              path: "settings",
+              element: <Navigate to="/saas/dashboard" replace />,
+            },
           ],
         },
         {

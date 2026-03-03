@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+import { isAxiosError } from "axios";
 import { ssoClient } from "@gaqno-development/frontcore/utils/api";
 import { Zap, DollarSign, Activity, Globe } from "lucide-react";
 import type { ChartConfig } from "@gaqno-development/frontcore/components/ui";
@@ -24,6 +25,11 @@ const CARD_ICON_MAP: Record<string, React.ElementType> = {
   activeServices: Globe,
 };
 
+function retryUnless401(failureCount: number, error: unknown): boolean {
+  if (isAxiosError(error) && error.response?.status === 401) return false;
+  return failureCount < 2;
+}
+
 const useOverviewCards = () =>
   useQuery<IDashboardOverviewResponse>({
     queryKey: ["dashboard", "overview"],
@@ -35,6 +41,7 @@ const useOverviewCards = () =>
     },
     staleTime: 2 * 60 * 1000,
     refetchInterval: 5 * 60 * 1000,
+    retry: retryUnless401,
   });
 
 const useUsageTimeSeries = (range: TimeRange) =>
@@ -47,6 +54,7 @@ const useUsageTimeSeries = (range: TimeRange) =>
       return data;
     },
     staleTime: 2 * 60 * 1000,
+    retry: retryUnless401,
   });
 
 const useActivityFeed = () =>
@@ -60,6 +68,7 @@ const useActivityFeed = () =>
     },
     staleTime: 1 * 60 * 1000,
     refetchInterval: 3 * 60 * 1000,
+    retry: retryUnless401,
   });
 
 export const useDashboardOverview = (): DashboardOverviewState => {
