@@ -9,7 +9,6 @@ import { QueryProvider } from "@gaqno-development/frontcore/components/providers
 import { AuthProvider } from "@gaqno-development/frontcore/contexts";
 import { ToastContainer } from "@gaqno-development/frontcore/components/ui";
 import { I18nProvider, i18n } from "@gaqno-development/frontcore/i18n";
-import { ShellLayoutWrapper } from "@/components/shell-layout-wrapper";
 import { RouteErrorElement } from "@/components/route-error-element";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -22,7 +21,15 @@ import { lazy, Suspense } from "react";
 import { RootLayout } from "./components/public-layout";
 
 // @ts-nocheck
-const AIPage = lazy(() => import("ai/App" as string));
+const AIRouteLayout = lazy(() => import("ai/AIRouteLayout" as string));
+const AIBookPage = lazy(() => import("ai/BookPage" as string));
+const AIAudioSection = lazy(() => import("ai/AudioSection" as string));
+const AIImagesSection = lazy(() => import("ai/ImagesSection" as string));
+const AIVideoSection = lazy(() => import("ai/VideoSection" as string));
+const AIStudioDashboard = lazy(() => import("ai/StudioDashboard" as string));
+const AISocialAccountsPage = lazy(() => import("ai/SocialAccountsPage" as string));
+const AIProductDataDiscoveryPage = lazy(() => import("ai/ProductDataDiscoveryPage" as string));
+const AIRetailSection = lazy(() => import("ai/RetailSection" as string));
 const CRMPage = lazy(() => import("crm/App" as string));
 const ERPPage = lazy(() => import("erp/App" as string));
 const ERPDashboardPage = lazy(() => import("erp/DashboardPage" as string));
@@ -60,8 +67,23 @@ const OmnichannelReportsPage = lazy(
 // @ts-nocheck
 const AdminPage = lazy(() => import("admin/App" as string));
 // @ts-nocheck
-const SaasPage = lazy(() => import("saas/App" as string));
-const WellnessPage = lazy(() => import("wellness/App" as string));
+const SaasRouteLayout = lazy(() => import("saas/SaasRouteLayout" as string));
+// @ts-nocheck
+const SaasDashboardPage = lazy(() => import("saas/DashboardPage" as string));
+// @ts-nocheck
+const SaasCostingPage = lazy(() => import("saas/SaasCostingPage" as string));
+// @ts-nocheck
+const SaasCodemapView = lazy(() => import("saas/CodemapView" as string));
+// @ts-nocheck
+const WellnessRouteLayout = lazy(() => import("wellness/WellnessRouteLayout" as string));
+// @ts-nocheck
+const WellnessDailyLogPage = lazy(() => import("wellness/DailyLogPage" as string));
+// @ts-nocheck
+const WellnessTimelinePage = lazy(() => import("wellness/TimelinePage" as string));
+// @ts-nocheck
+const WellnessStatsPage = lazy(() => import("wellness/StatsPage" as string));
+// @ts-nocheck
+const WellnessInsightsPage = lazy(() => import("wellness/InsightsPage" as string));
 
 function LoadingFallback() {
   return (
@@ -93,20 +115,77 @@ const router = createBrowserRouter(
         {
           path: "/ai",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<LoadingFallback />}>
+              <AIRouteLayout />
+            </Suspense>
+          ),
           children: [
             {
               index: true,
+              element: <Navigate to="/ai/books" replace />,
+            },
+            {
+              path: "books",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <AIPage />
+                  <AIBookPage />
                 </Suspense>
               ),
             },
             {
-              path: "*",
+              path: "audio",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <AIPage />
+                  <AIAudioSection />
+                </Suspense>
+              ),
+            },
+            {
+              path: "images",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <AIImagesSection />
+                </Suspense>
+              ),
+            },
+            {
+              path: "video",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <AIVideoSection />
+                </Suspense>
+              ),
+            },
+            {
+              path: "studio",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <AIStudioDashboard />
+                </Suspense>
+              ),
+            },
+            {
+              path: "social",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <AISocialAccountsPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "discovery",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <AIProductDataDiscoveryPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "retail",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <AIRetailSection />
                 </Suspense>
               ),
             },
@@ -331,20 +410,37 @@ const router = createBrowserRouter(
         {
           path: "/saas",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<LoadingFallback />}>
+              <SaasRouteLayout />
+            </Suspense>
+          ),
           children: [
             {
               index: true,
+              element: <Navigate to="/saas/dashboard" replace />,
+            },
+            {
+              path: "dashboard",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <SaasPage />
+                  <SaasDashboardPage />
                 </Suspense>
               ),
             },
             {
-              path: "*",
+              path: "costing",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <SaasPage />
+                  <SaasCostingPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "codemap",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <SaasCodemapView />
                 </Suspense>
               ),
             },
@@ -353,20 +449,45 @@ const router = createBrowserRouter(
         {
           path: "/wellness",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<LoadingFallback />}>
+              <WellnessRouteLayout />
+            </Suspense>
+          ),
           children: [
             {
               index: true,
+              element: <Navigate to="/wellness/today" replace />,
+            },
+            {
+              path: "today",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <WellnessPage />
+                  <WellnessDailyLogPage />
                 </Suspense>
               ),
             },
             {
-              path: "*",
+              path: "timeline",
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <WellnessPage />
+                  <WellnessTimelinePage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "stats",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <WellnessStatsPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "insights",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <WellnessInsightsPage />
                 </Suspense>
               ),
             },

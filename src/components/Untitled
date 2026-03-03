@@ -1,0 +1,69 @@
+installHook.js:1 Uncaught TypeError: window.__REACT_DEVTOOLS_GLOBAL_HOOK__.on is not a function
+    at installHook.js:1:178665
+    at installHook.js:1:178827
+    at installHook.js:1:178831
+(anonymous) @ installHook.js:1
+(anonymous) @ installHook.js:1
+(anonymous) @ installHook.js:1
+webpage_content_reporter.js:1 Uncaught SyntaxError: Unexpected token 'export' (at webpage_content_reporter.js:1:115539)
+backendManager.js:1 Uncaught TypeError: Cannot read properties of undefined (reading 'has')
+    at registerRenderer (backendManager.js:1:12314)
+    at backendManager.js:1:13933
+    at Map.forEach (<anonymous>)
+    at backendManager.js:1:13920
+    at welcome (backendManager.js:1:14271)
+registerRenderer @ backendManager.js:1
+(anonymous) @ backendManager.js:1
+(anonymous) @ backendManager.js:1
+welcome @ backendManager.js:1
+postMessage
+sayHelloToBackendManager @ proxy.js:1
+(anonymous) @ proxy.js:1
+setInterval
+injectProxy @ proxy.js:1
+index-CDqWJwId.js:223 Error: useAuth must be used within an AuthProvider
+    at useAuth (clap-CLXz-OK5.js:30141:11)
+    at OmnichannelPageLayout (__federation_expose_App-BQ4bhsOL.js:666:45)
+    at Nh (index-CDqWJwId.js:195:137)
+    at Vk (index-CDqWJwId.js:324:352)
+    at Uk (index-CDqWJwId.js:314:393)
+    at Tk (index-CDqWJwId.js:314:322)
+    at Ik (index-CDqWJwId.js:314:181)
+    at Nk (index-CDqWJwId.js:305:88)
+    at Gk (index-CDqWJwId.js:302:432)
+    at J (index-CDqWJwId.js:25:212)
+Li @ index-CDqWJwId.js:223
+Qi.f.componentDidCatch.c.callback @ index-CDqWJwId.js:224
+sh @ index-CDqWJwId.js:191
+kk @ index-CDqWJwId.js:295
+ik @ index-CDqWJwId.js:294
+ik @ index-CDqWJwId.js:294
+hk @ index-CDqWJwId.js:293
+Wk @ index-CDqWJwId.js:317
+Pk @ index-CDqWJwId.js:315
+Gk @ index-CDqWJwId.js:303
+J @ index-CDqWJwId.js:25
+R @ index-CDqWJwId.js:26
+clap-CLXz-OK5.js:45165 Error Boundary caught an error: Error: useAuth must be used within an AuthProvider
+    at useAuth (clap-CLXz-OK5.js:30141:11)
+    at OmnichannelPageLayout (__federation_expose_App-BQ4bhsOL.js:666:45)
+    at Nh (index-CDqWJwId.js:195:137)
+    at Vk (index-CDqWJwId.js:324:352)
+    at Uk (index-CDqWJwId.js:314:393)
+    at Tk (index-CDqWJwId.js:314:322)
+    at Ik (index-CDqWJwId.js:314:181)
+    at Nk (index-CDqWJwId.js:305:88)
+    at Gk (index-CDqWJwId.js:302:432)
+    at J (index-CDqWJwId.js:25:212) {componentStack: '\n    at OmnichannelPageLayout (https://portal.gaqn….br/assets/index-C6eZImMl.js:24524:25)\n    at App'}
+componentDidCatch @ clap-CLXz-OK5.js:45165
+Qi.f.componentDidCatch.c.callback @ index-CDqWJwId.js:224
+sh @ index-CDqWJwId.js:191
+kk @ index-CDqWJwId.js:295
+ik @ index-CDqWJwId.js:294
+ik @ index-CDqWJwId.js:294
+hk @ index-CDqWJwId.js:293
+Wk @ index-CDqWJwId.js:317
+Pk @ index-CDqWJwId.js:315
+Gk @ index-CDqWJwId.js:303
+J @ index-CDqWJwId.js:25
+R @ index-CDqWJwId.js:26
