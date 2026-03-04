@@ -93,4 +93,31 @@ test.describe("Production modules load", () => {
     }
     expect((await page.locator("#root").innerHTML()).length).toBeGreaterThan(200);
   });
+
+  test("Intelligence route loads and shows Analytics or placeholder", async ({ page }) => {
+    await page.goto(BASE_URL + "/intelligence", { waitUntil: "networkidle", timeout: 25000 });
+    await page.waitForTimeout(3000);
+    const body = await page.locator("body").innerText();
+    for (const phrase of ERROR_PHRASES) {
+      expect(body).not.toContain(phrase);
+    }
+    const hasContent =
+      body.includes("Analytics") ||
+      body.includes("Intelligence") ||
+      body.includes("inteligência") ||
+      body.includes("Previsões") ||
+      body.includes("Insights");
+    expect(hasContent).toBe(true);
+    expect((await page.locator("#root").innerHTML()).length).toBeGreaterThan(200);
+  });
+
+  test("ERP Orders route loads without service error", async ({ page }) => {
+    await page.goto(BASE_URL + "/erp/orders", { waitUntil: "networkidle", timeout: 25000 });
+    await page.waitForTimeout(3000);
+    const body = await page.locator("body").innerText();
+    for (const phrase of ERROR_PHRASES) {
+      expect(body).not.toContain(phrase);
+    }
+    expect((await page.locator("#root").innerHTML()).length).toBeGreaterThan(200);
+  });
 });
