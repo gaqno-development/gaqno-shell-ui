@@ -18,8 +18,14 @@ import {
   ShoppingCart,
   Warehouse,
 } from "lucide-react";
-import { GearIcon, TargetIcon, UsersIcon } from "@gaqno-development/frontcore/components/icons";
+import {
+  GearIcon,
+  TargetIcon,
+  UsersIcon,
+  AnimatedLightbulbIcon,
+} from "@gaqno-development/frontcore/components/icons";
 import { BookIcon } from "@gaqno-development/frontcore/components/icons";
+import { Activity, FileSearch, Workflow } from "lucide-react";
 
 const iconCls = "h-4 w-4";
 
@@ -85,6 +91,40 @@ export const SAAS_MFE_CONFIG: MfeRouteLayoutConfig = {
     { id: "dashboard", path: "dashboard", labelKey: "saas.dashboard", icon: <LayoutDashboard className={iconCls} /> },
     { id: "costing", path: "costing", labelKey: "saas.costing", icon: <DollarSign className={iconCls} /> },
     { id: "codemap", path: "codemap", labelKey: "saas.codemap", icon: <Network className={iconCls} /> },
+  ],
+};
+
+export const INTELLIGENCE_MFE_CONFIG: MfeRouteLayoutConfig = {
+  basePath: "/intelligence",
+  titleKey: "intelligence.title",
+  layoutId: "intelligenceActiveTab",
+  tabs: [
+    { id: "analytics", path: "analytics", labelKey: "intelligence.analytics", icon: <BarChart3 className={iconCls} /> },
+    { id: "forecasts", path: "forecasts", labelKey: "intelligence.forecasts", icon: <TrendingUp className={iconCls} /> },
+    { id: "insights", path: "insights", labelKey: "intelligence.insights", icon: <AnimatedLightbulbIcon className={iconCls} /> },
+    { id: "automation", path: "automation", labelKey: "intelligence.automation", icon: <Workflow className={iconCls} /> },
+  ],
+};
+
+export const CONSUMER_MFE_CONFIG: MfeRouteLayoutConfig = {
+  basePath: "/consumer",
+  titleKey: "consumer.title",
+  layoutId: "consumerActiveTab",
+  tabs: [
+    { id: "dashboard", path: "dashboard", labelKey: "consumer.dashboard", icon: <Activity className={iconCls} /> },
+  ],
+};
+
+export const ADMIN_MFE_CONFIG: MfeRouteLayoutConfig = {
+  basePath: "/admin",
+  titleKey: "admin.title",
+  layoutId: "adminActiveTab",
+  tabs: [
+    { id: "organization", path: "organization", labelKey: "admin.organization", icon: <GearIcon className={iconCls} /> },
+    { id: "users", path: "users", labelKey: "admin.users", icon: <UsersIcon className={iconCls} /> },
+    { id: "integrations", path: "integrations", labelKey: "admin.integrations", icon: <Network className={iconCls} /> },
+    { id: "audit", path: "audit", labelKey: "admin.audit", icon: <FileSearch className={iconCls} /> },
+    { id: "settings", path: "settings", labelKey: "admin.settings", icon: <GearIcon className={iconCls} /> },
   ],
 };
 

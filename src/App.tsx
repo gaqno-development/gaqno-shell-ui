@@ -10,6 +10,15 @@ import { AuthProvider } from "@gaqno-development/frontcore/contexts";
 import { ToastContainer } from "@gaqno-development/frontcore/components/ui";
 import { I18nProvider, i18n } from "@gaqno-development/frontcore/i18n";
 import { RouteErrorElement } from "@/components/route-error-element";
+import { MfeRouteLayout } from "@/components/MfeRouteLayout";
+import {
+  CRM_MFE_CONFIG,
+  ERP_MFE_CONFIG,
+  INTELLIGENCE_MFE_CONFIG,
+  CONSUMER_MFE_CONFIG,
+  ADMIN_MFE_CONFIG,
+  WELLNESS_MFE_CONFIG,
+} from "@/config/mfe-route-config";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -54,8 +63,6 @@ const SaasCostingPage = lazy(() => import("saas/SaasCostingPage" as string));
 // @ts-nocheck
 const SaasCodemapView = lazy(() => import("saas/CodemapView" as string));
 // @ts-nocheck
-const WellnessRouteLayout = lazy(() => import("wellness/WellnessRouteLayout" as string));
-// @ts-nocheck
 const WellnessDailyLogPage = lazy(() => import("wellness/DailyLogPage" as string));
 // @ts-nocheck
 const WellnessTimelinePage = lazy(() => import("wellness/TimelinePage" as string));
@@ -72,6 +79,20 @@ function LoadingFallback() {
       <div className="animate-pulse text-center">
         <p className="text-muted-foreground">Carregando...</p>
       </div>
+    </div>
+  );
+}
+
+function SectionLoadingFallback() {
+  return (
+    <div className="flex min-h-[320px] flex-1 flex-col gap-4 p-6">
+      <div className="h-8 w-48 animate-pulse rounded-md bg-muted" />
+      <div className="flex gap-2">
+        <div className="h-9 w-24 animate-pulse rounded-md bg-muted" />
+        <div className="h-9 w-24 animate-pulse rounded-md bg-muted" />
+        <div className="h-9 w-24 animate-pulse rounded-md bg-muted" />
+      </div>
+      <div className="flex-1 animate-pulse rounded-lg bg-muted/50" />
     </div>
   );
 }
@@ -179,13 +200,18 @@ const router = createBrowserRouter(
           path: "/intelligence",
           errorElement: <RouteErrorElement />,
           element: (
-            <Suspense fallback={<LoadingFallback />}>
-              <IntelligencePage />
+            <Suspense fallback={<SectionLoadingFallback />}>
+              <MfeRouteLayout config={INTELLIGENCE_MFE_CONFIG} />
             </Suspense>
           ),
           children: [
             {
+              index: true,
+              element: <Navigate to="analytics" replace />,
+            },
+            {
               path: "*",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <IntelligencePage />
@@ -198,13 +224,18 @@ const router = createBrowserRouter(
           path: "/consumer",
           errorElement: <RouteErrorElement />,
           element: (
-            <Suspense fallback={<LoadingFallback />}>
-              <ConsumerPage />
+            <Suspense fallback={<SectionLoadingFallback />}>
+              <MfeRouteLayout config={CONSUMER_MFE_CONFIG} />
             </Suspense>
           ),
           children: [
             {
+              index: true,
+              element: <Navigate to="dashboard" replace />,
+            },
+            {
               path: "*",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ConsumerPage />
@@ -216,6 +247,11 @@ const router = createBrowserRouter(
         {
           path: "/crm",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<SectionLoadingFallback />}>
+              <MfeRouteLayout config={CRM_MFE_CONFIG} />
+            </Suspense>
+          ),
           children: [
             {
               index: true,
@@ -223,6 +259,7 @@ const router = createBrowserRouter(
             },
             {
               path: "*",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <CRMPage />
@@ -234,6 +271,11 @@ const router = createBrowserRouter(
         {
           path: "/erp",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<SectionLoadingFallback />}>
+              <MfeRouteLayout config={ERP_MFE_CONFIG} />
+            </Suspense>
+          ),
           children: [
             {
               index: true,
@@ -241,6 +283,7 @@ const router = createBrowserRouter(
             },
             {
               path: "dashboard",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPDashboardPage />
@@ -249,6 +292,7 @@ const router = createBrowserRouter(
             },
             {
               path: "catalog",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPCatalogPage />
@@ -257,6 +301,7 @@ const router = createBrowserRouter(
             },
             {
               path: "inventory",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPInventoryPage />
@@ -265,6 +310,7 @@ const router = createBrowserRouter(
             },
             {
               path: "orders",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPOrdersPage />
@@ -273,6 +319,7 @@ const router = createBrowserRouter(
             },
             {
               path: "ai-content",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPAIContentPage />
@@ -281,6 +328,7 @@ const router = createBrowserRouter(
             },
             {
               path: "*",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPPage />
@@ -432,8 +480,8 @@ const router = createBrowserRouter(
           path: "/wellness",
           errorElement: <RouteErrorElement />,
           element: (
-            <Suspense fallback={<LoadingFallback />}>
-              <WellnessRouteLayout />
+            <Suspense fallback={<SectionLoadingFallback />}>
+              <MfeRouteLayout config={WELLNESS_MFE_CONFIG} />
             </Suspense>
           ),
           children: [
@@ -443,6 +491,7 @@ const router = createBrowserRouter(
             },
             {
               path: "today",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <WellnessDailyLogPage />
@@ -451,6 +500,7 @@ const router = createBrowserRouter(
             },
             {
               path: "timeline",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <WellnessTimelinePage />
@@ -459,6 +509,7 @@ const router = createBrowserRouter(
             },
             {
               path: "stats",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <WellnessStatsPage />
@@ -467,6 +518,7 @@ const router = createBrowserRouter(
             },
             {
               path: "insights",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <WellnessInsightsPage />
@@ -500,17 +552,19 @@ const router = createBrowserRouter(
         {
           path: "/admin",
           errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<SectionLoadingFallback />}>
+              <MfeRouteLayout config={ADMIN_MFE_CONFIG} />
+            </Suspense>
+          ),
           children: [
             {
               index: true,
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <AdminPage />
-                </Suspense>
-              ),
+              element: <Navigate to="users" replace />,
             },
             {
               path: "*",
+              errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <AdminPage />
