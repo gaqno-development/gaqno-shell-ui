@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
 
+const baseURL = process.env.BASE_URL || 'http://localhost:3000';
+const isProduction = baseURL.includes('portal.gaqno.com.br') || (process.env.BASE_URL != null && process.env.BASE_URL !== '');
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -9,7 +12,7 @@ export default defineConfig({
   timeout: 30000,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -19,13 +22,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: true,
-    timeout: 180 * 1000,
-    stdout: 'pipe',
-    stderr: 'pipe',
-  },
+  webServer: isProduction
+    ? undefined
+    : {
+        command: 'npm run dev',
+        url: 'http://localhost:3000',
+        reuseExistingServer: true,
+        timeout: 180 * 1000,
+        stdout: 'pipe',
+        stderr: 'pipe',
+      },
 })
 

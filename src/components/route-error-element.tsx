@@ -53,18 +53,31 @@ export function RouteErrorElement() {
   const serviceName = getServiceName(location.pathname);
   const inline = !isPublicRoute(location.pathname);
 
-  const errorMessage =
-    error instanceof Error
-      ? error.message
-      : typeof (error as { message?: string })?.message === "string"
-        ? (error as { message: string }).message
-        : "Ocorreu um erro inesperado";
+  React.useEffect(() => {
+    if (error != null) {
+      console.error("[RouteErrorElement]", location.pathname, error);
+    }
+  }, [error, location.pathname]);
+
+  const errorMessage = (() => {
+    if (error instanceof Error && error.message) return error.message;
+    if (typeof (error as { message?: string })?.message === "string")
+      return (error as { message: string }).message;
+    if (typeof error === "string") return error;
+    if (error && typeof (error as { reason?: unknown })?.reason !== "undefined")
+      return String((error as { reason: unknown }).reason);
+    if (error && typeof error === "object" && error !== null)
+      return JSON.stringify(error).slice(0, 500);
+    return "Ocorreu um erro inesperado";
+  })();
 
   const isRemoteLoadError =
     typeof errorMessage === "string" &&
     (errorMessage.includes("Failed to fetch dynamically imported module") ||
       errorMessage.includes("Can not find remote module") ||
-      errorMessage.includes("remoteEntry"));
+      errorMessage.includes("remoteEntry") ||
+      /loading chunk \d+ failed/i.test(errorMessage) ||
+      /Loading chunk .* failed/i.test(errorMessage));
 
   const hint = isRemoteLoadError
     ? "Verifique se o serviço está implantado e se o proxy encaminha o caminho corretamente para o container do MFE."
@@ -130,10 +143,12 @@ export function RouteErrorElement() {
             </Button>
           </div>
 
-          {process.env.NODE_ENV === "development" && errorDetails && (
+          {errorDetails && (
             <details className="mt-4">
               <summary className="text-xs text-muted-foreground cursor-pointer">
-                Detalhes do erro (desenvolvimento)
+                {process.env.NODE_ENV === "development"
+                  ? "Detalhes do erro (desenvolvimento)"
+                  : "Detalhes do erro (copie para o suporte)"}
               </summary>
               <pre className="mt-2 text-xs text-muted-foreground font-mono bg-muted p-2 rounded overflow-auto max-h-40">
                 {errorDetails}

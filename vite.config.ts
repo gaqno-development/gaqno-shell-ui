@@ -24,7 +24,7 @@ export default defineConfig(async () => {
   const MFE_SAAS_URL = origin ? `${origin}/saas` : ensureUrl(process.env.MFE_SAAS_URL, "http://localhost:3008/saas");
   const MFE_OMNICHANNEL_URL = origin ? `${origin}/omnichannel` : ensureUrl(process.env.MFE_OMNICHANNEL_URL, "http://localhost:3011/omnichannel");
   const MFE_WELLNESS_URL = origin ? `${origin}/wellness` : ensureUrl(process.env.MFE_WELLNESS_URL, "http://localhost:3012/wellness");
-  const MFE_ADMIN_URL = origin ? `${origin}/admin` : ensureUrl(process.env.MFE_ADMIN_URL, "http://localhost:3010");
+  const MFE_ADMIN_URL = origin ? `${origin}/admin` : ensureUrl(process.env.MFE_ADMIN_URL, "http://localhost:3010/admin");
 
   return {
     server: {

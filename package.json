@@ -13,9 +13,11 @@
     "start": "vite preview --port 3000 --host 0.0.0.0",
     "lint": "eslint . --ext .ts,.tsx",
     "test:e2e": "playwright test",
+    "test:e2e:production": "playwright test tests/production-modules.spec.ts",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
     "verify:browser": "node scripts/verify-browser.js",
+    "verify:production": "node scripts/verify-production-modules.js",
     "test": "echo \"No tests\""
   },
   "dependencies": {
