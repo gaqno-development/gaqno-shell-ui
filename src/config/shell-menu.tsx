@@ -44,28 +44,28 @@ export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
   },
   {
     label: "Atendimento",
-    href: "/omnichannel/overview",
+    href: "/omnichannel#overview",
     icon: AnimatedBellIcon,
     isCollapsible: true,
     children: [
       {
         label: "Inbox",
-        href: "/omnichannel/inbox/conversations",
+        href: "/omnichannel/inbox#conversations",
         icon: FileDescriptionIcon,
         children: [
-          { label: "Conversas", href: "/omnichannel/inbox/conversations", icon: FileDescriptionIcon },
-          { label: "Fila", href: "/omnichannel/inbox/queues", icon: FileDescriptionIcon },
-          { label: "Atribuições", href: "/omnichannel/inbox/assigned", icon: UsersIcon },
+          { label: "Conversas", href: "/omnichannel/inbox#conversations", icon: FileDescriptionIcon },
+          { label: "Fila", href: "/omnichannel/inbox#queues", icon: FileDescriptionIcon },
+          { label: "Atribuições", href: "/omnichannel/inbox#conversations", icon: UsersIcon },
         ],
       },
       {
         label: "Tickets",
-        href: "/omnichannel/inbox/conversations",
+        href: "/omnichannel/inbox#conversations",
         icon: FileDescriptionIcon,
         children: [
-          { label: "Pendentes", href: "/omnichannel/inbox/unassigned", icon: FileDescriptionIcon },
-          { label: "SLA", href: "/omnichannel/sla-status", icon: FileDescriptionIcon },
-          { label: "Resolvidos", href: "/omnichannel/reports/conversations", icon: FileDescriptionIcon },
+          { label: "Pendentes", href: "/omnichannel/inbox#conversations", icon: FileDescriptionIcon },
+          { label: "SLA", href: "/omnichannel#sla-status", icon: FileDescriptionIcon },
+          { label: "Resolvidos", href: "/omnichannel#reports", icon: FileDescriptionIcon },
         ],
       },
       {
@@ -79,22 +79,22 @@ export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
       },
       {
         label: "Automação",
-        href: "/omnichannel/automation/routing",
+        href: "/omnichannel#automation",
         icon: ShieldCheck,
         children: [
-          { label: "Bots", href: "/omnichannel/automation/routing", icon: ShieldCheck },
-          { label: "Regras", href: "/omnichannel/automation/sla", icon: ShieldCheck },
-          { label: "Roteamento", href: "/omnichannel/automation/routing", icon: ShieldCheck },
+          { label: "Bots", href: "/omnichannel#automation", icon: ShieldCheck },
+          { label: "Regras", href: "/omnichannel#automation", icon: ShieldCheck },
+          { label: "Roteamento", href: "/omnichannel#automation", icon: ShieldCheck },
         ],
       },
       {
         label: "Métricas",
-        href: "/omnichannel/reports/conversations",
+        href: "/omnichannel#reports",
         icon: FileDescriptionIcon,
         children: [
-          { label: "SLA", href: "/omnichannel/reports/conversations", icon: FileDescriptionIcon },
-          { label: "Volume", href: "/omnichannel/reports/conversations", icon: FileDescriptionIcon },
-          { label: "CSAT", href: "/omnichannel/reports/agents", icon: FileDescriptionIcon },
+          { label: "SLA", href: "/omnichannel#reports", icon: FileDescriptionIcon },
+          { label: "Volume", href: "/omnichannel#reports", icon: FileDescriptionIcon },
+          { label: "CSAT", href: "/omnichannel#reports", icon: FileDescriptionIcon },
         ],
       },
     ],
@@ -294,18 +294,18 @@ export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
         children: [
           { label: "Shorts", href: "/ai/studio", icon: FileDescriptionIcon },
           { label: "Campanhas", href: "/ai/social", icon: AnimatedTrendingUpIcon },
-          { label: "Distribuição", href: "/ai/retail/distribution", icon: FileDescriptionIcon },
+          { label: "Distribuição", href: "/ai/retail#distribution", icon: FileDescriptionIcon },
         ],
       },
       {
         label: "Varejo",
-        href: "/ai/retail/profile",
+        href: "/ai/retail#profile",
         icon: BoxesIcon,
         children: [
-          { label: "Perfil", href: "/ai/retail/profile", icon: UsersIcon },
-          { label: "Conteúdo", href: "/ai/retail/content", icon: FileDescriptionIcon },
-          { label: "Vídeo", href: "/ai/retail/video", icon: FileDescriptionIcon },
-          { label: "Atribuição GMV", href: "/ai/retail/attribution", icon: DollarSignIcon },
+          { label: "Perfil", href: "/ai/retail#profile", icon: UsersIcon },
+          { label: "Conteúdo", href: "/ai/retail#content", icon: FileDescriptionIcon },
+          { label: "Vídeo", href: "/ai/retail#video", icon: FileDescriptionIcon },
+          { label: "Atribuição GMV", href: "/ai/retail#attribution", icon: DollarSignIcon },
         ],
       },
       {
