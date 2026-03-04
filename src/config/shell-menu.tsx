@@ -282,8 +282,8 @@ export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
         icon: AnimatedSparklesIcon,
         children: [
           { label: "Texto", href: "/ai/audio#tts", icon: FileDescriptionIcon },
-          { label: "Imagem", href: "/ai/images/text", icon: FileDescriptionIcon },
-          { label: "Vídeo", href: "/ai/video/text", icon: FileDescriptionIcon },
+          { label: "Imagem", href: "/ai/images#text", icon: FileDescriptionIcon },
+          { label: "Vídeo", href: "/ai/video#text", icon: FileDescriptionIcon },
           { label: "Áudio", href: "/ai/audio", icon: FileDescriptionIcon },
         ],
       },

@@ -32,19 +32,24 @@ test.describe("AI Audio and Images child pages", () => {
     }
   });
 
-  test("GET /ai/images redirects to /ai/images/text", async ({ page }) => {
-    await page.goto(`${BASE_URL}/ai/images`);
-    await page.waitForLoadState("networkidle");
-    await expect(page).toHaveURL(/\/ai\/images\/text/, { timeout: 15000 });
-  });
-
-  test("/ai/images/text shows Texto para Imagem as its own page", async ({
+  test("GET /ai/images shows default Texto para Imagem tab", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/images/text`);
+    await page.goto(`${BASE_URL}/ai/images`);
+    await page.waitForLoadState("networkidle");
+    await expect(page).toHaveURL(/\/ai\/images/);
+    await expect(
+      page.getByRole("heading", { name: "Texto para Imagem" })
+    ).toBeVisible({ timeout: 15000 });
+  });
+
+  test("/ai/images#text shows Texto para Imagem as its own page", async ({
+    page,
+  }) => {
+    await page.goto(`${BASE_URL}/ai/images#text`);
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/images\/text/);
+    await expect(page).toHaveURL(/\/ai\/images#text/);
     await expect(
       page.getByRole("heading", { name: "Texto para Imagem" })
     ).toBeVisible();
@@ -53,13 +58,13 @@ test.describe("AI Audio and Images child pages", () => {
     ).toBeVisible();
   });
 
-  test("/ai/images/edit shows Editar Imagem as its own page", async ({
+  test("/ai/images#edit shows Editar Imagem as its own page", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/images/edit`);
+    await page.goto(`${BASE_URL}/ai/images#edit`);
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/images\/edit/);
+    await expect(page).toHaveURL(/\/ai\/images#edit/);
     await expect(
       page.getByRole("heading", { name: "Editar Imagem" })
     ).toBeVisible();
@@ -88,59 +93,59 @@ test.describe("AI Audio and Images child pages", () => {
     ).toBeVisible();
   });
 
-  test("sub-nav on /ai/images/text: clicking Editar Imagem goes to /ai/images/edit", async ({
+  test("sub-nav on /ai/images#text: clicking Editar Imagem goes to /ai/images#edit", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/images/text`);
+    await page.goto(`${BASE_URL}/ai/images#text`);
     await page.waitForLoadState("networkidle");
 
     await page.getByRole("link", { name: "Editar Imagem" }).click();
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/images\/edit/);
+    await expect(page).toHaveURL(/\/ai\/images#edit/);
     await expect(
       page.getByRole("heading", { name: "Editar Imagem" })
     ).toBeVisible();
   });
 
-  test("sub-nav on /ai/images/edit: clicking Texto para Imagem goes to /ai/images/text", async ({
+  test("sub-nav on /ai/images#edit: clicking Texto para Imagem goes to /ai/images#text", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/images/edit`);
+    await page.goto(`${BASE_URL}/ai/images#edit`);
     await page.waitForLoadState("networkidle");
 
     await page.getByRole("link", { name: "Texto para Imagem" }).click();
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/images\/text/);
+    await expect(page).toHaveURL(/\/ai\/images#text/);
     await expect(
       page.getByRole("heading", { name: "Texto para Imagem" })
     ).toBeVisible();
   });
 
-  test("/ai/images/inpainting shows Inpainting as its own page", async ({
+  test("/ai/images#inpainting shows Inpainting as its own page", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/images/inpainting`);
+    await page.goto(`${BASE_URL}/ai/images#inpainting`);
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/images\/inpainting/);
+    await expect(page).toHaveURL(/\/ai\/images#inpainting/);
     await expect(
       page.getByRole("heading", { name: "Inpainting" })
     ).toBeVisible();
     await expect(page.getByText("Em breve.")).toBeVisible();
   });
 
-  test("sub-nav on /ai/images/text: clicking Inpainting goes to /ai/images/inpainting", async ({
+  test("sub-nav on /ai/images#text: clicking Inpainting goes to /ai/images#inpainting", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/images/text`);
+    await page.goto(`${BASE_URL}/ai/images#text`);
     await page.waitForLoadState("networkidle");
 
     await page.getByRole("link", { name: "Inpainting" }).click();
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/images\/inpainting/);
+    await expect(page).toHaveURL(/\/ai\/images#inpainting/);
     await expect(
       page.getByRole("heading", { name: "Inpainting" })
     ).toBeVisible();
@@ -173,13 +178,13 @@ test.describe("AI Video child pages", () => {
     }
   });
 
-  test("/ai/video/text shows Texto para Vídeo as its own page", async ({
+  test("/ai/video#text shows Texto para Vídeo as its own page", async ({
     page,
   }) => {
-    await page.goto(`${BASE_URL}/ai/video/text`);
+    await page.goto(`${BASE_URL}/ai/video#text`);
     await page.waitForLoadState("networkidle");
 
-    await expect(page).toHaveURL(/\/ai\/video\/text/);
+    await expect(page).toHaveURL(/\/ai\/video#text/);
     await expect(
       page.getByRole("heading", { name: "Texto para Vídeo" })
     ).toBeVisible();
