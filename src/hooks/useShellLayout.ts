@@ -18,6 +18,8 @@ const MFE_ROUTES = [
   "/omnichannel",
   "/wellness",
   "/saas",
+  "/intelligence",
+  "/consumer",
 ];
 const LAYOUT_ROUTES = ["/dashboard", ...MFE_ROUTES];
 const PUBLIC_ROUTES = ["/login", "/register", "/"];

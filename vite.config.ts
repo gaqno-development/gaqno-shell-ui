@@ -26,6 +26,7 @@ export default defineConfig(async () => {
   const MFE_WELLNESS_URL = origin ? `${origin}/wellness` : ensureUrl(process.env.MFE_WELLNESS_URL, "http://localhost:3012/wellness");
   const MFE_ADMIN_URL = origin ? `${origin}/admin` : ensureUrl(process.env.MFE_ADMIN_URL, "http://localhost:3010/admin");
   const MFE_INTELLIGENCE_URL = origin ? `${origin}/intelligence` : ensureUrl(process.env.MFE_INTELLIGENCE_URL, "http://localhost:3013/intelligence");
+  const MFE_CONSUMER_URL = origin ? `${origin}/consumer` : ensureUrl(process.env.MFE_CONSUMER_URL, "http://localhost:3015/consumer");
 
   return {
     server: {
@@ -90,6 +91,7 @@ export default defineConfig(async () => {
           wellness: MFE_WELLNESS_URL + "/assets/remoteEntry.js",
           admin: MFE_ADMIN_URL + "/assets/remoteEntry.js",
           intelligence: MFE_INTELLIGENCE_URL + "/assets/remoteEntry.js",
+          consumer: MFE_CONSUMER_URL + "/assets/remoteEntry.js",
         },
         shared: {
           react: {

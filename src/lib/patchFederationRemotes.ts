@@ -15,6 +15,8 @@ export const REMOTE_PATHS: Record<string, string> = {
   omnichannel: "/omnichannel",
   wellness: "/wellness",
   admin: "/admin",
+  intelligence: "/intelligence",
+  consumer: "/consumer",
 };
 
 function patchFederationRemotes(): void {

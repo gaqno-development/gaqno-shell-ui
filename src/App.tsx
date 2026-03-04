@@ -63,6 +63,8 @@ const WellnessTimelinePage = lazy(() => import("wellness/TimelinePage" as string
 const WellnessStatsPage = lazy(() => import("wellness/StatsPage" as string));
 // @ts-nocheck
 const WellnessInsightsPage = lazy(() => import("wellness/InsightsPage" as string));
+// @ts-nocheck
+const ConsumerPage = lazy(() => import("consumer/App" as string));
 
 function LoadingFallback() {
   return (
@@ -187,6 +189,25 @@ const router = createBrowserRouter(
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <IntelligencePage />
+                </Suspense>
+              ),
+            },
+          ],
+        },
+        {
+          path: "/consumer",
+          errorElement: <RouteErrorElement />,
+          element: (
+            <Suspense fallback={<LoadingFallback />}>
+              <ConsumerPage />
+            </Suspense>
+          ),
+          children: [
+            {
+              path: "*",
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <ConsumerPage />
                 </Suspense>
               ),
             },

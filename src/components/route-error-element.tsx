@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@gaqno-development/frontcore/components/ui";
 import { Button } from "@gaqno-development/frontcore/components/ui";
-import { AlertCircle, Home, RefreshCw } from "lucide-react";
+import { AlertCircle, Home, RefreshCw, Construction } from "lucide-react";
 
 const SERVICE_NAMES: Record<string, string> = {
   "/dashboard/profile": "Perfil",
@@ -27,7 +27,14 @@ const SERVICE_NAMES: Record<string, string> = {
   "/omnichannel": "Omnichannel",
   "/wellness": "Wellness",
   "/saas": "SAAS",
+  "/consumer": "Consumer",
+  "/intelligence": "Intelligence",
 };
+
+const ROUTES_NOT_DEPLOYED = ["/intelligence", "/consumer"];
+function isRouteNotDeployed(pathname: string): boolean {
+  return ROUTES_NOT_DEPLOYED.some((p) => pathname.startsWith(p));
+}
 
 const PUBLIC_PATHS = ["/", "/login", "/register", "/recovery-pass"];
 
@@ -52,6 +59,7 @@ export function RouteErrorElement() {
   const location = useLocation();
   const serviceName = getServiceName(location.pathname);
   const inline = !isPublicRoute(location.pathname);
+  const notDeployed = isRouteNotDeployed(location.pathname);
 
   React.useEffect(() => {
     if (error != null) {
@@ -79,9 +87,12 @@ export function RouteErrorElement() {
       /loading chunk \d+ failed/i.test(errorMessage) ||
       /Loading chunk .* failed/i.test(errorMessage));
 
-  const hint = isRemoteLoadError
-    ? "Verifique se o serviço está implantado e se o proxy encaminha o caminho corretamente para o container do MFE."
-    : null;
+  const hint =
+    notDeployed
+      ? null
+      : isRemoteLoadError
+        ? "Verifique se o serviço está implantado e se o proxy encaminha o caminho corretamente para o container do MFE."
+        : null;
 
   const errorDetails =
     error instanceof Error
@@ -100,57 +111,77 @@ export function RouteErrorElement() {
     >
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
-            <AlertCircle className="h-6 w-6 text-destructive" />
+          <div
+            className={`mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full ${
+              notDeployed ? "bg-amber-500/10" : "bg-destructive/10"
+            }`}
+          >
+            {notDeployed ? (
+              <Construction className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+            ) : (
+              <AlertCircle className="h-6 w-6 text-destructive" />
+            )}
           </div>
-          <CardTitle className="text-2xl">Serviço Indisponível</CardTitle>
+          <CardTitle className="text-2xl">
+            {notDeployed ? "Módulo em implantação" : "Serviço Indisponível"}
+          </CardTitle>
           <CardDescription>
-            O {serviceName} não está disponível no momento
+            {notDeployed
+              ? `${serviceName} ainda não está disponível. Use o menu para acessar outras áreas.`
+              : `O ${serviceName} não está disponível no momento.`}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="rounded-md bg-muted p-4 text-sm">
-            <p className="font-medium mb-2">O que aconteceu?</p>
+            <p className="mb-2 font-medium">
+              {notDeployed ? "Por quê?" : "O que aconteceu?"}
+            </p>
             <p className="text-muted-foreground">
-              O serviço que você está tentando acessar não está respondendo.
-              Isso pode acontecer se o serviço não estiver em execução ou se
-              houver um problema de conexão.
+              {notDeployed
+                ? "Este módulo está em implantação. Quando estiver no ar, ele aparecerá aqui normalmente."
+                : "O serviço que você está tentando acessar não está respondendo. Pode ser que não esteja em execução ou haja um problema de conexão."}
             </p>
             {hint && (
-              <p className="mt-2 text-xs text-muted-foreground italic">
+              <p className="mt-2 text-xs italic text-muted-foreground">
                 {hint}
               </p>
             )}
-            {errorMessage && (
-              <p className="mt-2 text-xs text-muted-foreground font-mono break-words">
+            {errorMessage && !notDeployed && (
+              <p className="mt-2 break-words font-mono text-xs text-muted-foreground">
                 {errorMessage}
               </p>
             )}
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button variant="default" onClick={() => navigate("/dashboard")} className="w-full">
-              <Home className="mr-2 h-4 w-4" />
-              Voltar ao Dashboard
-            </Button>
             <Button
-              variant="outline"
-              onClick={() => window.location.reload()}
+              variant="default"
+              onClick={() => navigate("/dashboard")}
               className="w-full"
             >
-              <RefreshCw className="mr-2 h-4 w-4" />
-              Tentar Novamente
+              <Home className="mr-2 h-4 w-4" />
+              Ir ao Dashboard
             </Button>
+            {!notDeployed && (
+              <Button
+                variant="outline"
+                onClick={() => window.location.reload()}
+                className="w-full"
+              >
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Tentar novamente
+              </Button>
+            )}
           </div>
 
-          {errorDetails && (
+          {errorDetails && !notDeployed && (
             <details className="mt-4">
-              <summary className="text-xs text-muted-foreground cursor-pointer">
+              <summary className="cursor-pointer text-xs text-muted-foreground">
                 {process.env.NODE_ENV === "development"
                   ? "Detalhes do erro (desenvolvimento)"
                   : "Detalhes do erro (copie para o suporte)"}
               </summary>
-              <pre className="mt-2 text-xs text-muted-foreground font-mono bg-muted p-2 rounded overflow-auto max-h-40">
+              <pre className="mt-2 max-h-40 overflow-auto rounded bg-muted p-2 font-mono text-xs text-muted-foreground">
                 {errorDetails}
               </pre>
             </details>

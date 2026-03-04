@@ -13,7 +13,7 @@ import {
   ShieldCheck,
   UsersIcon,
 } from "@gaqno-development/frontcore/components/icons";
-import { Heart } from "lucide-react";
+import { Activity, Heart } from "lucide-react";
 import type { ShellMenuItem } from "@/components/shell-sidebar";
 
 export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
@@ -259,6 +259,15 @@ export const SHELL_MENU_ITEMS: ShellMenuItem[] = [
           { label: "Regras", href: "/intelligence/automation/rules", icon: ShieldCheck },
         ],
       },
+    ],
+  },
+  {
+    label: "Consumer",
+    href: "/consumer",
+    icon: Activity,
+    isCollapsible: true,
+    children: [
+      { label: "Dashboard", href: "/consumer/dashboard", icon: LayoutPanelTopIcon },
     ],
   },
   {

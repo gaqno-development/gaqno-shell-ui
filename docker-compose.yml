@@ -19,6 +19,8 @@ services:
         MFE_OMNICHANNEL_URL: ${MFE_OMNICHANNEL_URL:-http://localhost:3011}
         MFE_WELLNESS_URL: ${MFE_WELLNESS_URL:-http://localhost:3012}
         MFE_ADMIN_URL: ${MFE_ADMIN_URL:-http://localhost:3010}
+        MFE_INTELLIGENCE_URL: ${MFE_INTELLIGENCE_URL:-http://localhost:3013}
+        MFE_CONSUMER_URL: ${MFE_CONSUMER_URL:-http://localhost:3015}
     ports:
       - "3000:3000"
     environment:

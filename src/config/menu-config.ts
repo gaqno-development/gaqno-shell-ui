@@ -13,7 +13,7 @@ import {
   ShieldCheck,
   UsersIcon,
 } from "@gaqno-development/frontcore/components/icons";
-import { Heart } from "lucide-react";
+import { Activity, Heart } from "lucide-react";
 import type { ComponentType } from "react";
 
 export interface MenuItem {
@@ -94,6 +94,16 @@ export const MENU_ITEMS: MenuItem[] = [
     href: "/intelligence",
     icon: AnimatedLightbulbIcon,
     requiredPermissions: [],
+  },
+  {
+    id: "consumer",
+    label: "Consumer",
+    href: "/consumer",
+    icon: Activity,
+    requiredPermissions: [],
+    children: [
+      { id: "consumer-dashboard", label: "Dashboard", href: "/consumer/dashboard", icon: LayoutPanelTopIcon, requiredPermissions: [] },
+    ],
   },
   {
     id: "ai-studio",
@@ -245,6 +255,8 @@ export const ROUTE_PERMISSIONS: Record<string, string[]> = {
   "/intelligence/forecasts": [],
   "/intelligence/insights": [],
   "/intelligence/automation": [],
+  "/consumer": [],
+  "/consumer/dashboard": [],
   "/erp/dashboard": ["erp.access"],
   "/erp/catalog": ["erp.access"],
   "/erp/catalog/:id": ["erp.access"],
