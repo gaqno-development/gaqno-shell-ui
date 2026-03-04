@@ -17,6 +17,7 @@ services:
         MFE_SSO_URL: ${MFE_SSO_URL:-http://localhost:3001}
         MFE_SAAS_URL: ${MFE_SAAS_URL:-http://localhost:3008}
         MFE_OMNICHANNEL_URL: ${MFE_OMNICHANNEL_URL:-http://localhost:3011}
+        MFE_WELLNESS_URL: ${MFE_WELLNESS_URL:-http://localhost:3012}
         MFE_ADMIN_URL: ${MFE_ADMIN_URL:-http://localhost:3010}
     ports:
       - "3000:3000"

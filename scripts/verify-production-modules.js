@@ -42,6 +42,7 @@ const PROTECTED_ROUTES = [
   { path: "/dashboard/notifications", name: "Dashboard Notifications" },
   { path: "/ai/books", name: "AI Books" },
   { path: "/ai/audio", name: "AI Audio" },
+  { path: "/ai/audio#tts", name: "AI Audio TTS" },
   { path: "/ai/images", name: "AI Images" },
   { path: "/ai/video", name: "AI Video" },
   { path: "/ai/studio", name: "AI Studio" },
@@ -101,21 +102,21 @@ const MFE_PREFIXES = [
 const MFE_WAIT_MS = 8000;
 const MFE_RETRIES = 2;
 
+const LOGIN_GOTO_TIMEOUT_MS = 35000;
+const LOGIN_INPUT_TIMEOUT_MS = 45000;
+
 async function login(page) {
   await page.goto(BASE_URL + "/login", {
-    waitUntil: "networkidle",
-    timeout: 20000,
+    waitUntil: "domcontentloaded",
+    timeout: LOGIN_GOTO_TIMEOUT_MS,
   });
-  await page.waitForTimeout(1500);
-  const emailInput = page
-    .getByPlaceholder("seu@email.com")
-    .or(page.locator('input[type="email"]'));
-  const passwordInput = page
-    .getByPlaceholder("••••••••")
-    .or(page.locator('input[type="password"]'));
-  await emailInput.fill(LOGIN_EMAIL);
-  await passwordInput.fill(LOGIN_PASSWORD);
-  await page.getByRole("button", { name: /Entrar|Entrando...|Login/ }).click();
+  const emailInput = page.locator('input[type="email"]').first();
+  await emailInput.waitFor({ state: "visible", timeout: LOGIN_INPUT_TIMEOUT_MS });
+  await page.waitForTimeout(500);
+  const passwordInput = page.locator('input[type="password"]').first();
+  await emailInput.fill(LOGIN_EMAIL, { timeout: 10000 });
+  await passwordInput.fill(LOGIN_PASSWORD, { timeout: 10000 });
+  await page.getByRole("button", { name: /Entrar|Entrando|Login/ }).click();
   await page.waitForURL(/dashboard|\/login/, { timeout: 20000 });
   await page.waitForTimeout(2000);
 }
