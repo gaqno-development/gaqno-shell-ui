@@ -92,9 +92,9 @@ export function useShellLayout() {
   }, [isMobile, setSidebarOpen]);
 
   const pageTransition = {
-    initial: { opacity: 0, x: 8 },
+    initial: { opacity: 1, x: 12 },
     animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -8 },
+    exit: { opacity: 1, x: -12 },
     transition: { duration: 0.2 },
   };
 
