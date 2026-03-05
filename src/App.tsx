@@ -63,13 +63,7 @@ const SaasCostingPage = lazy(() => import("saas/SaasCostingPage" as string));
 // @ts-nocheck
 const SaasCodemapView = lazy(() => import("saas/CodemapView" as string));
 // @ts-nocheck
-const WellnessDailyLogPage = lazy(() => import("wellness/DailyLogPage" as string));
-// @ts-nocheck
-const WellnessTimelinePage = lazy(() => import("wellness/TimelinePage" as string));
-// @ts-nocheck
-const WellnessStatsPage = lazy(() => import("wellness/StatsPage" as string));
-// @ts-nocheck
-const WellnessInsightsPage = lazy(() => import("wellness/InsightsPage" as string));
+const WellnessPages = lazy(() => import("wellness/Pages" as string));
 // @ts-nocheck
 const ConsumerPage = lazy(() => import("consumer/App" as string));
 
@@ -490,38 +484,11 @@ const router = createBrowserRouter(
               element: <Navigate to="/wellness/today" replace />,
             },
             {
-              path: "today",
+              path: "*",
               errorElement: <RouteErrorElement />,
               element: (
                 <Suspense fallback={<LoadingFallback />}>
-                  <WellnessDailyLogPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "timeline",
-              errorElement: <RouteErrorElement />,
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <WellnessTimelinePage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "stats",
-              errorElement: <RouteErrorElement />,
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <WellnessStatsPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "insights",
-              errorElement: <RouteErrorElement />,
-              element: (
-                <Suspense fallback={<LoadingFallback />}>
-                  <WellnessInsightsPage />
+                  <WellnessPages />
                 </Suspense>
               ),
             },
