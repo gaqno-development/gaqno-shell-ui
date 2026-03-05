@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Production: set VITE_APP_ORIGIN (e.g. https://portal.gaqno.com.br) so all MFE remotes
 # default to ${VITE_APP_ORIGIN}/{admin,sso,saas,...}. Or pass each MFE_*_URL explicitly.
-ARG VITE_APP_ORIGIN=
+ARG VITE_APP_ORIGIN=https://portal.gaqno.com.br
 ARG MFE_AI_URL=http://localhost:3002
 ARG MFE_CRM_URL=http://localhost:3003
 ARG MFE_ERP_URL=http://localhost:3004
