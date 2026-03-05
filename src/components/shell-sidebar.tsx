@@ -42,6 +42,10 @@ function splitHref(href: string): { pathname: string; hash: string } {
   return { pathname: href.slice(0, idx), hash: href.slice(idx) };
 }
 
+function toAbsoluteHref(href: string): string {
+  return href.startsWith("/") ? href : `/${href}`;
+}
+
 function isPathActive(pathname: string, href: string | undefined): boolean {
   if (!href || href === "#") return false;
   const parsed = splitHref(href);
@@ -116,7 +120,7 @@ function MenuItemContent({ item, pathname, depth }: MenuItemContentProps) {
     <SidebarMenuItem isActive={active}>
       <SidebarMenuButton asChild isActive={active}>
         <Link
-          to={item.href ? splitHref(item.href) : "#"}
+          to={item.href ? splitHref(toAbsoluteHref(item.href)) : "#"}
           className="flex items-center gap-2"
         >
           <div
@@ -183,7 +187,7 @@ function ShellMenuSubItem({
   return (
     <SidebarMenuSubItem>
       <SidebarMenuSubButton asChild isActive={active}>
-        <Link to={item.href ? splitHref(item.href) : "#"} className="flex items-center gap-2">
+        <Link to={item.href ? splitHref(toAbsoluteHref(item.href)) : "#"} className="flex items-center gap-2">
           <Icon className="size-4 shrink-0 text-sidebar-foreground" />
           <span>{item.label}</span>
           {item.notificationCount != null && item.notificationCount > 0 && (
