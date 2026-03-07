@@ -9,6 +9,7 @@ import { QueryProvider } from "@gaqno-development/frontcore/components/providers
 import { AuthProvider } from "@gaqno-development/frontcore/contexts";
 import { ToastContainer } from "@gaqno-development/frontcore/components/ui";
 import { I18nProvider, i18n } from "@gaqno-development/frontcore/i18n";
+import "@gaqno-development/frontcore/hooks/erp";
 import { RouteErrorElement } from "@/components/route-error-element";
 import { MfeRouteLayout } from "@/components/MfeRouteLayout";
 import {
@@ -264,6 +265,33 @@ const router = createBrowserRouter(
               element: (
                 <Suspense fallback={<LoadingFallback />}>
                   <ERPDashboardPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "catalog/new",
+              errorElement: <RouteErrorElement />,
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <ERPPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "catalog/:id/edit",
+              errorElement: <RouteErrorElement />,
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <ERPPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "catalog/:id",
+              errorElement: <RouteErrorElement />,
+              element: (
+                <Suspense fallback={<LoadingFallback />}>
+                  <ERPPage />
                 </Suspense>
               ),
             },
